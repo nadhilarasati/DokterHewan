@@ -1,0 +1,141 @@
+html, body{
+    overflow-x: hidden;
+}
+body{
+    margin-top: 68px!important;
+}
+
+
+
+
+/* NAVBAR-TOP */
+.navbar{
+    background-color: #2c3e50;
+    color: aliceblue;
+}
+.navbar .navbar-nav .nav-item .nav-link{
+    color: aliceblue;
+    font-weight: 100px;
+}
+
+
+.navbar .glow{
+    padding: 10px;
+        color: pink;
+        font: 20px 'Poiret One', cursive;
+        box-shadow: inset 0px 0px 10px #ffbbbb, 0px 0px 10px #ff0000;
+        text-shadow: 0px 0px 10px #ff0000, 2px 2px 4px #000;
+        border: 2px solid pink;
+        border-radius: 15px;
+      
+}
+.navbar .right-item li a i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
+
+/* HOME */
+.card-promo .card{
+    margin: 20px;
+    max-width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    color: aliceblue;
+    text-align: center;
+    border-radius: 20px!important;
+}
+
+.card-promo .card-1{
+    background:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("../img/pet1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.card-promo .card-2{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("../img/pet2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.card-promo .card-3{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("../img/pet3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+/* ABOUT US */
+.about-us{
+    /* padding: 10px!important; */
+    margin-top: 10px;
+}
+
+.about-us .card{
+    border: none;
+    text-align: center;
+}
+
+.about-us .card .card-header{
+    background: none;
+    border: none;
+    padding: 10px;
+}
+.about-us .card .card-header i{
+    font-size: 55px;
+    color: #2c2c54;
+}
+.about-us .card .card-title{
+    margin: 0;
+}
+
+.about-us .card .card-body{
+    padding: 5px;
+}
+.about-us .card .card-body p{
+    display: inline-block;
+    max-width: 50%;
+}
+.about-us .desc-cont{
+    padding: 10px;
+}
+.about-us .activity .card{
+    margin-top: 10px;
+    background-color: #dfe6e9;
+    padding: 10px;
+}
+
+
+.about-us .section{
+    padding: 30px;
+}
+.about-us .section h5{
+    text-decoration: underline;
+}
+.about-us .section p{
+    
+}
+
+
+
+/* FACILITIES */
+.design{
+    margin: 100px;
+}
+.design-facilities{
+    background-color: #ffbbbb!important;
+    height: 300px;
+    margin: 0 auto;
+}
+.facilities-desc .card{
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid sienna;
+    border-radius: 0;
+}
+.facilities-desc .card .card-header{
+    background: none;
+    border-bottom: none;
+}
