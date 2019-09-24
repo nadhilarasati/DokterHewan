@@ -1,6 +1,6 @@
 <div id="content-wrapper">
     <div class="container-fluid">
-    <h2 class="text-center" style="margin-bottom:1cm; margin-top:1cm">Data Pegawai Baru</h2>
+        <h2 class="text-center" style="margin-bottom:1cm; margin-top:1cm">Data Pegawai Baru</h2>
         <form class="data-pegawai" action="<?php site_url('admin/formDataPegawai'); ?>" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6">
@@ -56,7 +56,7 @@
 
                     <button class="btn btn-secondary" style="margin-top:1cm">Submit</button>
                     <div class="form-group row">
-                        
+
                     </div>
                 </div>
             </div>
