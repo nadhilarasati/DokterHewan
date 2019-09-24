@@ -1,6 +1,7 @@
 <div id="content-wrapper">
     <div class="container-fluid">
         <form class="data-pasien">
+        <h2 class="text-center" style="margin-bottom:2cm">Data Pasien</h2>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group row">
