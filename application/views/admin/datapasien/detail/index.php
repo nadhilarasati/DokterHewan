@@ -1,43 +1,50 @@
 <div id="content-wrapper">
     <div class="container-fluid">
         <form class="data-pasien">
-        <h2 class="text-center" style="margin-bottom:2cm">Data Pasien</h2>
+            <h2 class="text-center" style="margin-bottom:2cm">Data Pasien</h2>
             <div class="row">
                 <div class="col-md-6">
+                    <h3 style="margin-bottom:1cm">Data Pemilik Hewan</h3>
+                    <div class="form-group row">
+                        <label for="idPemilik" class="col-sm-4 col-form-label">No. KTP</label>
+                        <div class="col-sm-8">
+                            <label for="noKTP" class="col-sm-4 col-form-label">781097281910</label>
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">No. KTP</label>
                         <div class="col-sm-8">
-                        <label for="noKTP" class="col-sm-4 col-form-label">781097281910</label>
+                            <label for="noKTP" class="col-sm-4 col-form-label">781097281910</label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Nama Pemilik Hewan</label>
                         <div class="col-sm-8">
-                        <label for="noKTP" class="col-sm-4 col-form-label">Nadhila Larasati</label>
+                            <label for="noKTP" class="col-sm-4 col-form-label">Nadhila Larasati</label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Alamat</label>
                         <div class="col-sm-8">
-                        <label for="noKTP" class="col-sm-4 col-form-label">Wira Angun-Angun no.12</label>
+                            <label for="noKTP" class="col-sm-4 col-form-label">Wira Angun-Angun no.12</label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">No. Telepon</label>
                         <div class="col-sm-8">
-                        <label for="noKTP" class="col-sm-4 col-form-label">08118072775</label>
+                            <label for="noKTP" class="col-sm-4 col-form-label">08118072775</label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Username</label>
                         <div class="col-sm-8">
-                        <label for="noKTP" class="col-sm-4 col-form-label">nadhilarasati</label>
+                            <label for="noKTP" class="col-sm-4 col-form-label">nadhilarasati</label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Password</label>
                         <div class="col-sm-8">
-                        <label for="noKTP" class="col-sm-4 col-form-label">nadhila5</label>
+                            <label for="noKTP" class="col-sm-4 col-form-label">nadhila5</label>
                         </div>
                     </div>
                 </div>
