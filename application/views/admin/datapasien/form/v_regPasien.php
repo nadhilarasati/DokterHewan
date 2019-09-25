@@ -120,11 +120,11 @@
                         <label for="noKTP" class="col-sm-4 col-form-label">Jenis Kelamin</label>
                         <div class="col-sm-8">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input <?php echo form_error('jenisKelamin') ? 'is-invalid' : '' ?>" type="radio" name="jenisKelamin" id="inlineRadio1" value="option1">
+                                <input class="form-check-input <?php echo form_error('jenisKelamin') ? 'is-invalid' : '' ?>" type="radio" name="jenisKelamin" id="inlineRadio1" value="0">
                                 <label class="form-check-label" for="inlineRadio1">Jantan</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input <?php echo form_error('jenisKelamin') ? 'is-invalid' : '' ?>" type="radio" name="jenisKelamin" id="inlineRadio2" value="option2">
+                                <input class="form-check-input <?php echo form_error('jenisKelamin') ? 'is-invalid' : '' ?>" type="radio" name="jenisKelamin" id="inlineRadio2" value="1">
                                 <label class="form-check-label" for="inlineRadio2">Betina</label>
                             </div>
                             <div class="invalid-feedback">
