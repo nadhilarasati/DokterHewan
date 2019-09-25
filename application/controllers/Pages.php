@@ -13,7 +13,7 @@ class Pages extends CI_Controller
 
         $data['title'] = 'Home';
         $this->load->view('templates/header', $data);
-        $this->load->view('home/index');
+        $this->load->view('public/home/v_home');
         $this->load->view('templates/footer');
     }
 
@@ -21,7 +21,7 @@ class Pages extends CI_Controller
     {
         $data['title'] = 'About Us';
         $this->load->view('templates/header', $data);
-        $this->load->view('aboutus/index');
+        $this->load->view('public/aboutus/v_aboutus');
         $this->load->view('templates/footer');
     }
 
@@ -29,7 +29,7 @@ class Pages extends CI_Controller
     {
         $data['title'] = 'Facilities';
         $this->load->view('templates/header', $data);
-        $this->load->view('facilities/index');
+        $this->load->view('public/facilities/v_facilities');
         $this->load->view('templates/footer');
     }
 
@@ -37,18 +37,9 @@ class Pages extends CI_Controller
     {
         $data['title'] = 'Login';
         $this->load->view('templates/header', $data);
-        $this->load->view('login/index');
+        $this->load->view('public/login/v_loginPublic');
         $this->load->view('templates/footer');
     }
-
-    public function signup()
-    {
-        $data['title'] = 'Sign Up';
-        $this->load->view('templates/header', $data);
-        $this->load->view('signup/index');
-        $this->load->view('templates/footer');
-    }
-
 
     // ADMIN PAGE
     
