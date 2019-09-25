@@ -57,7 +57,7 @@ class m_admin extends CI_Model
                 'rules' => 'required'
             ],
             [
-                'field' => 'namaPemilk',
+                'field' => 'namaPemilik',
                 'label' => 'namaPemilik',
                 'rules' => 'required'
             ],
