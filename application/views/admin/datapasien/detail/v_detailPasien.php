@@ -74,7 +74,7 @@
                                         <td><?php echo $d->namaHewan?></td>
                                         <td></td>
                                         <td><?php echo $d->tanggalLahir ?></td>
-                                        <td><?php echo $d->jenisKelamin ?></td>
+                                        <td><?php echo gender($d->jenisKelamin) ?></td>
                                         <td><?php echo $d->ras ?></td>
                                         <td><?php echo $d->warna ?></td>
                                     </tr>
@@ -137,12 +137,12 @@
                                         <div class="form-group">
                                             <label for="jenisKelamin">Jenis Kelamin</label>
                                             <div class="radio">
-                                                <input type="radio" name="optradio">
+                                                <input type="radio" name="jenisKelamin" value="0">
                                                 <label style="margin-left:0.1cm">Jantan</label>
 
                                             </div>
                                             <div class="radio">
-                                                <input type="radio" name="optradio">
+                                                <input type="radio" name="jenisKelamin" value="1">
                                                 <label style="margin-left:0.1cm">Betina</label>
                                             </div>
                                         </div>
@@ -187,3 +187,15 @@
         });
     });
 </script>
+
+<?php
+
+function gender($code){
+  if($code==1){
+    return "Betina";
+  }else{
+    return "Jantan";
+  }
+}
+
+?>
