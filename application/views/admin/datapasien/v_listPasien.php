@@ -34,7 +34,7 @@
                   <td>
                     <?php echo $d->telepon ?>
                   </td>
-                  <td><a class="btn btn-primary" href="<?php echo base_url(); ?>admin/detailDataPasien"><i class="fas fa-pen"></i></a></td>
+                  <td><a class="btn btn-primary" href="<?php echo site_url('admin/detailDataPasien/'.$d->idPemilik); ?>"><i class="fas fa-pen"></i></a></td>
                 </tr>
               <?php } ?>
             </tbody>
