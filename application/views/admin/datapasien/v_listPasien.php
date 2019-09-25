@@ -16,7 +16,7 @@
                 <th>Nama</th>
                 <th>Alamat</th>
                 <th>No. Telepon</th>
-                <th></th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
