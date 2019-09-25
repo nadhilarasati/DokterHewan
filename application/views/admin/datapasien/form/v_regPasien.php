@@ -14,38 +14,62 @@
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">No. KTP</label>
                         <div class="col-sm-8">
-                            <input type="text" name="noKTP" class="form-control" id="" placeholder="no ktp">
+                            <input type="text" name="noKTP" class="form-control <?php echo form_error('noKTP') ? 'is-invalid' : '' ?>" id="" placeholder="no ktp">
+                            <div class="invalid-feedback">
+                                <?php echo form_error('noKTP') ?>
+                            </div>
                         </div>
+
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Nama Pemilik Hewan</label>
                         <div class="col-sm-8">
-                            <input type="text" name="namaPemilik" class="form-control" id="" placeholder="nama">
+                            <input type="text" name="namaPemilik" class="form-control <?php echo form_error('namaPemilik') ? 'is-invalid' : '' ?>" id="" placeholder="nama">
+                            <div class="invalid-feedback">
+                                <?php echo form_error('namaPemilik') ?>
+                            </div>
                         </div>
+
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Alamat</label>
                         <div class="col-sm-8">
-                            <input type="text" name="alamat" class="form-control" id="" placeholder="alamat">
+                            <input type="text" name="alamat" class="form-control <?php echo form_error('alamat') ? 'is-invalid' : '' ?>" id="" placeholder="alamat">
+                            <div class="invalid-feedback">
+                                <?php echo form_error('alamat') ?>
+                            </div>
                         </div>
+
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">No. Telepon</label>
                         <div class="col-sm-8">
-                            <input type="number" name="telepon" class="form-control" id="" placeholder="no telepon">
+                            <input type="text" name="telepon" class="form-control <?php echo form_error('telepon') ? 'is-invalid' : '' ?>" id="" placeholder="no telepon">
+                            <div class="invalid-feedback">
+                                <?php echo form_error('telepon') ?>
+                            </div>
                         </div>
+
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Email</label>
                         <div class="col-sm-8">
-                            <input type="email" name="email" class="form-control" id="" placeholder="username">
+                            <input type="email" name="email" class="form-control <?php echo form_error('email') ? 'is-invalid' : '' ?>" id="" placeholder="username">
+                            <div class="invalid-feedback">
+                                <?php echo form_error('email') ?>
+                            </div>
                         </div>
+
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Password</label>
                         <div class="col-sm-8">
-                            <input type="password" name="password" class="form-control" id="" placeholder="password">
+                            <input type="password" name="password" class="form-control <?php echo form_error('password') ? 'is-invalid' : '' ?>" id="" placeholder="password">
+                            <div class="invalid-feedback">
+                                <?php echo form_error('password') ?>
+                            </div>
                         </div>
+
                     </div>
 
                     <h3 style="margin-bottom:1cm; margin-top:1cm">Data Hewan Peliharaan</h3>
@@ -70,44 +94,64 @@
                                 </select>
                             </div>
                         </div>
+
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Nama Hewan</label>
                         <div class="col-sm-8">
-                            <input type="text" name="namaHewan" class="form-control" id="" placeholder="nama hewan">
+                            <input type="text" name="namaHewan" class="form-control <?php echo form_error('namaHewan') ? 'is-invalid' : '' ?>" id="" placeholder="nama hewan">
+                            <div class="invalid-feedback">
+                                <?php echo form_error('namaHewan') ?>
+                            </div>
                         </div>
+
                     </div>
                     <div class="input-group date form-group row">
                         <label for="name" class="col-sm-4 col-form-label">Tanggal Lahir</label>
                         <div class="col-sm-8">
-                            <input type="date" name="tanggalLahir" class="tanggal form-control" placeholder="tanggal lahir" style="margin-left:0.3cm">
+                            <input type="date" name="tanggalLahir" class="tanggal form-control <?php echo form_error('tanggalLahir') ? 'is-invalid' : '' ?>" placeholder="tanggal lahir" style="margin-left:0.3cm">
+                            <div class="invalid-feedback">
+                                <?php echo form_error('tanggalLahir') ?>
+                            </div>
                         </div>
+
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Jenis Kelamin</label>
                         <div class="col-sm-8">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="jenisKelamin" id="inlineRadio1" value="option1">
+                                <input class="form-check-input <?php echo form_error('jenisKelamin') ? 'is-invalid' : '' ?>" type="radio" name="jenisKelamin" id="inlineRadio1" value="option1">
                                 <label class="form-check-label" for="inlineRadio1">Jantan</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="jenisKelamin" id="inlineRadio2" value="option2">
+                                <input class="form-check-input <?php echo form_error('jenisKelamin') ? 'is-invalid' : '' ?>" type="radio" name="jenisKelamin" id="inlineRadio2" value="option2">
                                 <label class="form-check-label" for="inlineRadio2">Betina</label>
                             </div>
-
+                            <div class="invalid-feedback">
+                                <?php echo form_error('jenisKelamin') ?>
+                            </div>
                         </div>
+
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Ras</label>
                         <div class="col-sm-8">
-                            <input type="text" name="ras" class="form-control" id="" placeholder="ras">
+                            <input type="text" name="ras" class="form-control <?php echo form_error('ras') ? 'is-invalid' : '' ?>" id="" placeholder="ras">
+                            <div class="invalid-feedback">
+                                <?php echo form_error('ras') ?>
+                            </div>
                         </div>
+
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Warna</label>
                         <div class="col-sm-8">
-                            <input type="text" name="warna" class="form-control" id="" placeholder="warna">
+                            <input type="text" name="warna" class="form-control <?php echo form_error('warna') ? 'is-invalid' : '' ?>" id="" placeholder="warna">
+                            <div class="invalid-feedback">
+                                <?php echo form_error('warna') ?>
+                            </div>
                         </div>
+
                     </div>
                     <button class="btn btn-secondary" style="margin-top:1cm">Submit</button>
                 </div>
