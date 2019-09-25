@@ -20,7 +20,7 @@ class Admin extends CI_Controller{
     {
         $data['title'] = 'Login Admin';
 
-        $this->load->view('admin/login/index');
+        $this->load->view('admin/login/v_loginAdmin');
 
     }
 
@@ -31,7 +31,7 @@ class Admin extends CI_Controller{
     {
         $data['title'] = 'Rekam Medis';
         $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/rekammedis/index');
+        $this->load->view('admin/rekammedis/v_listRekamMedis');
         $this->load->view('admin/template/sidebarfooter');
 
     }
@@ -48,7 +48,7 @@ class Admin extends CI_Controller{
     {
         $data['title'] = 'Detail Rekam Medis';
         $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/rekammedis/detail/index');
+        $this->load->view('admin/rekammedis/detail/v_detailRekamMedis');
         $this->load->view('admin/template/sidebarfooter');
     }
 
@@ -134,7 +134,7 @@ class Admin extends CI_Controller{
     {
         $data['title'] = 'Laporan';
         $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/laporan/index');
+        $this->load->view('admin/laporan/v_listLaporan');
         $this->load->view('admin/template/sidebarfooter');
 
     }
