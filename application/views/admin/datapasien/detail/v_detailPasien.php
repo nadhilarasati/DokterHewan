@@ -8,43 +8,43 @@
                     <div class="form-group row">
                         <label for="idPemilik" class="col-sm-4 col-form-label">ID Pemilik Hewan</label>
                         <div class="col-sm-8">
-                            <label for="idPemilik" class="col-sm-4 col-form-label">781097281910</label>
+                            <?php echo $data_pemilik->idPemilik ?>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">No. KTP</label>
                         <div class="col-sm-8">
-                            <input type="text" name="noKTP" class="form-control" id="" placeholder="">
+                            <input type="text" name="noKTP" class="form-control" id="" placeholder="<?php echo $data_pemilik->noKTP ?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="namaPemilik" class="col-sm-4 col-form-label">Nama Pemilik Hewan</label>
                         <div class="col-sm-8">
-                            <input type="text" name="namaPemilik" class="form-control" id="" placeholder="">
+                            <input type="text" name="namaPemilik" class="form-control" id="" placeholder="<?php echo $data_pemilik->namaPemilik ?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="alamat" class="col-sm-4 col-form-label">Alamat</label>
                         <div class="col-sm-8">
-                            <input type="text" name="alamat" class="form-control" id="" placeholder="">
+                            <input type="text" name="alamat" class="form-control" id="" placeholder="<?php echo $data_pemilik->alamat ?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="telepon" class="col-sm-4 col-form-label">No. Telepon</label>
                         <div class="col-sm-8">
-                            <input type="text" name="telepon" class="form-control" id="" placeholder="">
+                            <input type="text" name="telepon" class="form-control" id="" placeholder="<?php echo $data_pemilik->telepon ?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-sm-4 col-form-label">Email</label>
                         <div class="col-sm-8">
-                            <input type="text" name="email" class="form-control" id="" placeholder="">
+                            <input type="text" name="email" class="form-control" id="" placeholder="<?php echo $data_pemilik->email ?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="password" class="col-sm-4 col-form-label">Password</label>
                         <div class="col-sm-8">
-                            <input type="text" name="password" class="form-control" id="" placeholder="">
+                            <input type="text" name="password" class="form-control" id="" placeholder="<?php echo $data_pemilik->password ?>">
                         </div>
                     </div>
                 </div>
@@ -68,16 +68,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>001</td>
-                                    <td><input type="text" name="namaHewan" class="form-control" id=""></td>
-                                    <td><input type="text" name="jenisHewan" class="form-control" id=""></td>
-                                    <td><input type="text" name="tanggalLahir" class="form-control" id=""></td>
-                                    <td><input type="text" name="jenisKelamin" class="form-control" id=""></td>
-                                    <td><input type="text" name="ras" class="form-control" id=""></td>
-                                    <td><input type="text" name="warna" class="form-control" id=""></td>
-
-                                </tr>
+                                <?php foreach ($data_hewan as $d) { ?>
+                                    <tr>
+                                        <td><?php echo $d->idHewan?></td>
+                                        <td><?php echo $d->namaHewan?></td>
+                                        <td></td>
+                                        <td><?php echo $d->tanggalLahir ?></td>
+                                        <td><?php echo $d->jenisKelamin ?></td>
+                                        <td><?php echo $d->ras ?></td>
+                                        <td><?php echo $d->warna ?></td>
+                                    </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
 
