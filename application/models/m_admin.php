@@ -187,4 +187,16 @@ class m_admin extends CI_Model
         $this->db->insert("pemilik_hewan", $data);
         $this->db->insert("hewan_peliharaan", $dataHewan);
     }
+
+    public function getPemilikById($idPemilik)
+    {
+        $this->db->where('idPemilik', $idPemilik);
+        return $this->db->get('pemilik_hewan')->row();
+    }
+
+    public function getHewanById($idHewan)
+    {
+        $this->db->where('idHewan', $idHewan);
+        return $this->db->get('hewan_peliharaan')->result();
+    }
 }
