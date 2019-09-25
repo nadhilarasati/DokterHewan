@@ -67,7 +67,7 @@ class Admin extends CI_Controller{
 
         $data['title'] = 'Form Data Pegawai';
         $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/datapegawai/form/index');
+        $this->load->view('admin/datapegawai/form/v_regPegawai');
         $this->load->view('admin/template/sidebarfooter');
     }
 
@@ -77,7 +77,7 @@ class Admin extends CI_Controller{
         $data['title'] = 'Detail Data Pegawai';
         $data["data_pegawai"] = $this->m_admin->getPegawaiById($idPegawai);
         $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/dataPegawai/detail/index');
+        $this->load->view('admin/dataPegawai/detail/v_detailPegawai');
         $this->load->view('admin/template/sidebarfooter');
     }
 
@@ -86,7 +86,7 @@ class Admin extends CI_Controller{
         $data['title'] = 'Data Pegawai';
         $data['daftar_pegawai'] = $this->m_admin->getPegawai();
         $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/dataPegawai/index');
+        $this->load->view('admin/dataPegawai/v_listPegawai');
         $this->load->view('admin/template/sidebarfooter');
     }
 
@@ -105,7 +105,7 @@ class Admin extends CI_Controller{
 		}
         $data['title'] = 'Form Data Pasien';
         $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/datapasien/form/index');
+        $this->load->view('admin/datapasien/form/v_regPasien');
         $this->load->view('admin/template/sidebarfooter');
     }
 
@@ -114,7 +114,7 @@ class Admin extends CI_Controller{
         $data['title'] = 'Data Pasien';
         $data['daftar_pemilik'] = $this->m_admin->getPemilikHewan();
         $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/dataPasien/index');
+        $this->load->view('admin/dataPasien/v_listPasien');
         $this->load->view('admin/template/sidebarfooter');
     }
 
@@ -123,7 +123,7 @@ class Admin extends CI_Controller{
     {
         $data['title'] = 'Data Pasien';
         $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/dataPasien/detail/index');
+        $this->load->view('admin/dataPasien/detail/v_detailPasien');
         $this->load->view('admin/template/sidebarfooter');
     }
 
