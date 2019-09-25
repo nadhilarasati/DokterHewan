@@ -119,13 +119,23 @@ class Admin extends CI_Controller{
     }
 
 
-    public function detailDataPasien()
+    public function detailDataPasien($idPemilik=null, $idHewan=null)
     {
         $data['title'] = 'Data Pasien';
+        //nampilin data pemilik
+        $result = $this->m_admin->getPemilikById($idPemilik);
+		$data["data_pemilik"] = $result;
+        
+        //data hewan
+        $result = $this->m_admin->getHewanById($idHewan);
+		$data["data_hewan"] = $result;
+        
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('admin/dataPasien/detail/v_detailPasien');
         $this->load->view('admin/template/sidebarfooter');
     }
+
+    
 
     /*
     * LAPORAN
