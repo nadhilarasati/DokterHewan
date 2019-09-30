@@ -135,7 +135,21 @@ class Admin extends CI_Controller{
         $this->load->view('admin/template/sidebarfooter');
     }
 
-    
+    public function formDataHewan(){
+        //$data['title'] = 'Data Pasien';
+        $formhewan = $this->m_admin;
+		$validation = $this->form_validation;
+		$validation->set_rules($formhewan->rules_hewan());
+
+		if ($validation->run()) {
+			$formhewan->saveHewan();
+			$this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+        
+        // $this->load->view('admin/template/sidebar', $data);
+        // $this->load->view('admin/dataPasien/detail/v_detailPasien');
+        // $this->load->view('admin/template/sidebarfooter');
+    }
 
     /*
     * LAPORAN
