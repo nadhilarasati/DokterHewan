@@ -85,7 +85,7 @@ class m_admin extends CI_Model
                 'field' => 'password',
                 'label' => 'Password',
                 'rules' => 'required'
-            ],
+            ]
 
             /*[
                 'field' => 'jenis hewan',
@@ -93,6 +93,13 @@ class m_admin extends CI_Model
                 'rules' => 'required'
             ],*/
 
+
+        ];
+    }
+
+    public function rules_hewan()
+    {
+        return [
             [
                 'field' => 'namaHewan',
                 'label' => 'namaHewan',
@@ -165,27 +172,40 @@ class m_admin extends CI_Model
     public function savePasien()
     {
         $post = $this->input->post();
-        
-        $data= array(
+
+        $data = array(
             'noKTP' => $post['noKTP'],
             'namaPemilik' => $post['namaPemilik'],
             'alamat' => $post['alamat'],
             'telepon' => $post['telepon'],
             'email' => $post['email'],
             'password' => $post['password']
-            
+
         );
 
-        $dataHewan= array (
-            'namaHewan' => $post['namaHewan'],
-            'tanggalLahir' => $post['tanggalLahir'],
-            'jenisKelamin' => $post['jenisKelamin'],
-            'ras' => $post['ras'],
-            'warna' => $post['warna']
-        );
+        // $dataHewan = array(
+        //     'namaHewan' => $post['namaHewan'],
+        //     'tanggalLahir' => $post['tanggalLahir'],
+        //     'jenisKelamin' => $post['jenisKelamin'],
+        //     'ras' => $post['ras'],
+        //     'warna' => $post['warna']
+        // );
 
         $this->db->insert("pemilik_hewan", $data);
-        $this->db->insert("hewan_peliharaan", $dataHewan);
+        //$this->db->insert("hewan_peliharaan", $dataHewan);
+    }
+
+    public function saveHewan($fk){
+        $post = $this->input->post();
+
+        $this->namaHewan = $post["namaHewan"];
+        $this->tanggalLahir = $post["tanggalLahir"];
+        $this->jenisKelamin = $post["jenisKelamin"];
+        $this->ras = $post["ras"];
+        $this->warna = $post["warna"];
+
+        $this->idPemilik = $fk;
+        $this->db->insert("hewan_peliharaan", $this);
     }
 
     public function getPemilikById($idPemilik)
