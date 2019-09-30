@@ -72,7 +72,7 @@
 
                     </div>
 
-                    <h3 style="margin-bottom:1cm; margin-top:1cm">Data Hewan Peliharaan</h3>
+                    <!--<h3 style="margin-bottom:1cm; margin-top:1cm">Data Hewan Peliharaan</h3>
                     <p></p>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Jenis Hewan</label>
@@ -152,7 +152,7 @@
                             </div>
                         </div>
 
-                    </div>
+                    </div>-->
                     <button class="btn btn-secondary" style="margin-top:1cm">Submit</button>
                 </div>
             </div>
