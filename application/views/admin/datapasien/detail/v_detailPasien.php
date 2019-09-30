@@ -76,7 +76,7 @@
                                         <td><?php echo $d->tanggalLahir ?></td>
                                         <td><?php echo gender($d->jenisKelamin) ?></td>
                                         <td><?php echo $d->ras ?></td>
-                                        <td><?php echo $d->warna ?></td>
+                                        <td><?php echo $d->warna?></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
