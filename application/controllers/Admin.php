@@ -98,20 +98,20 @@ class Admin extends CI_Controller{
         $this->load->view('admin/template/sidebarfooter');
     }
 
-    public function editDataPegawai($idPegawai=null){
-        $datapegawai = $this->m_admin;
-        $validation = $this->form_validation;
-        $validation->set_rules($datapegawai->rules_pegawai());
+    // public function editDataPegawai($idPegawai=null){
+    //     $datapegawai = $this->m_admin;
+    //     $validation = $this->form_validation;
+    //     $validation->set_rules($datapegawai->rules_pegawai());
         
-        if ($validation->run()) {
-			$datapegawai->editPegawai($idPegawai);
-			$this->session->set_flashdata('success', 'Berhasil diperbaharui');
-			//redirect(site_url('admin/pariwisata/info/'.$fk));
-        }
+    //     if ($validation->run()) {
+	// 		$datapegawai->editPegawai($idPegawai);
+	// 		$this->session->set_flashdata('success', 'Berhasil diperbaharui');
+	// 		//redirect(site_url('admin/pariwisata/info/'.$fk));
+    //     }
         
         
 
-    }
+    // }
 
     /*
     * DATA PASIEN
@@ -144,19 +144,25 @@ class Admin extends CI_Controller{
 
     public function detailDataPasien($idPemilik=null)
     {
+        
+        $datapemilik = $this->m_admin;
+        $validation = $this->form_validation;
+        $validation->set_rules($datapemilik->rules_pasien());
+        
+        if ($validation->run()) {
+			$datapemilik->editPemilikHewan($idPemilik);
+			$this->session->set_flashdata('success', 'Berhasil diperbaharui');
+        }
+
         $data['title'] = 'Data Pasien';
         //nampilin data pemilik
-        $result = $this->m_admin->getPemilikById($idPemilik);
-		$data["data_pemilik"] = $result;
-        
+        $data["data_pemilik"] = $this->m_admin->getPemilikById($idPemilik);
+    
         //data hewan
-        $result = $this->m_admin->getHewanById($idPemilik);
-        $data["data_hewan"] = $result;
+        $data["data_hewan"] = $this->m_admin->getHewanById($idPemilik);
         
         //tipe hewan
-        $result = $this->m_admin->getTipeHewan();
-        $data["tipe_hewan"] = $result;
-        
+        $data["tipe_hewan"] = $this->m_admin->getTipeHewan();
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('admin/dataPasien/detail/v_detailPasien');
         $this->load->view('admin/template/sidebarfooter');
