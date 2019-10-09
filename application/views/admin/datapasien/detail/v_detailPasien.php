@@ -1,9 +1,14 @@
 <div id="content-wrapper">
     <div class="container-fluid">
-        <form class="data-pasien">
+        <form class="data-pasien" action="<?php site_url('admin/detailDataPasien/' . $data_pemilik->idPemilik); ?>" method="post">
             <h2 class="text-center" style="margin-bottom:2cm">Data Pasien</h2>
             <div class="row">
                 <div class="col-md-6">
+                    <?php if ($this->session->flashdata('success')) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                    <?php endif; ?>
                     <h3 style="margin-bottom:1cm">Data Pemilik Hewan</h3>
                     <div class="form-group row">
                         <label for="idPemilik" class="col-sm-4 col-form-label">ID Pemilik Hewan</label>
@@ -14,37 +19,37 @@
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">No. KTP</label>
                         <div class="col-sm-8">
-                            <input type="text" name="noKTP" class="form-control" id="" placeholder="<?php echo $data_pemilik->noKTP ?>">
+                            <input type="text" name="noKTP" class="form-control" id="" value="<?php echo $data_pemilik->noKTP ?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="namaPemilik" class="col-sm-4 col-form-label">Nama Pemilik Hewan</label>
                         <div class="col-sm-8">
-                            <input type="text" name="namaPemilik" class="form-control" id="" placeholder="<?php echo $data_pemilik->namaPemilik ?>">
+                            <input type="text" name="namaPemilik" class="form-control" id="" value="<?php echo $data_pemilik->namaPemilik ?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="alamat" class="col-sm-4 col-form-label">Alamat</label>
                         <div class="col-sm-8">
-                            <input type="text" name="alamat" class="form-control" id="" placeholder="<?php echo $data_pemilik->alamat ?>">
+                            <input type="text" name="alamat" class="form-control" id="" value="<?php echo $data_pemilik->alamat ?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="telepon" class="col-sm-4 col-form-label">No. Telepon</label>
                         <div class="col-sm-8">
-                            <input type="text" name="telepon" class="form-control" id="" placeholder="<?php echo $data_pemilik->telepon ?>">
+                            <input type="text" name="telepon" class="form-control" value="" placeholder="<?php echo $data_pemilik->telepon ?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-sm-4 col-form-label">Email</label>
                         <div class="col-sm-8">
-                            <input type="text" name="email" class="form-control" id="" placeholder="<?php echo $data_pemilik->email ?>">
+                            <input type="text" name="email" class="form-control" id="" value="<?php echo $data_pemilik->email ?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="password" class="col-sm-4 col-form-label">Password</label>
                         <div class="col-sm-8">
-                            <input type="text" name="password" class="form-control" id="" placeholder="<?php echo $data_pemilik->password ?>">
+                            <input type="text" name="password" class="form-control" id="" value="<?php echo $data_pemilik->password ?>">
                         </div>
                     </div>
                 </div>
@@ -92,7 +97,7 @@
         <div class="row">
             <div class="col-md-6">
                 <button class="btn btn-secondary" href="#" id="myBtn">Tambah Hewan Baru</button>
-                <button class="btn btn-secondary">Simpan</button>
+                <button type="submit" class="btn btn-secondary">Simpan</button>
             </div>
         </div>
     </div>
@@ -114,10 +119,10 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
-            <?php echo form_open('Admin/formDataHewan/'.$data_pemilik->idPemilik) ?>
+            <?php echo form_open('Admin/formDataHewan/' . $data_pemilik->idPemilik) ?>
             <!-- <form class="data-pasien" role="form" style="margin-top:0.5cm" action="<?php //site_url('Admin/formDataHewan'); 
                                                                                         ?>" method="post" enctype="multipart/form-data"> -->
-            <div class="form-group">
+            <div class="form-group" style="margin-top:0.5cm">
                 <label for="namaHewan" class="">Nama Hewan</label>
                 <input type="text" name="namaHewan" class="form-control <?php echo form_error('namaHewan') ? 'is-invalid' : '' ?>" id="" placeholder="nama hewan">
                 <div class="invalid-feedback">
@@ -131,7 +136,7 @@
                     <select name="jenisHewan" class="custom-select" id="inputGroupSelect01">
                         <option selected>Choose...</option>
                         <?php foreach ($tipe_hewan as $th) { ?>
-                        <option value="<?php echo $th->idJenis ?>"><?php echo $th->jenis ?></option>
+                            <option value="<?php echo $th->idJenis ?>"><?php echo $th->jenis ?></option>
                         <?php } ?>
                         <!-- <option value="2">Anjing</option>
                         <option value="3">Kelinci</option>
@@ -190,7 +195,7 @@
             </div>
             <!-- </form> -->
             <?php echo form_close(); ?>
-            
+
         </div>
     </div>
 </div>
