@@ -1,7 +1,13 @@
 <div id="content-wrapper">
     <div class="container-fluid">
-        <form class="data-pasien" action="<?php site_url('admin/detailDataPegawai'); ?>">
+        <form class="data-pasien" action="<?php site_url('admin/detailDataPegawai/' . $data_pegawai->idPegawai); ?>" method="post">
             <h2 class="text-center" style="margin-bottom:2cm">Data Pegawai</h2>
+
+            <?php if ($this->session->flashdata('success')) : ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $this->session->flashdata('success'); ?>
+                </div>
+            <?php endif; ?>
 
             <div class="form-group row">
                 <label for="noKTP" name="id" class="col-sm-4 col-form-label">ID Pegawai</label>
@@ -12,41 +18,48 @@
             <div class="form-group row">
                 <label for="noKTP" class="col-sm-4 col-form-label">Nama Pegawai</label>
                 <div class="col-sm-6">
-                    <input type="text" name="noKTP" class="form-control" id="" placeholder="<?php echo $data_pegawai->namaPegawai ?>">
+                    <input type="text" name="nama" class="form-control" id="" value="<?php echo $data_pegawai->namaPegawai ?>">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="noKTP" class="col-sm-4 col-form-label">Alamat</label>
                 <div class="col-sm-6">
-                    <input type="text" name="noKTP" class="form-control" id="" placeholder="<?php echo $data_pegawai->alamat ?>">
+                    <input type="text" name="alamat" class="form-control" id="" value="<?php echo $data_pegawai->alamat ?>">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="noKTP" class="col-sm-4 col-form-label">No. Telepon</label>
                 <div class="col-sm-6">
-                    <input type="text" name="noKTP" class="form-control" id="" placeholder="<?php echo $data_pegawai->telepon ?>">
+                    <input type="text" name="telepon" class="form-control" id="" value="<?php echo $data_pegawai->telepon ?>">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="noKTP" class="col-sm-4 col-form-label">Role</label>
+                <label for="status" class="col-sm-4 col-form-label">Role</label>
                 <div class="col-sm-6">
-                    <input type="text" name="noKTP" class="form-control" id="" placeholder="<?php echo roleName($data_pegawai->role) ?>">
+                    <div class="input-group mb-3">
+                        <select name="role" class="custom-select" id="inputGroupSelect01">
+                            <option selected>Choose...</option>
+                            <option value="1">Dokter</option>
+                            <option value="2">Paramedis</option>
+                        </select>
+                    </div>
                 </div>
             </div>
+            
             <div class="form-group row">
                 <label for="noKTP" class="col-sm-4 col-form-label">Email</label>
                 <div class="col-sm-6">
-                    <input type="text" name="noKTP" class="form-control" id="" placeholder="<?php echo $data_pegawai->email ?>">
+                    <input type="text" name="email" class="form-control" id="" value="<?php echo $data_pegawai->email ?>">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="noKTP" class="col-sm-4 col-form-label">Password</label>
                 <div class="col-sm-6">
-                    <input type="text" name="noKTP" class="form-control" id="" placeholder="<?php echo $data_pegawai->password ?>">
+                    <input type="text" name="password" class="form-control" id="" value="<?php echo $data_pegawai->password ?>">
                 </div>
             </div>
             <div style="margin-left:12cm; margin-top:2cm">
-                <button class="btn btn-secondary">Save</button>
+                <button type="submit" class="btn btn-secondary">Save</button>
                 <button class="btn btn-secondary">Delete</button>
             </div>
 
