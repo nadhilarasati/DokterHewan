@@ -59,8 +59,8 @@
                 </div>
             </div>
             <div style="margin-left:12cm; margin-top:2cm">
-                <button type="submit" class="btn btn-secondary">Save</button>
-                <button class="btn btn-secondary">Delete</button>
+                <button type="submit" class="btn btn-secondary">Simpan</button>
+                <button class="btn btn-secondary">Hapus</button>
             </div>
 
         </form>
