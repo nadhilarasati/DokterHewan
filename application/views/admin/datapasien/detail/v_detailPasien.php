@@ -52,6 +52,7 @@
                             <input type="text" name="password" class="form-control" id="" value="<?php echo $data_pemilik->password ?>">
                         </div>
                     </div>
+                    <button type="submit" class="btn btn-secondary" style="margin-top:0.5cm">Simpan</button>
                 </div>
             </div>
         </form>
@@ -95,9 +96,9 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col">
                 <button class="btn btn-secondary" href="#" id="myBtn">Tambah Hewan Baru</button>
-                <button type="submit" class="btn btn-secondary">Simpan</button>
+
             </div>
         </div>
     </div>
