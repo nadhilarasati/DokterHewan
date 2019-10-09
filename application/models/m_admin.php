@@ -87,11 +87,7 @@ class m_admin extends CI_Model
                 'rules' => 'required'
             ]
 
-            /*[
-                'field' => 'jenis hewan',
-                'label' => 'Jenis Hewan',
-                'rules' => 'required'
-            ],*/
+            
 
 
         ];
@@ -128,6 +124,12 @@ class m_admin extends CI_Model
                 'field' => 'warna',
                 'label' => 'warna',
                 'rules' => 'required'
+            ],
+
+            [
+                'field' => 'jenisHewan',
+                'label' => 'jenisHewan',
+                'rules' => 'required'
             ]
         ];
     }
@@ -159,6 +161,22 @@ class m_admin extends CI_Model
     {
         $this->db->where('idPegawai', $idPegawai);
         return $this->db->get('staff_klinik')->row();
+    }
+
+    public function editPegawai($idPegawai){
+        $post = $this->input->post();
+
+		$this->namaPegawai = $post["nama"];
+		$this->alamat = $post["alamat"];
+		$this->telepon = $post["telepon"];
+        $this->role = $post["role"];
+        $this->email = $post["email"];
+		$this->password = $post["password"];
+
+		
+
+		$this->db->where('idPegawai',$idPegawai);
+		return $this->db->update("staff_klinik", $this);
     }
 
     /*
@@ -203,6 +221,7 @@ class m_admin extends CI_Model
         $this->jenisKelamin = $post["jenisKelamin"];
         $this->ras = $post["ras"];
         $this->warna = $post["warna"];
+        $this->idTipe = $post["jenisHewan"];
 
         $this->idPemilik = $fk;
         $this->db->insert("hewan_peliharaan", $this);
@@ -216,7 +235,11 @@ class m_admin extends CI_Model
 
     public function getHewanById($idHewan)
     {
-        $this->db->where('idHewan', $idHewan);
-        return $this->db->get('hewan_peliharaan')->result();
+        $this->db->where('idPemilik', $idHewan);
+        return $this->db->get('daftar_hewan')->result();
+    }
+
+    public function getTipeHewan(){
+        return $this->db->get('jenis_hewan')->result();
     }
 }
