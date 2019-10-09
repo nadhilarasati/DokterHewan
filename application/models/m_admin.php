@@ -242,4 +242,19 @@ class m_admin extends CI_Model
     public function getTipeHewan(){
         return $this->db->get('jenis_hewan')->result();
     }
+
+    public function editPemilikHewan($idPemilik){
+        $post = $this->input->post();
+
+        $this->noKTP = $post["noKTP"];
+		$this->namaPemilik = $post["namaPemilik"];
+		$this->alamat = $post["alamat"];
+		$this->telepon = $post["telepon"];
+        $this->email = $post["email"];
+		$this->password = $post["password"];
+
+
+		$this->db->where('idPemilik',$idPemilik);
+		return $this->db->update("pemilik_hewan", $this);
+    }
 }
