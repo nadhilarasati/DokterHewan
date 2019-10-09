@@ -73,7 +73,15 @@ class Admin extends CI_Controller{
 
     public function detailDataPegawai($idPegawai=null)
     {
+        $datapegawai = $this->m_admin;
+        $validation = $this->form_validation;
+        $validation->set_rules($datapegawai->rules_pegawai());
         
+        if ($validation->run()) {
+			$datapegawai->editPegawai($idPegawai);
+			$this->session->set_flashdata('success', 'Berhasil diperbaharui');
+        }
+
         $data['title'] = 'Detail Data Pegawai';
         $data["data_pegawai"] = $this->m_admin->getPegawaiById($idPegawai);
         $this->load->view('admin/template/sidebar', $data);
@@ -88,6 +96,21 @@ class Admin extends CI_Controller{
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('admin/dataPegawai/v_listPegawai');
         $this->load->view('admin/template/sidebarfooter');
+    }
+
+    public function editDataPegawai($idPegawai=null){
+        $datapegawai = $this->m_admin;
+        $validation = $this->form_validation;
+        $validation->set_rules($datapegawai->rules_pegawai());
+        
+        if ($validation->run()) {
+			$datapegawai->editPegawai($idPegawai);
+			$this->session->set_flashdata('success', 'Berhasil diperbaharui');
+			//redirect(site_url('admin/pariwisata/info/'.$fk));
+        }
+        
+        
+
     }
 
     /*
@@ -119,7 +142,7 @@ class Admin extends CI_Controller{
     }
 
 
-    public function detailDataPasien($idPemilik=null, $idHewan=null)
+    public function detailDataPasien($idPemilik=null)
     {
         $data['title'] = 'Data Pasien';
         //nampilin data pemilik
@@ -127,24 +150,31 @@ class Admin extends CI_Controller{
 		$data["data_pemilik"] = $result;
         
         //data hewan
-        $result = $this->m_admin->getHewanById($idHewan);
-		$data["data_hewan"] = $result;
+        $result = $this->m_admin->getHewanById($idPemilik);
+        $data["data_hewan"] = $result;
+        
+        //tipe hewan
+        $result = $this->m_admin->getTipeHewan();
+        $data["tipe_hewan"] = $result;
         
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('admin/dataPasien/detail/v_detailPasien');
         $this->load->view('admin/template/sidebarfooter');
     }
 
-    public function formDataHewan(){
-        //$data['title'] = 'Data Pasien';
+    public function formDataHewan($fk){
+        $data['title'] = 'Data Pasien';
         $formhewan = $this->m_admin;
 		$validation = $this->form_validation;
 		$validation->set_rules($formhewan->rules_hewan());
 
 		if ($validation->run()) {
-			$formhewan->saveHewan();
-			$this->session->set_flashdata('success', 'Berhasil disimpan');
+			$formhewan->saveHewan($fk);
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            //redirect(base_url());
         }
+
+        redirect('admin/detailDataPasien/'.$fk);
         
         // $this->load->view('admin/template/sidebar', $data);
         // $this->load->view('admin/dataPasien/detail/v_detailPasien');
