@@ -38,7 +38,7 @@
                 <div class="col-sm-6">
                     <div class="input-group mb-3">
                         <select name="role" class="custom-select" id="inputGroupSelect01">
-                            <option selected>Choose...</option>
+                            <option selected><?php echo roleName($data_pegawai->role) ?></option>
                             <option value="1">Dokter</option>
                             <option value="2">Paramedis</option>
                         </select>
