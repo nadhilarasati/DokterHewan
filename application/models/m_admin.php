@@ -321,7 +321,7 @@ class m_admin extends CI_Model
     }
 
     public function getRekamMedis($idRekamMedis){
-        $this->db->where('idRekamMedis', $idRekamMedis);
+        $this->db->where('idHewan', $idRekamMedis);
         return $this->db->get("rekam_medis")->result();
     }
 }
