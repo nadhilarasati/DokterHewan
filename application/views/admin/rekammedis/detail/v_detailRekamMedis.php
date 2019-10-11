@@ -1,71 +1,55 @@
 <div id="content-wrapper">
     <div class="container-fluid">
-        <form class="data-pasien">
+        <form class="data-pasien" action="<?php site_url('admin/detailRekamMedis/'.$data_hewan->idHewan);?>" method="post">
             <h2 class="text-center" style="margin-bottom:2cm; margin-top:1cm">Rekam Medis Pasien</h2>
+            <?php if ($this->session->flashdata('success')) : ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $this->session->flashdata('success'); ?>
+                </div>
+            <?php endif; ?>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group row">
-                        <label for="noKTP" class="col-sm-4 col-form-label">ID Rekam Medis</label>
+                        <label for="idHewan" class="col-sm-4 col-form-label">ID Hewan</label>
                         <div class="col-sm-8">
-                            <label for="noKTP" class="col-sm-4 col-form-label">001</label>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="noKTP" class="col-sm-4 col-form-label">Nama Pemilik Hewan</label>
-                        <div class="col-sm-8">
-                            <label for="noKTP" class="col-sm-4 col-form-label">Nadhila Larasati</label>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="noKTP" class="col-sm-4 col-form-label">Alamat</label>
-                        <div class="col-sm-8">
-                            <label for="noKTP" class="col-sm-4 col-form-label">Wira Angun-Angun no.12</label>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="noKTP" class="col-sm-4 col-form-label">No. Telepon</label>
-                        <div class="col-sm-8">
-                            <label for="noKTP" class="col-sm-4 col-form-label">08118072775</label>
+                            <label for="idHewan" name="idHewan" class="col-sm-4 col-form-label"><?php echo $data_hewan->idHewan ?></label>
                         </div>
                     </div>
 
-                </div>
-                <div class="col-md-6">
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Nama Hewan</label>
                         <div class="col-sm-8">
-                            <label for="noKTP" class="col-sm-4 col-form-label">Apuy</label>
+                            <label for="namaHewan" name="namaHewan" class="col-sm-4 col-form-label"><?php echo $data_hewan->namaHewan ?></label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="name" class="col-sm-4 col-form-label">Tanggal Lahir</label>
                         <div class="col-md-8">
-                            <label for="noKTP" class="col-sm-4 col-form-label">19/05/2016</label>
-                            <span class="input-group-addon"></span>
+                            <label for="noKTP" name="tanggalLahir" class="col-sm-4 col-form-label"><?php echo $data_hewan->tanggalLahir ?></label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Jenis Hewan</label>
                         <div class="col-sm-8">
-                            <label for="noKTP" class="col-sm-4 col-form-label">Kucing</label>
+                            <label for="noKTP" name="jenisHewan"class="col-sm-4 col-form-label"><?php echo $data_hewan->jenis ?></label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Ras</label>
                         <div class="col-sm-8">
-                            <label for="noKTP" class="col-sm-4 col-form-label">Persia</label>
+                            <label for="noKTP" name="ras" class="col-sm-4 col-form-label"><?php echo $data_hewan->ras ?></label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Warna</label>
                         <div class="col-sm-8">
-                            <label for="noKTP" class="col-sm-4 col-form-label">Abu-Abu</label>
+                            <label for="noKTP" name="warna" class="col-sm-4 col-form-label"><?php echo $data_hewan->warna ?></label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">Jenis Kelamin</label>
                         <div class="col-sm-8">
-                            <label for="noKTP" class="col-sm-4 col-form-label">Jantan</label>
+                            <label for="noKTP" name="jenisKelamin" class="col-sm-4 col-form-label"><?php echo gender($data_hewan->jenisKelamin) ?></label>
                         </div>
                     </div>
                 </div>
@@ -190,3 +174,18 @@
         });
     });
 </script>
+
+<?php
+
+function gender($code)
+{
+    if ($code == 1) {
+        return "Betina";
+    } else {
+        return "Jantan";
+    }
+}
+
+
+
+?>
