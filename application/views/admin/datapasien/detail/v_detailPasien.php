@@ -89,7 +89,7 @@
                                 <td><?php echo gender($d->jenisKelamin) ?></td>
                                 <td><?php echo $d->ras ?></td>
                                 <td><?php echo $d->warna ?></td>
-                                <td><a class="btn btn-primary" href="<?php echo site_url('admin/detailRekamMedis'); ?>"><i class="fa fa-file"></i></a></td>
+                                <td><a class="btn btn-primary" href="<?php echo site_url('admin/detailRekamMedis/'.$d->idHewan); ?>"><i class="fa fa-file"></i></a></td>
                                 <td></td>
                             </tr>
                         <?php } ?>
