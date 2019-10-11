@@ -258,6 +258,11 @@ class m_admin extends CI_Model
 		return $this->db->update("pemilik_hewan", $this);
     }
 
+    public function getHewan($idHewan){
+        $this->db->where('idHewan', $idHewan);
+        return $this->db->get("daftar_hewan")->row();
+    }
+
     //rekam medis
     public function getListRekamMedis(){
 
