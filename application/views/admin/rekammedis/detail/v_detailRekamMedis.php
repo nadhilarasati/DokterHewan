@@ -90,6 +90,7 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
+                                <th>ID Rekam Medis</th>
                                 <th>Tanggal</th>
                                 <th>Gejala Klinis</th>
                                 <th>Suhu Badan</th>
@@ -103,6 +104,7 @@
                         <tbody>
                             <?php foreach ($data_medis as $dm) { ?>
                                 <tr>
+                                <td><?php echo $dm->idRekamMedis ?></td>
                                     <td>
                                         <?php
                                             $d = strtotime("today");
