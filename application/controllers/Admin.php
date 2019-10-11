@@ -32,10 +32,26 @@ class Admin extends CI_Controller{
     {
         
         $data['title'] = 'Detail Rekam Medis';
-        $data["data_hewan"] = $this->m_admin->getHewan($idHewan);
+        $data["data_pet"] = $this->m_admin->getHewan($idHewan);
+        $data["data_medis"] = $this->m_admin->getRekamMedis($idHewan);
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('admin/rekammedis/detail/v_detailRekamMedis');
         $this->load->view('admin/template/sidebarfooter');
+    }
+
+    public function formRekamMedis($fk){
+        $data['title'] = 'Data Pasien';
+        $formmedis = $this->m_admin;
+		$validation = $this->form_validation;
+		$validation->set_rules($formmedis->rules_rekammedis());
+
+		if ($validation->run()) {
+			$formmedis->buatRekamMedis($fk);
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            //redirect(base_url());
+        }
+
+        redirect('admin/detailRekamMedis/'.$fk);
     }
 
     /*
