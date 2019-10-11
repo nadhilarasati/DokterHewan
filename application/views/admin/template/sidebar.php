@@ -89,11 +89,16 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url(); ?>admin/rekamMedis">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Rekam Medis</span>
-        </a>
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url(); ?>admin/dataPasien">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Data Pasien</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url(); ?>admin/dataPegawai">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Data Pegawai</span></a>
       </li>
       <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -116,14 +121,6 @@
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Laporan</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>admin/dataPegawai">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Data Pegawai</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>admin/dataPasien">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Data Owner</span></a>
-      </li>
+      
+      
     </ul>
