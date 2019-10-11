@@ -109,12 +109,12 @@
                                             echo date("d-m-y", $d) . "<br>";
                                             ?>
                                     </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><?php echo $d->gejalaKlinis ?></td>
+                                    <td><?php echo $d->suhuBadan ?></td>
+                                    <td><?php echo $d->beratBadan ?></td>
+                                    <td><?php echo $d->diagnosa ?></td>
+                                    <td><?php echo $d->tindakan ?></td>
+                                    <td><?php echo $d->obat ?></td>
                                     <td></td>
                                 </tr>
                             <?php } ?>
@@ -141,69 +141,69 @@
                 <h4 class="modal-title">New Record</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <?php echo form_open('Admin/formRekamMedis/' . $data_medis->idHewan) ?>
-            <form role="form" style="margin-top:0.5cm">
-                <div class="form-group">
-                    <label for="gejalaKlinis" class="">Gejala Klinis</label>
-                    <input type="text" name="gejalaKlinis" class="form-control <?php echo form_error('gejalaKlinis') ? 'is-invalid' : '' ?>" id="" placeholder="gejala klinis">
-                    <div class="invalid-feedback">
-                        <?php echo form_error('gejalaKlinis') ?>
-                    </div>
+            <?php echo form_open('Admin/formRekamMedis/' . $data_pet->idHewan) ?>
+
+            <div class="form-group" style="margin-top:0.5cm">
+                <label for="gejalaKlinis" class="">Gejala Klinis</label>
+                <input type="text" name="gejalaKlinis" class="form-control <?php echo form_error('gejalaKlinis') ? 'is-invalid' : '' ?>" id="" placeholder="gejala klinis">
+                <div class="invalid-feedback">
+                    <?php echo form_error('gejalaKlinis') ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="suhuBadan" class="">Suhu Badan</label>
+                <input type="text" name="suhuBadan" class="form-control <?php echo form_error('suhuBadan') ? 'is-invalid' : '' ?>" id="" placeholder="suhu badan">
+                <div class="invalid-feedback">
+                    <?php echo form_error('suhuBadan') ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="beratBadan" class="">Berat Badan</label>
+                <input type="text" name="beratBadan" class="form-control <?php echo form_error('beratBadan') ? 'is-invalid' : '' ?>" id="" placeholder="berat badan">
+                <div class="invalid-feedback">
+                    <?php echo form_error('beratBadan') ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="diagnosa" class="">Diagnosa</label>
+                <input type="text" name="diagnosa" class="form-control <?php echo form_error('diagnosa') ? 'is-invalid' : '' ?>" id="" placeholder="diagnosa">
+                <div class="invalid-feedback">
+                    <?php echo form_error('diagnosa') ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tindakan" class="">Tindakan</label>
+                <input type="text" name="tindakan" class="form-control <?php echo form_error('tindakan') ? 'is-invalid' : '' ?>" id="" placeholder="tindakan">
+                <div class="invalid-feedback">
+                    <?php echo form_error('tindakan') ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="obat" class="">Obat</label>
+                <input type="text" name="obat" class="form-control <?php echo form_error('obat') ? 'is-invalid' : '' ?>" id="" placeholder="obat">
+                <div class="invalid-feedback">
+                    <?php echo form_error('obat') ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="idDokter" class="">Diperiksa Oleh</label>
+
+                <div class="input-group mb-3">
+                    <select name="role" class="custom-select" id="inputGroupSelect01">
+                        <option selected>Choose...</option>
+                    </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="suhuBadan" class="">Suhu Badan</label>
-                    <input type="text" name="suhuBadan" class="form-control <?php echo form_error('suhuBadan') ? 'is-invalid' : '' ?>" id="" placeholder="suhu badan">
-                    <div class="invalid-feedback">
-                        <?php echo form_error('suhuBadan') ?>
-                    </div>
-                </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="beratBadan" class="">Berat Badan</label>
-                    <input type="text" name="beratBadan" class="form-control <?php echo form_error('beratBadan') ? 'is-invalid' : '' ?>" id="" placeholder="berat badan">
-                    <div class="invalid-feedback">
-                        <?php echo form_error('beratBadan') ?>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="diagnosa" class="">Diagnosa</label>
-                    <input type="text" name="diagnosa" class="form-control <?php echo form_error('diagnosa') ? 'is-invalid' : '' ?>" id="" placeholder="diagnosa">
-                    <div class="invalid-feedback">
-                        <?php echo form_error('diagnosa') ?>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="tindakan" class="">Tindakan</label>
-                    <input type="text" name="tindakan" class="form-control <?php echo form_error('tindakan') ? 'is-invalid' : '' ?>" id="" placeholder="tindakan">
-                    <div class="invalid-feedback">
-                        <?php echo form_error('tindakan') ?>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="obat" class="">Obat</label>
-                    <input type="text" name="obat" class="form-control <?php echo form_error('obat') ? 'is-invalid' : '' ?>" id="" placeholder="obat">
-                    <div class="invalid-feedback">
-                        <?php echo form_error('obat') ?>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="idDokter" class="">Diperiksa Oleh</label>
-
-                    <div class="input-group mb-3">
-                        <select name="role" class="custom-select" id="inputGroupSelect01">
-                            <option selected>Choose...</option>
-                        </select>
-                    </div>
-
-                </div>
-            </form>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-secondary">Submit</button>
+                <button type="submit" class="btn btn-secondary">Simpan</button>
                 <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
             </div>
             <?php echo form_close(); ?>
