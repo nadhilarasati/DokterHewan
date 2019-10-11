@@ -257,4 +257,9 @@ class m_admin extends CI_Model
 		$this->db->where('idPemilik',$idPemilik);
 		return $this->db->update("pemilik_hewan", $this);
     }
+
+    //rekam medis
+    public function getListRekamMedis(){
+
+    }
 }
