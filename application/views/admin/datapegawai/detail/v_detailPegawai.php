@@ -12,7 +12,7 @@
             <div class="form-group row">
                 <label for="noKTP" name="id" class="col-sm-4 col-form-label">ID Pegawai</label>
                 <div class="col-sm-6">
-                    <?php echo $data_pegawai->idPegawai ?>
+                    <input type="text" name="idPegawai" class="form-control" id="" value="<?php echo $data_pegawai->idPegawai ?>" readonly>
                 </div>
             </div>
             <div class="form-group row">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="form-group row">
                 <label for="noKTP" class="col-sm-4 col-form-label">Email</label>
                 <div class="col-sm-6">
@@ -55,7 +55,8 @@
             <div class="form-group row">
                 <label for="noKTP" class="col-sm-4 col-form-label">Password</label>
                 <div class="col-sm-6">
-                    <input type="text" name="password" class="form-control" id="" value="<?php echo $data_pegawai->password ?>">
+                    <input type="password" name="password" class="form-control" id="pw" value="<?php echo $data_pegawai->password ?>">
+                    <span toggle="#pw" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                 </div>
             </div>
             <div style="margin-left:12cm; margin-top:2cm">
@@ -78,4 +79,17 @@ function roleName($code)
     }
 }
 
+
 ?>
+<!-- Password Toggle Visibility -->
+<script>
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+</script>
