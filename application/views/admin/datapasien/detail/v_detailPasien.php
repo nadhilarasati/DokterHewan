@@ -2,13 +2,14 @@
     <div class="container-fluid">
         <form class="data-pasien" action="<?php site_url('admin/detailDataPasien/' . $data_pemilik->idPemilik); ?>" method="post">
             <h2 class="text-center" style="margin-bottom:2cm">Data Pasien</h2>
+            <?php if ($this->session->flashdata('success')) : ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $this->session->flashdata('success'); ?>
+                </div>
+            <?php endif; ?>
             <div class="row">
                 <div class="col-md-6">
-                    <?php if ($this->session->flashdata('success')) : ?>
-                        <div class="alert alert-success" role="alert">
-                            <?php echo $this->session->flashdata('success'); ?>
-                        </div>
-                    <?php endif; ?>
+
                     <h3 style="margin-bottom:1cm">Data Pemilik Hewan</h3>
                     <div class="form-group row">
                         <label for="idPemilik" class="col-sm-4 col-form-label">ID Pemilik Hewan</label>
