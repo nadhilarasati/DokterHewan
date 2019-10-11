@@ -14,7 +14,7 @@
                     <div class="form-group row">
                         <label for="idPemilik" class="col-sm-4 col-form-label">ID Pemilik Hewan</label>
                         <div class="col-sm-8">
-                            <?php echo $data_pemilik->idPemilik ?>
+                            <input type="text" name="idPemilik" class="form-control" id="" value="<?php echo $data_pemilik->idPemilik ?>" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -38,7 +38,7 @@
                     <div class="form-group row">
                         <label for="telepon" class="col-sm-4 col-form-label">No. Telepon</label>
                         <div class="col-sm-8">
-                            <input type="text" name="telepon" class="form-control" value="" placeholder="<?php echo $data_pemilik->telepon ?>">
+                            <input type="text" name="telepon" class="form-control" value="<?php echo $data_pemilik->telepon ?>">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -50,59 +50,62 @@
                     <div class="form-group row">
                         <label for="password" class="col-sm-4 col-form-label">Password</label>
                         <div class="col-sm-8">
-                            <input type="text" name="password" class="form-control" id="" value="<?php echo $data_pemilik->password ?>">
+                            <input id="pw" type="password" name="password" class="form-control " id="" value="<?php echo $data_pemilik->password ?>">
+                            <span toggle="#pw" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-secondary" style="margin-top:0.5cm">Simpan</button>
                 </div>
             </div>
         </form>
+    </div>
 
-        <div class="row">
-            <div class="col">
-                <h3 style="margin-bottom:1cm; margin-top:1cm">Data Hewan Peliharaan</h3>
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
+
+    <div class="row">
+        <div class="col">
+            <h3 style="margin-bottom:1cm; margin-top:1cm">Data Hewan Peliharaan</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama Hewan</th>
+                            <th>Jenis Hewan</th>
+                            <th>Tanggal Lahir</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Ras</th>
+                            <th>Warna</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($data_hewan as $d) { ?>
                             <tr>
-                                <th>ID</th>
-                                <th>Nama Hewan</th>
-                                <th>Jenis Hewan</th>
-                                <th>Tanggal Lahir</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Ras</th>
-                                <th>Warna</th>
-
+                                <td><?php echo $d->idHewan ?></td>
+                                <td><?php echo $d->namaHewan ?></td>
+                                <td><?php echo $d->jenis ?></td>
+                                <td><?php echo $d->tanggalLahir ?></td>
+                                <td><?php echo gender($d->jenisKelamin) ?></td>
+                                <td><?php echo $d->ras ?></td>
+                                <td><?php echo $d->warna ?></td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($data_hewan as $d) { ?>
-                                <tr>
-                                    <td><?php echo $d->idHewan ?></td>
-                                    <td><?php echo $d->namaHewan ?></td>
-                                    <td><?php echo $d->jenis ?></td>
-                                    <td><?php echo $d->tanggalLahir ?></td>
-                                    <td><?php echo gender($d->jenisKelamin) ?></td>
-                                    <td><?php echo $d->ras ?></td>
-                                    <td><?php echo $d->warna ?></td>
-                                </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
+                        <?php } ?>
+                    </tbody>
+                </table>
 
 
-
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <button class="btn btn-secondary" href="#" id="myBtn">Tambah Hewan Baru</button>
 
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-secondary" href="#" id="myBtn">Tambah Hewan Baru</button>
+
+        </div>
+    </div>
+</div>
 </div>
 
 <!-- Modal -->
@@ -122,7 +125,7 @@
             </div>
 
             <?php echo form_open('Admin/formDataHewan/' . $data_pemilik->idPemilik) ?>
-            <!-- <form class="data-pasien" role="form" style="margin-top:0.5cm" action="<?php //site_url('Admin/formDataHewan'); 
+            <!-- <form class="data-pasien" role="form" style="margin-top:0.5cm" action="<?php //site_url('Admin/formDataHewan');
                                                                                         ?>" method="post" enctype="multipart/form-data"> -->
             <div class="form-group" style="margin-top:0.5cm">
                 <label for="namaHewan" class="">Nama Hewan</label>
@@ -141,14 +144,14 @@
                             <option value="<?php echo $th->idJenis ?>"><?php echo $th->jenis ?></option>
                         <?php } ?>
                         <!-- <option value="2">Anjing</option>
-                        <option value="3">Kelinci</option>
-                        <option value="4">Alap-Alap</option>
-                        <option value="5">Hamster</option>
-                        <option value="6">Landak</option>
-                        <option value="7">Ular</option>
-                        <option value="8">Burung</option>
-                        <option value="9">Ayam</option>
-                        <option value="10">Lain-Lain</option> -->
+            <option value="3">Kelinci</option>
+            <option value="4">Alap-Alap</option>
+            <option value="5">Hamster</option>
+            <option value="6">Landak</option>
+            <option value="7">Ular</option>
+            <option value="8">Burung</option>
+            <option value="9">Ayam</option>
+            <option value="10">Lain-Lain</option> -->
                     </select>
                 </div>
             </div>
@@ -219,6 +222,19 @@
             format: "dd-mm-yyyy",
             autoclose: true
         });
+    });
+</script>
+
+<!-- Password Toggle Visibility -->
+<script>
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
     });
 </script>
 
