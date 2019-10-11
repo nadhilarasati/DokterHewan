@@ -33,7 +33,7 @@ class Admin extends CI_Controller{
         
         $data['title'] = 'Detail Rekam Medis';
         $data["data_pet"] = $this->m_admin->getHewan($idHewan);
-        $data["data_medis"] = $this->m_admin->getRekamMedis($idRekamMedis);
+        $data["data_medis"] = $this->m_admin->getRekamMedis($idHewan);
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('admin/rekammedis/detail/v_detailRekamMedis');
         $this->load->view('admin/template/sidebarfooter');
