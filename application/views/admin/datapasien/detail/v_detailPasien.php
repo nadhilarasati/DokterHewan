@@ -13,7 +13,7 @@
                     <div class="form-group row">
                         <label for="idPemilik" class="col-sm-4 col-form-label">ID Pemilik Hewan</label>
                         <div class="col-sm-8">
-                            <input type="text" name="noKTP" class="form-control" id="" value="<?php echo $data_pemilik->idPemilik ?>" readonly>
+                            <input type="text" name="idPemilik" class="form-control" id="" value="<?php echo $data_pemilik->idPemilik ?>" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
