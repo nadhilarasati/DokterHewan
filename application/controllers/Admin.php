@@ -28,9 +28,11 @@ class Admin extends CI_Controller{
     * REKAM MEDIS
     */
 
-    public function detailRekamMedis()
+    public function detailRekamMedis($idHewan=null)
     {
+        
         $data['title'] = 'Detail Rekam Medis';
+        $data["data_hewan"] = $this->m_admin->getHewan($idHewan);
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('admin/rekammedis/detail/v_detailRekamMedis');
         $this->load->view('admin/template/sidebarfooter');
