@@ -9,24 +9,20 @@
 
   <link href="<?php echo base_url(); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-
   <link href="<?php echo base_url(); ?>vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
   <link href="<?php echo base_url(); ?>css/sb-admin.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>lib/css/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>lib/css/styleAdmin.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>lib/css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>lib/css/password-toggler.css">
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
-
 
   <link href="<?php echo base_url(); ?>lib/font/comfortaa.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="datepicker/datepicker3.css" />
-
-
-
 
   <script src="<?php echo base_url(); ?>vendor/jquery/jquery.min.js"></script>
   <script src="<?php echo base_url(); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
