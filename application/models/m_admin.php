@@ -134,6 +134,47 @@ class m_admin extends CI_Model
         ];
     }
 
+    public function rules_rekammedis()
+    {
+        return [
+            [
+                'field' => 'gejalaKlinis',
+                'label' => 'gejalaKlinis',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'suhuBadan',
+                'label' => 'suhuBadan',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'beratBadan',
+                'label' => 'beratBadan',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'diagnosa',
+                'label' => 'diagnosa',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'tindakan',
+                'label' => 'tindakan',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'obat',
+                'label' => 'obat',
+                'rules' => 'required'
+            ]
+        ];
+    }
+
     /*
 	* Method untuk mendapatkan seluruh data staff klinik
 	*/
@@ -264,7 +305,23 @@ class m_admin extends CI_Model
     }
 
     //rekam medis
-    public function getListRekamMedis(){
 
+    public function buatRekamMedis($fk){
+        $post = $this->input->post();
+
+        $this->gejalaKlinis = $post["gejalaKlinis"];
+        $this->suhuBadan = $post["suhuBadan"];
+        $this->beratBadan = $post["beratBadan"];
+        $this->diagnosa = $post["diagnosa"];
+        $this->tindakan = $post["tindakan"];
+        $this->obat = $post["obat"];
+
+        $this->idHewan = $fk;
+        $this->db->insert("rekam_medis", $this);
+    }
+
+    public function getRekamMedis($idRekamMedis){
+        $this->db->where('idRekamMedis', $idRekamMedis);
+        return $this->db->get("rekam_medis")->result();
     }
 }
