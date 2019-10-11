@@ -58,54 +58,54 @@
                 </div>
             </div>
         </form>
-    
 
 
-    <div class="row">
-        <div class="col">
-            <h3 style="margin-bottom:1cm; margin-top:1cm">Data Hewan Peliharaan</h3>
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nama Hewan</th>
-                            <th>Jenis Hewan</th>
-                            <th>Tanggal Lahir</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Ras</th>
-                            <th>Warna</th>
-                            <th>Rekam Medis</th>
-                            <th>Ubah Data Hewan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($data_hewan as $d) { ?>
+
+        <div class="row">
+            <div class="col">
+                <h3 style="margin-bottom:1cm; margin-top:1cm">Data Hewan Peliharaan</h3>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
                             <tr>
-                                <td><?php echo $d->idHewan ?></td>
-                                <td><?php echo $d->namaHewan ?></td>
-                                <td><?php echo $d->jenis ?></td>
-                                <td><?php echo $d->tanggalLahir ?></td>
-                                <td><?php echo gender($d->jenisKelamin) ?></td>
-                                <td><?php echo $d->ras ?></td>
-                                <td><?php echo $d->warna ?></td>
-                                <td><a class="btn btn-primary" href="<?php echo site_url('admin/detailRekamMedis/'.$d->idHewan); ?>"><i class="fa fa-file"></i></a></td>
-                                <td></td>
+                                <th>ID</th>
+                                <th>Nama Hewan</th>
+                                <th>Jenis Hewan</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Ras</th>
+                                <th>Warna</th>
+                                <th>Rekam Medis</th>
+                                <th>Ubah Data Hewan</th>
                             </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($data_hewan as $d) { ?>
+                                <tr>
+                                    <td><?php echo $d->idHewan ?></td>
+                                    <td><?php echo $d->namaHewan ?></td>
+                                    <td><?php echo $d->jenis ?></td>
+                                    <td><?php echo $d->tanggalLahir ?></td>
+                                    <td><?php echo gender($d->jenisKelamin) ?></td>
+                                    <td><?php echo $d->ras ?></td>
+                                    <td><?php echo $d->warna ?></td>
+                                    <td><a class="btn btn-primary" href="<?php echo site_url('admin/detailRekamMedis/' . $d->idHewan); ?>"><i class="fa fa-file"></i></a></td>
+                                    <td></td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-secondary" href="#" id="myBtn">Tambah Hewan Baru</button>
+
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-secondary" href="#" id="myBtn">Tambah Hewan Baru</button>
-
-        </div>
-    </div>
-</div>
 </div>
 
 <!-- Modal -->
@@ -165,6 +165,21 @@
             </div>
 
             <div class="form-group">
+                <label for="jenisKelamin">Jenis Kelamin</label>
+                <div class="radio">
+                    <input type="radio" name="jenisKelamin" class=" <?php echo form_error('jenisKelamin') ? 'is-invalid' : '' ?>" value="0">
+                    <label style="margin-left:0.1cm">Jantan</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="jenisKelamin" class=" <?php echo form_error('jenisKelamin') ? 'is-invalid' : '' ?>" value="1">
+                    <label style="margin-left:0.1cm">Betina</label>
+                </div>
+            </div>
+            <div class="invalid-feedback">
+                <?php echo form_error('jenisKelamin') ?>
+            </div>
+
+            <div class="form-group">
                 <label for="ras" class="">Ras</label>
                 <input type="text" name="ras" class="form-control <?php echo form_error('ras') ? 'is-invalid' : '' ?>" id="" placeholder="ras">
                 <div class="invalid-feedback">
@@ -179,20 +194,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="jenisKelamin">Jenis Kelamin</label>
-                <div class="radio">
-                    <input type="radio" name="jenisKelamin" class=" <?php echo form_error('jenisKelamin') ? 'is-invalid' : '' ?>" value="0">
-                    <label style="margin-left:0.1cm">Jantan</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="jenisKelamin" class=" <?php echo form_error('jenisKelamin') ? 'is-invalid' : '' ?>" value="1">
-                    <label style="margin-left:0.1cm">Betina</label>
-                </div>
-            </div>
-            <div class="invalid-feedback">
-                <?php echo form_error('jenisKelamin') ?>
-            </div>
+            
 
             <div class="modal-footer">
                 <button type="submit" class="btn btn-secondary">Save</button>
