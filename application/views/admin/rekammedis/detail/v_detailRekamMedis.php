@@ -101,7 +101,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($data_medis as $d) { ?>
+                            <?php foreach ($data_medis as $dm) { ?>
                                 <tr>
                                     <td>
                                         <?php
@@ -109,12 +109,12 @@
                                             echo date("d-m-y", $d) . "<br>";
                                             ?>
                                     </td>
-                                    <td><?php echo $d->gejalaKlinis ?></td>
-                                    <td><?php echo $d->suhuBadan ?></td>
-                                    <td><?php echo $d->beratBadan ?></td>
-                                    <td><?php echo $d->diagnosa ?></td>
-                                    <td><?php echo $d->tindakan ?></td>
-                                    <td><?php echo $d->obat ?></td>
+                                    <td><?php echo $dm->gejalaKlinis ?></td>
+                                    <td><?php echo $dm->suhuBadan ?></td>
+                                    <td><?php echo $dm->beratBadan ?></td>
+                                    <td><?php echo $dm->diagnosa ?></td>
+                                    <td><?php echo $dm->tindakan ?></td>
+                                    <td><?php echo $dm->obat ?></td>
                                     <td></td>
                                 </tr>
                             <?php } ?>
