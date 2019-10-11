@@ -27,22 +27,6 @@ class Admin extends CI_Controller{
     /*
     * REKAM MEDIS
     */
-    public function rekamMedis()
-    {
-        $data['title'] = 'Rekam Medis';
-        $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/rekammedis/v_listRekamMedis');
-        $this->load->view('admin/template/sidebarfooter');
-
-    }
-
-    public function formRekamMedis()
-    {
-        $data['title'] = 'Form Rekam Medis';
-        $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/rekammedis/form/index');
-        $this->load->view('admin/template/sidebarfooter');
-    }
 
     public function detailRekamMedis()
     {
@@ -79,7 +63,7 @@ class Admin extends CI_Controller{
         
         if ($validation->run()) {
 			$datapegawai->editPegawai($idPegawai);
-			$this->session->set_flashdata('success', 'Berhasil diperbaharui');
+			$this->session->set_flashdata('success', 'Berhasil diperbarui');
         }
 
         $data['title'] = 'Detail Data Pegawai';
@@ -151,7 +135,7 @@ class Admin extends CI_Controller{
         
         if ($validation->run()) {
 			$datapemilik->editPemilikHewan($idPemilik);
-			$this->session->set_flashdata('success', 'Berhasil diperbaharui');
+			$this->session->set_flashdata('success', 'Berhasil diperbarui');
         }
 
         $data['title'] = 'Data Pasien';
