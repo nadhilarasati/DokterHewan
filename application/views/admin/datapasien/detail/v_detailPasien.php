@@ -13,7 +13,7 @@
                     <div class="form-group row">
                         <label for="idPemilik" class="col-sm-4 col-form-label">ID Pemilik Hewan</label>
                         <div class="col-sm-8">
-                            <?php echo $data_pemilik->idPemilik ?>
+                            <input type="text" name="noKTP" class="form-control" id="" value="<?php echo $data_pemilik->idPemilik ?>" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -37,7 +37,7 @@
                     <div class="form-group row">
                         <label for="telepon" class="col-sm-4 col-form-label">No. Telepon</label>
                         <div class="col-sm-8">
-                            <input type="text" name="telepon" class="form-control" value="" placeholder="<?php echo $data_pemilik->telepon ?>">
+                            <input type="text" name="telepon" class="form-control" value="<?php echo $data_pemilik->telepon ?>">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -49,7 +49,7 @@
                     <div class="form-group row">
                         <label for="password" class="col-sm-4 col-form-label">Password</label>
                         <div class="col-sm-8">
-                            <input type="text" name="password" class="form-control" id="" value="<?php echo $data_pemilik->password ?>">
+                            <input type="password" name="password" class="form-control" id="" value="<?php echo $data_pemilik->password ?>">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-secondary" style="margin-top:0.5cm">Simpan</button>
@@ -121,7 +121,7 @@
             </div>
 
             <?php echo form_open('Admin/formDataHewan/' . $data_pemilik->idPemilik) ?>
-            <!-- <form class="data-pasien" role="form" style="margin-top:0.5cm" action="<?php //site_url('Admin/formDataHewan'); 
+            <!-- <form class="data-pasien" role="form" style="margin-top:0.5cm" action="<?php //site_url('Admin/formDataHewan');
                                                                                         ?>" method="post" enctype="multipart/form-data"> -->
             <div class="form-group" style="margin-top:0.5cm">
                 <label for="namaHewan" class="">Nama Hewan</label>
