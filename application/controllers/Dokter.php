@@ -33,7 +33,8 @@ class Dokter extends CI_Controller{
     {
         
         $data['title'] = 'Rekam Medis';
-        $data["data_pet"] = $this->m_dokter->getHewan($idHewan);
+        //$data["data_owner"] = $this->m_dokter->getPemilik($idHewan);
+        $data["data_pet"] = $this->m_dokter->getHewanById($idHewan);
         $data["data_medis"] = $this->m_dokter->getRekamMedis($idHewan);
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('dokter/rekammedis/detail/v_detailMedis');
