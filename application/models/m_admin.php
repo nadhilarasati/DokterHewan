@@ -4,7 +4,7 @@ class m_admin extends CI_Model
 {
 
     /*
-	* Method untuk menentukan aturan input form
+	* Method untuk menentukan aturan input form data pegawai
 	*/
     public function rules_pegawai()
     {
@@ -48,6 +48,9 @@ class m_admin extends CI_Model
         ];
     }
 
+    /*
+	* Method untuk menentukan aturan input form data pemilik hewan
+	*/
     public function rules_pasien()
     {
         return [
@@ -93,6 +96,10 @@ class m_admin extends CI_Model
         ];
     }
 
+    /*
+	* Method untuk menentukan aturan input form data hewan peliharaan
+	*/
+
     public function rules_hewan()
     {
         return [
@@ -133,6 +140,10 @@ class m_admin extends CI_Model
             ]
         ];
     }
+
+    /*
+	* Method untuk menentukan aturan input form insert rekam medis
+	*/
 
     public function rules_rekammedis()
     {
@@ -175,6 +186,8 @@ class m_admin extends CI_Model
         ];
     }
 
+    //DATA PEGAWAI
+
     /*
 	* Method untuk mendapatkan seluruh data staff klinik
 	*/
@@ -183,6 +196,9 @@ class m_admin extends CI_Model
         return $this->db->get("staff_klinik")->result();
     }
 
+    /*
+	* Method untuk create data pegawai baru
+	*/
     public function savePegawai()
     {
         $post = $this->input->post();
@@ -198,12 +214,18 @@ class m_admin extends CI_Model
         return $this->db->insert("staff_klinik", $this);
     }
 
+    /*
+	* Method untuk menampilkan data dari seorang pegawai
+	*/
     public function getPegawaiById($idPegawai)
     {
         $this->db->where('idPegawai', $idPegawai);
         return $this->db->get('staff_klinik')->row();
     }
 
+    /*
+	* Method untuk edit data pegawai
+	*/
     public function editPegawai($idPegawai){
         $post = $this->input->post();
 
@@ -220,6 +242,8 @@ class m_admin extends CI_Model
 		return $this->db->update("staff_klinik", $this);
     }
 
+    //DATA PASIEN
+
     /*
 	* Method untuk mendapatkan seluruh data pemilik hewan
 	*/
@@ -228,6 +252,9 @@ class m_admin extends CI_Model
         return $this->db->get("pemilik_hewan")->result();
     }
 
+    /*
+	* Method untuk create data pemilik hewan baru
+	*/
     public function savePasien()
     {
         $post = $this->input->post();
@@ -254,6 +281,9 @@ class m_admin extends CI_Model
         //$this->db->insert("hewan_peliharaan", $dataHewan);
     }
 
+    /*
+	* Method untuk menambahkan data hewan peliharaan
+	*/
     public function saveHewan($fk){
         $post = $this->input->post();
 
@@ -268,22 +298,34 @@ class m_admin extends CI_Model
         $this->db->insert("hewan_peliharaan", $this);
     }
 
+    /*
+	* Method untuk menampilkan data seorang pemilik hewan
+	*/
     public function getPemilikById($idPemilik)
     {
         $this->db->where('idPemilik', $idPemilik);
         return $this->db->get('pemilik_hewan')->row();
     }
 
+    /*
+	* Method untuk menampilkan hewan peliharaan
+	*/
     public function getHewanById($idHewan)
     {
         $this->db->where('idPemilik', $idHewan);
         return $this->db->get('daftar_hewan')->result();
     }
 
+    /*
+	* Method untuk mendapatkan suatu jenis hewan
+	*/
     public function getTipeHewan(){
         return $this->db->get('jenis_hewan')->result();
     }
 
+    /*
+	* Method untuk edit data pemilik hewan
+	*/
     public function editPemilikHewan($idPemilik){
         $post = $this->input->post();
 
@@ -299,13 +341,19 @@ class m_admin extends CI_Model
 		return $this->db->update("pemilik_hewan", $this);
     }
 
+    /*
+	* Method untuk menampilkan hewan peliharaan
+	*/
     public function getHewan($idHewan){
         $this->db->where('idHewan', $idHewan);
         return $this->db->get("daftar_hewan")->row();
     }
 
-    //rekam medis
+    //REKAM MEDIS
 
+    /*
+	* Method untuk insert rekam medis
+	*/
     public function buatRekamMedis($fk){
         $post = $this->input->post();
 
@@ -320,6 +368,9 @@ class m_admin extends CI_Model
         $this->db->insert("rekam_medis", $this);
     }
 
+    /*
+	* Method untuk menampilkan rekam medis
+	*/
     public function getRekamMedis($idRekamMedis){
         $this->db->where('idHewan', $idRekamMedis);
         return $this->db->get("rekam_medis")->result();
