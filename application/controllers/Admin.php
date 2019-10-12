@@ -40,7 +40,7 @@ class Admin extends CI_Controller{
         $this->load->view('admin/template/sidebarfooter');
     }
 
-    //insert record rekam medis
+    //insert rekam medis
     public function formRekamMedis($fk){
         $data['title'] = 'Data Pasien';
         $formmedis = $this->m_admin;
