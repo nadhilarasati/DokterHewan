@@ -7,58 +7,65 @@
                     <?php echo $this->session->flashdata('success'); ?>
                 </div>
             <?php endif; ?>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group row">
-                        <label for="idHewan" class="col-sm-4 col-form-label">ID Hewan</label>
-                        <div class="col-sm-8">
-                            <label for="idHewan" name="idHewan" class="col-sm-4 col-form-label"><?php echo $data_pet->idHewan ?></label>
-                        </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <label for="noKTP" class="col-sm-4 col-form-label">Nama Hewan</label>
-                        <div class="col-sm-8">
-                            <label for="namaHewan" name="namaHewan" class="col-sm-4 col-form-label"><?php echo $data_pet->namaHewan ?></label>
-                        </div>
-                    </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group row">
+                                <label for="idHewan" class="col-sm-4 col-form-label">ID Hewan</label>
+                                <div class="col-sm-8">
+                                    <label for="idHewan" name="idHewan" class="col-sm-4 col-form-label"><?php echo $data_pet->idHewan ?></label>
+                                </div>
+                            </div>
 
-                    <div class="form-group row">
-                        <label for="noKTP" class="col-sm-4 col-form-label">Jenis Hewan</label>
-                        <div class="col-sm-8">
-                            <label for="noKTP" name="jenisHewan" class="col-sm-4 col-form-label"><?php echo $data_pet->jenis ?></label>
-                        </div>
-                    </div>
+                            <div class="form-group row">
+                                <label for="noKTP" class="col-sm-4 col-form-label">Nama Hewan</label>
+                                <div class="col-sm-8">
+                                    <label for="namaHewan" name="namaHewan" class="col-sm-4 col-form-label"><?php echo $data_pet->namaHewan ?></label>
+                                </div>
+                            </div>
 
-                    <div class="form-group row">
-                        <label for="name" class="col-sm-4 col-form-label">Tanggal Lahir</label>
-                        <div class="col-md-8">
-                            <label for="noKTP" name="tanggalLahir" class="col-sm-4 col-form-label"><?php echo $data_pet->tanggalLahir ?></label>
-                        </div>
-                    </div>
+                            <div class="form-group row">
+                                <label for="noKTP" class="col-sm-4 col-form-label">Jenis Hewan</label>
+                                <div class="col-sm-8">
+                                    <label for="noKTP" name="jenisHewan" class="col-sm-4 col-form-label"><?php echo $data_pet->jenis ?></label>
+                                </div>
+                            </div>
 
-                    <div class="form-group row">
-                        <label for="noKTP" class="col-sm-4 col-form-label">Jenis Kelamin</label>
-                        <div class="col-sm-8">
-                            <label for="noKTP" name="jenisKelamin" class="col-sm-4 col-form-label"><?php echo gender($data_pet->jenisKelamin) ?></label>
-                        </div>
-                    </div>
+                            <div class="form-group row">
+                                <label for="name" class="col-sm-4 col-form-label">Tanggal Lahir</label>
+                                <div class="col-md-8">
+                                    <label for="noKTP" name="tanggalLahir" class="col-sm-4 col-form-label"><?php echo $data_pet->tanggalLahir ?></label>
+                                </div>
+                            </div>
 
-                    <div class="form-group row">
-                        <label for="noKTP" class="col-sm-4 col-form-label">Ras</label>
-                        <div class="col-sm-8">
-                            <label for="noKTP" name="ras" class="col-sm-4 col-form-label"><?php echo $data_pet->ras ?></label>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="noKTP" class="col-sm-4 col-form-label">Warna</label>
-                        <div class="col-sm-8">
-                            <label for="noKTP" name="warna" class="col-sm-4 col-form-label"><?php echo $data_pet->warna ?></label>
-                        </div>
-                    </div>
+                            <div class="form-group row">
+                                <label for="noKTP" class="col-sm-4 col-form-label">Jenis Kelamin</label>
+                                <div class="col-sm-8">
+                                    <label for="noKTP" name="jenisKelamin" class="col-sm-4 col-form-label"><?php echo gender($data_pet->jenisKelamin) ?></label>
+                                </div>
+                            </div>
 
+                            <div class="form-group row">
+                                <label for="noKTP" class="col-sm-4 col-form-label">Ras</label>
+                                <div class="col-sm-8">
+                                    <label for="noKTP" name="ras" class="col-sm-4 col-form-label"><?php echo $data_pet->ras ?></label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="noKTP" class="col-sm-4 col-form-label">Warna</label>
+                                <div class="col-sm-8">
+                                    <label for="noKTP" name="warna" class="col-sm-4 col-form-label"><?php echo $data_pet->warna ?></label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
         </form>
 
         <div class="row">
@@ -104,7 +111,7 @@
                         <tbody>
                             <?php foreach ($data_medis as $dm) { ?>
                                 <tr>
-                                <td><?php echo $dm->idRekamMedis ?></td>
+                                    <td><?php echo $dm->idRekamMedis ?></td>
                                     <td>
                                         <?php
                                             $d = strtotime("today");
