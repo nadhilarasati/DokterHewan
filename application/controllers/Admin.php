@@ -28,7 +28,7 @@ class Admin extends CI_Controller{
     * REKAM MEDIS
     */
 
-    
+    //lihat detail rekam medis
     public function detailRekamMedis($idHewan=null)
     {
         
@@ -40,6 +40,7 @@ class Admin extends CI_Controller{
         $this->load->view('admin/template/sidebarfooter');
     }
 
+    //insert record rekam medis
     public function formRekamMedis($fk){
         $data['title'] = 'Data Pasien';
         $formmedis = $this->m_admin;
@@ -58,6 +59,8 @@ class Admin extends CI_Controller{
     /*
     * DATA PEGAWAI
     */
+
+    //create akun pegawai baru
     public function formDataPegawai(){
         $formpegawai = $this->m_admin;
 		$validation = $this->form_validation;
@@ -74,6 +77,7 @@ class Admin extends CI_Controller{
         $this->load->view('admin/template/sidebarfooter');
     }
 
+    //read detail data pegawai & edit data pegawai
     public function detailDataPegawai($idPegawai=null)
     {
         $datapegawai = $this->m_admin;
@@ -92,6 +96,7 @@ class Admin extends CI_Controller{
         $this->load->view('admin/template/sidebarfooter');
     }
 
+    //nampilin list pegawai
     public function dataPegawai()
     {
         $data['title'] = 'Data Pegawai';
@@ -119,6 +124,8 @@ class Admin extends CI_Controller{
     /*
     * DATA PASIEN
     */
+
+    //create akun pemilik hewan
     public function formDataPasien()
     {
         $formpasien = $this->m_admin;
@@ -135,6 +142,7 @@ class Admin extends CI_Controller{
         $this->load->view('admin/template/sidebarfooter');
     }
 
+    //nampilin list pemilik hewan
     public function dataPasien()
     {
         $data['title'] = 'Data Pasien';
@@ -145,6 +153,7 @@ class Admin extends CI_Controller{
     }
 
 
+    //read data pemilik hewan & hewan peliharaan
     public function detailDataPasien($idPemilik=null)
     {
         
@@ -171,6 +180,7 @@ class Admin extends CI_Controller{
         $this->load->view('admin/template/sidebarfooter');
     }
 
+    //nambahin hewan peliharaan di dalam data pemilik hewan
     public function formDataHewan($fk){
         $data['title'] = 'Data Pasien';
         $formhewan = $this->m_admin;
