@@ -28,6 +28,7 @@ class Admin extends CI_Controller{
     * REKAM MEDIS
     */
 
+    
     public function detailRekamMedis($idHewan=null)
     {
         
