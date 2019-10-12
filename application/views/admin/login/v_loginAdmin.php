@@ -53,7 +53,7 @@
                                         <input type="password" class="form-control form-control-lg rounded-0" id="pwd1" required="" autocomplete="new-password">
                                         <div class="invalid-feedback">Enter your password too!</div>
                                     </div>
-                                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin"><a href="<?php echo base_url('admin/rekamMedis') ?>">Login</a> </button>
+                                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin"><a href="<?php echo base_url('admin/dataPasien') ?>">Login</a> </button>
                                 </form>
                             </div>
                         </div>
