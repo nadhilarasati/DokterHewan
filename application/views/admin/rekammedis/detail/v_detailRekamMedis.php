@@ -85,7 +85,7 @@
             </div>
             <div class="col-md-6">
                 <div style="margin-left:5cm">
-                    <button class="btn btn-secondary" id="myBtn">Insert New Record</button>
+                    <button class="btn btn-secondary" id="myBtn">Tambah Record Baru</button>
                     <button class="btn btn-secondary">Download Form Record</button>
                     <!--<button class="btn btn-secondary">Delete Record</button>-->
                 </div>
@@ -131,11 +131,13 @@
                     </table>
                 </div>
             </div>
+            
         </div>
+        <button class="btn btn-secondary" id="myButton">Kirim</button>
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal Rekam Medis-->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
 
@@ -147,7 +149,7 @@
                 </div>
             <?php endif; ?>
             <div class="modal-header">
-                <h4 class="modal-title">New Record</h4>
+                <h4 class="modal-title">Tambah Record Baru</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <?php echo form_open('Admin/formRekamMedis/' . $data_pet->idHewan) ?>
@@ -219,10 +221,48 @@
         </div>
     </div>
 </div>
+
+<!-- Modal 'kirim' button-->
+<div class="modal fade" id="myMdl" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content" style="padding:40px 50px;">
+            <div class="modal-header">
+                <h4 class="modal-title">Kirim Rekam Medis</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="form-group">
+                <label for="idDokter" class=""style="margin-top:0.5cm">Tujuan</label>
+
+                <div class="input-group mb-3">
+                    <select name="role" class="custom-select" id="inputGroupSelect01">
+                        <option selected>Choose...</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary">Kirim</button>
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+            </div>
+            
+        </div>
+    </div>
+</div>
+
 <script>
     $(document).ready(function() {
         $("#myBtn").click(function() {
             $("#myModal").modal();
+        });
+    });
+
+    $(document).ready(function() {
+        $("#myButton").click(function() {
+            $("#myMdl").modal();
         });
     });
 </script>
