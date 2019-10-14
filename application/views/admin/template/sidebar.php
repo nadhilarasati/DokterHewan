@@ -104,13 +104,13 @@
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url(); ?>admin/laporan">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Laporan</span></a>
+          <span>Laporan Rekam Medis</span></a>
       </li>
       
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url(); ?>dokter/listRekamMedis">
           <i class="fas fa-fw fa-file"></i>
-          <span>Rekam Medis</span></a>
+          <span>Antrian Pasien</span></a>
       </li>
       
     </ul>
