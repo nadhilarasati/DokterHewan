@@ -5,7 +5,7 @@
     <!-- DataTables Example -->
     <div class="card">
       <div class="card-header">
-        <a class="btn btn-secondary" href="<?php echo base_url(); ?>admin/formDataPegawai"><i class="fas fa-plus"></i>Create</a>
+        <a class="btn btn-secondary" href="<?php echo base_url(); ?>admin/formDataPegawai"><i class="fas fa-plus"></i>Tambah Data Pegawai</a>
       </div>
       <div class="card-body">
         <div class="table-responsive">
