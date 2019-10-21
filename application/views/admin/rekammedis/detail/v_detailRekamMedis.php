@@ -84,9 +84,9 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div style="margin-left:5cm">
-                    <button class="btn btn-secondary" id="myBtn">Tambah Record Baru</button>
-                    <button class="btn btn-secondary">Download Form Record</button>
+                <div style="margin-left:4cm">
+                    <button class="btn btn-secondary" id="myBtn"><i class="fas fa-plus">Tambah Record Baru</i></button>
+                    <button class="btn btn-secondary"><i class="fas fa-download">Download Form Record</i></button>
                     <!--<button class="btn btn-secondary">Delete Record</button>-->
                 </div>
             </div>
