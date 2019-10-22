@@ -5,7 +5,7 @@
         <!-- DataTables Example -->
         <div class="card">
           <div class="card-header">
-            <a class="btn btn-secondary" href="<?php echo base_url(); ?>laporan/laporan_pdf"><i class="fas fa-download"></i>Download Report</a>
+            <a class="btn btn-secondary" href="<?php echo base_url(); ?>laporan/index"><i class="fas fa-download"></i>Download Report</a>
           </div>
           <div class="card-body">
             <div class="table-responsive">
