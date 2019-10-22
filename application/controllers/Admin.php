@@ -67,9 +67,17 @@ class Admin extends CI_Controller{
 		$validation->set_rules($formpegawai->rules_pegawai());
 
 		if ($validation->run()) {
-			$formpegawai->savePegawai();
+            $post = $this->input->post();
+            if($post['role']==1){
+                $formpegawai->saveDokter();
+            } else {
+                $formpegawai->savePegawai();
+            }
+            
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
-		}
+        }
+        
+
 
         $data['title'] = 'Form Data Pegawai';
         $this->load->view('admin/template/sidebar', $data);
