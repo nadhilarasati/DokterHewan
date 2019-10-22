@@ -90,7 +90,7 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
     <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>admin/dataPasien">
+        <a class="nav-link active" href="<?php echo base_url(); ?>admin/dataPasien">
           <i class="fas fa-fw fa-table"></i>
           <span>Data Pasien</span></a>
       </li>
