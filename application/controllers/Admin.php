@@ -73,12 +73,12 @@ class Admin extends CI_Controller{
             } else {
                 $formpegawai->savePegawai();
             }
-            
-			$this->session->set_flashdata('success', 'Berhasil disimpan');
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            redirect(site_url('admin/dataPegawai'));
+
         }
         
-
-
+        
         $data['title'] = 'Form Data Pegawai';
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('admin/datapegawai/form/v_regPegawai');
