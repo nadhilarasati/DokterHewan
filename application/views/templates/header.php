@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('pages/aboutus') ?>">ABOUT US</a>
+                    <a class="nav-link active" href="<?php echo base_url('pages/aboutus') ?>">ABOUT US</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('pages/facilities') ?>">FACILITIES</a>
