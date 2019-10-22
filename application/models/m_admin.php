@@ -90,9 +90,45 @@ class m_admin extends CI_Model
                 'rules' => 'required'
             ]
 
-            
 
 
+
+        ];
+    }
+
+    public function rules_dokter()
+    {
+        return [
+            [
+                'field' => 'nama',
+                'label' => 'Nama',
+                'rules' => 'required'
+            ],
+
+
+            [
+                'field' => 'alamat',
+                'label' => 'Alamat',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'telepon',
+                'label' => 'Telepon',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'email',
+                'label' => 'Email',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'password',
+                'label' => 'Password',
+                'rules' => 'required'
+            ]
         ];
     }
 
@@ -196,6 +232,11 @@ class m_admin extends CI_Model
         return $this->db->get("staff_klinik")->result();
     }
 
+    public function getDokter()
+    {
+        return $this->db->get("dokter")->result();
+    }
+
     /*
 	* Method untuk create data pegawai baru
 	*/
@@ -214,6 +255,18 @@ class m_admin extends CI_Model
         return $this->db->insert("staff_klinik", $this);
     }
 
+    public function saveDokter()
+    {
+        $post = $this->input->post();
+        $this->namaDokter = $post["nama"];
+        $this->alamat = $post["alamat"];
+        $this->telepon = $post["telepon"];
+        $this->email = $post["email"];
+        $this->password = $post["password"];
+
+        return $this->db->insert("dokter", $this);
+    }
+
     /*
 	* Method untuk menampilkan data dari seorang pegawai
 	*/
@@ -226,20 +279,21 @@ class m_admin extends CI_Model
     /*
 	* Method untuk edit data pegawai
 	*/
-    public function editPegawai($idPegawai){
+    public function editPegawai($idPegawai)
+    {
         $post = $this->input->post();
 
-		$this->namaPegawai = $post["nama"];
-		$this->alamat = $post["alamat"];
-		$this->telepon = $post["telepon"];
+        $this->namaPegawai = $post["nama"];
+        $this->alamat = $post["alamat"];
+        $this->telepon = $post["telepon"];
         $this->role = $post["role"];
         $this->email = $post["email"];
-		$this->password = $post["password"];
+        $this->password = $post["password"];
 
-		
 
-		$this->db->where('idPegawai',$idPegawai);
-		return $this->db->update("staff_klinik", $this);
+
+        $this->db->where('idPegawai', $idPegawai);
+        return $this->db->update("staff_klinik", $this);
     }
 
     //DATA PASIEN
@@ -284,7 +338,8 @@ class m_admin extends CI_Model
     /*
 	* Method untuk menambahkan data hewan peliharaan
 	*/
-    public function saveHewan($fk){
+    public function saveHewan($fk)
+    {
         $post = $this->input->post();
 
         $this->namaHewan = $post["namaHewan"];
@@ -319,32 +374,35 @@ class m_admin extends CI_Model
     /*
 	* Method untuk mendapatkan suatu jenis hewan
 	*/
-    public function getTipeHewan(){
+    public function getTipeHewan()
+    {
         return $this->db->get('jenis_hewan')->result();
     }
 
     /*
 	* Method untuk edit data pemilik hewan
 	*/
-    public function editPemilikHewan($idPemilik){
+    public function editPemilikHewan($idPemilik)
+    {
         $post = $this->input->post();
 
         $this->noKTP = $post["noKTP"];
-		$this->namaPemilik = $post["namaPemilik"];
-		$this->alamat = $post["alamat"];
-		$this->telepon = $post["telepon"];
+        $this->namaPemilik = $post["namaPemilik"];
+        $this->alamat = $post["alamat"];
+        $this->telepon = $post["telepon"];
         $this->email = $post["email"];
-		$this->password = $post["password"];
+        $this->password = $post["password"];
 
 
-		$this->db->where('idPemilik',$idPemilik);
-		return $this->db->update("pemilik_hewan", $this);
+        $this->db->where('idPemilik', $idPemilik);
+        return $this->db->update("pemilik_hewan", $this);
     }
 
     /*
 	* Method untuk menampilkan hewan peliharaan
 	*/
-    public function getHewan($idHewan){
+    public function getHewan($idHewan)
+    {
         $this->db->where('idHewan', $idHewan);
         return $this->db->get("daftar_hewan")->row();
     }
@@ -354,7 +412,8 @@ class m_admin extends CI_Model
     /*
 	* Method untuk insert rekam medis
 	*/
-    public function buatRekamMedis($fk){
+    public function buatRekamMedis($fk)
+    {
         $post = $this->input->post();
 
         $this->gejalaKlinis = $post["gejalaKlinis"];
@@ -371,7 +430,8 @@ class m_admin extends CI_Model
     /*
 	* Method untuk menampilkan rekam medis
 	*/
-    public function getRekamMedis($idRekamMedis){
+    public function getRekamMedis($idRekamMedis)
+    {
         $this->db->where('idHewan', $idRekamMedis);
         return $this->db->get("rekam_medis")->result();
     }
