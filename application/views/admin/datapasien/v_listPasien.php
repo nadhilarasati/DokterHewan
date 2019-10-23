@@ -6,7 +6,7 @@
     <div class="card">
       <div class="card-header">
         <a class="btn btn-secondary" href="<?php echo base_url(); ?>admin/formDataPasien"><i class="fas fa-plus"></i>Registrasi</a>
-        <a class="btn btn-secondary" href=""><i class="fas fa-download"></i>Download Formulir</a>
+        <a class="btn btn-secondary" href="<?php echo base_url(); ?>laporan/formulirRegistrasi"><i class="fas fa-download"></i>Download Formulir</a>
       </div>
       <div class="card-body">
         <div class="table-responsive">
