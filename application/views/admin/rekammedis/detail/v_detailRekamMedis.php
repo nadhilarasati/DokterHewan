@@ -59,6 +59,12 @@
                                     <label for="noKTP" name="warna" class="col-sm-4 col-form-label"><?php echo $data_pet->warna ?></label>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="noKTP" class="col-sm-4 col-form-label">Status Hewan</label>
+                                <div class="col-sm-8">
+                                    <label for="noKTP" name="warna" class="col-sm-4 col-form-label"><?php echo status($data_pet->status) ?></label>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -70,18 +76,7 @@
 
         <div class="row">
             <div class="col-md-6">
-                <div class="form-group row">
-                    <label for="status" class="col-sm-4 col-form-label">Status Hewan</label>
-                    <div class="col-sm-8">
-                        <div class="input-group mb-3">
-                            <select class="custom-select" id="inputGroupSelect01">
-                                <option selected>Choose...</option>
-                                <option value="1">Hidup</option>
-                                <option value="2">Mati</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <div class="col-md-6">
                 <div style="margin-left:4cm">
@@ -278,6 +273,13 @@ function gender($code)
     }
 }
 
-
+function status($code)
+{
+    if ($code == 0) {
+        return "Hidup";
+    } else {
+        return "Mati";
+    }
+}
 
 ?>
