@@ -75,6 +75,7 @@
                                 <th>Jenis Kelamin</th>
                                 <th>Ras</th>
                                 <th>Warna</th>
+                                <th>Status</th>
                                 <th>Rekam Medis</th>
                                 <th>Ubah Data Hewan</th>
                             </tr>
@@ -89,6 +90,7 @@
                                     <td><?php echo gender($d->jenisKelamin) ?></td>
                                     <td><?php echo $d->ras ?></td>
                                     <td><?php echo $d->warna ?></td>
+                                    <td><?php echo status($d->status) ?></td>
                                     <td><a class="btn btn-primary" href="<?php echo site_url('admin/detailRekamMedis/' . $d->idHewan); ?>"><i class="fa fa-file"></i></a></td>
                                     <td></td>
                                 </tr>
@@ -193,8 +195,17 @@
                     <?php echo form_error('warna') ?>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="status" class="">Status Hewan</label>
+                <div class="input-group mb-3">
+                    <select name="status" class="custom-select" id="inputGroupSelect01">
+                        <option value="0" selected>Hidup</option>
+                        <option value="1">Mati</option>
+                    </select>
+                </div>
+            </div>
 
-            
+
 
             <div class="modal-footer">
                 <button type="submit" class="btn btn-secondary">Save</button>
@@ -251,6 +262,13 @@ function gender($code)
     }
 }
 
-
+function status($code)
+{
+    if ($code == 0) {
+        return "Hidup";
+    } else {
+        return "Mati";
+    }
+}
 
 ?>
