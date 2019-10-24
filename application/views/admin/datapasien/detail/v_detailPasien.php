@@ -195,7 +195,7 @@
                     <?php echo form_error('warna') ?>
                 </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="status" class="">Status Hewan</label>
                 <div class="input-group mb-3">
                     <select name="status" class="custom-select" id="inputGroupSelect01">
@@ -203,7 +203,7 @@
                         <option value="1">Mati</option>
                     </select>
                 </div>
-            </div>
+            </div> -->
 
 
 
