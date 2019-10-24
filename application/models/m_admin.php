@@ -96,41 +96,6 @@ class m_admin extends CI_Model
         ];
     }
 
-    public function rules_dokter()
-    {
-        return [
-            [
-                'field' => 'nama',
-                'label' => 'Nama',
-                'rules' => 'required'
-            ],
-
-
-            [
-                'field' => 'alamat',
-                'label' => 'Alamat',
-                'rules' => 'required'
-            ],
-
-            [
-                'field' => 'telepon',
-                'label' => 'Telepon',
-                'rules' => 'required'
-            ],
-
-            [
-                'field' => 'email',
-                'label' => 'Email',
-                'rules' => 'required'
-            ],
-
-            [
-                'field' => 'password',
-                'label' => 'Password',
-                'rules' => 'required'
-            ]
-        ];
-    }
 
     /*
 	* Method untuk menentukan aturan input form data hewan peliharaan
@@ -230,11 +195,6 @@ class m_admin extends CI_Model
     public function getPegawai()
     {
         return $this->db->get("staff_klinik")->result();
-    }
-
-    public function getDokter()
-    {
-        return $this->db->get("dokter")->result();
     }
 
     /*
