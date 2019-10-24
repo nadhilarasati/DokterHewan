@@ -1,27 +1,28 @@
 <?php
 
-class Admin extends CI_Controller{
+class Admin extends CI_Controller
+{
 
 
-    public function __construct() {
-		parent::__construct();
+    public function __construct()
+    {
+        parent::__construct();
         $this->load->model("m_admin");
         $this->load->library('form_validation');
 
 
-		//If not login, cannot access this.
-		// $data = $this->session->has_userdata('logged_in');
-		// if(!$data){
-		// 	redirect('admin');
-		// }
-	}
+        //If not login, cannot access this.
+        // $data = $this->session->has_userdata('logged_in');
+        // if(!$data){
+        // 	redirect('admin');
+        // }
+    }
 
     public function loginAdmin()
     {
         $data['title'] = 'Login Admin';
 
         $this->load->view('admin/login/v_loginAdmin');
-
     }
 
     /*
@@ -29,9 +30,9 @@ class Admin extends CI_Controller{
     */
 
     //lihat detail rekam medis
-    public function detailRekamMedis($idHewan=null)
+    public function detailRekamMedis($idHewan = null)
     {
-        
+
         $data['title'] = 'Detail Rekam Medis';
         $data["data_pet"] = $this->m_admin->getHewan($idHewan);
         $data["data_medis"] = $this->m_admin->getRekamMedis($idHewan);
@@ -41,19 +42,20 @@ class Admin extends CI_Controller{
     }
 
     //insert rekam medis
-    public function formRekamMedis($fk){
+    public function formRekamMedis($fk)
+    {
         $data['title'] = 'Data Pasien';
         $formmedis = $this->m_admin;
-		$validation = $this->form_validation;
-		$validation->set_rules($formmedis->rules_rekammedis());
+        $validation = $this->form_validation;
+        $validation->set_rules($formmedis->rules_rekammedis());
 
-		if ($validation->run()) {
-			$formmedis->buatRekamMedis($fk);
+        if ($validation->run()) {
+            $formmedis->buatRekamMedis($fk);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             //redirect(base_url());
         }
 
-        redirect('admin/detailRekamMedis/'.$fk);
+        redirect('admin/detailRekamMedis/' . $fk);
     }
 
     /*
@@ -61,23 +63,18 @@ class Admin extends CI_Controller{
     */
 
     //create akun pegawai baru
-    public function formDataPegawai(){
+    public function formDataPegawai()
+    {
         $formpegawai = $this->m_admin;
-		$validation = $this->form_validation;
-		$validation->set_rules($formpegawai->rules_pegawai());
+        $validation = $this->form_validation;
+        $validation->set_rules($formpegawai->rules_pegawai());
 
-		if ($validation->run()) {
-            $post = $this->input->post();
-            if($post['role']==1){
-                $formpegawai->saveDokter();
-            } else {
-                $formpegawai->savePegawai();
-            }
+        if ($validation->run()) {
+            $formpegawai->savePegawai();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             redirect(site_url('admin/dataPegawai'));
-
         }
-        
+
         
         $data['title'] = 'Form Data Pegawai';
         $this->load->view('admin/template/sidebar', $data);
@@ -86,15 +83,15 @@ class Admin extends CI_Controller{
     }
 
     //read detail data pegawai & edit data pegawai
-    public function detailDataPegawai($idPegawai=null)
+    public function detailDataPegawai($idPegawai = null)
     {
         $datapegawai = $this->m_admin;
         $validation = $this->form_validation;
         $validation->set_rules($datapegawai->rules_pegawai());
-        
+
         if ($validation->run()) {
-			$datapegawai->editPegawai($idPegawai);
-			$this->session->set_flashdata('success', 'Berhasil diperbarui');
+            $datapegawai->editPegawai($idPegawai);
+            $this->session->set_flashdata('success', 'Berhasil diperbarui');
         }
 
         $data['title'] = 'Detail Data Pegawai';
@@ -114,18 +111,8 @@ class Admin extends CI_Controller{
         $this->load->view('admin/template/sidebarfooter');
     }
 
-    // public function editDataPegawai($idPegawai=null){
-    //     $datapegawai = $this->m_admin;
-    //     $validation = $this->form_validation;
-    //     $validation->set_rules($datapegawai->rules_pegawai());
-        
-    //     if ($validation->run()) {
-	// 		$datapegawai->editPegawai($idPegawai);
-	// 		$this->session->set_flashdata('success', 'Berhasil diperbaharui');
-	// 		//redirect(site_url('admin/pariwisata/info/'.$fk));
-    //     }
-        
-        
+
+
 
     // }
 
@@ -137,13 +124,13 @@ class Admin extends CI_Controller{
     public function formDataPasien()
     {
         $formpasien = $this->m_admin;
-		$validation = $this->form_validation;
-		$validation->set_rules($formpasien->rules_pasien());
+        $validation = $this->form_validation;
+        $validation->set_rules($formpasien->rules_pasien());
 
-		if ($validation->run()) {
-			$formpasien->savePasien();
-			$this->session->set_flashdata('success', 'Berhasil disimpan');
-		}
+        if ($validation->run()) {
+            $formpasien->savePasien();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
         $data['title'] = 'Form Data Pasien';
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('admin/datapasien/form/v_regPasien');
@@ -162,25 +149,25 @@ class Admin extends CI_Controller{
 
 
     //read data pemilik hewan & hewan peliharaan
-    public function detailDataPasien($idPemilik=null)
+    public function detailDataPasien($idPemilik = null)
     {
-        
+
         $datapemilik = $this->m_admin;
         $validation = $this->form_validation;
         $validation->set_rules($datapemilik->rules_pasien());
-        
+
         if ($validation->run()) {
-			$datapemilik->editPemilikHewan($idPemilik);
-			$this->session->set_flashdata('success', 'Berhasil diperbarui');
+            $datapemilik->editPemilikHewan($idPemilik);
+            $this->session->set_flashdata('success', 'Berhasil diperbarui');
         }
 
         $data['title'] = 'Data Pasien';
         //nampilin data pemilik
         $data["data_pemilik"] = $this->m_admin->getPemilikById($idPemilik);
-    
+
         //data hewan
         $data["data_hewan"] = $this->m_admin->getHewanById($idPemilik);
-        
+
         //tipe hewan
         $data["tipe_hewan"] = $this->m_admin->getTipeHewan();
         $this->load->view('admin/template/sidebar', $data);
@@ -189,20 +176,21 @@ class Admin extends CI_Controller{
     }
 
     //nambahin hewan peliharaan di dalam data pemilik hewan
-    public function formDataHewan($fk){
+    public function formDataHewan($fk)
+    {
         $data['title'] = 'Data Pasien';
         $formhewan = $this->m_admin;
-		$validation = $this->form_validation;
-		$validation->set_rules($formhewan->rules_hewan());
+        $validation = $this->form_validation;
+        $validation->set_rules($formhewan->rules_hewan());
 
-		if ($validation->run()) {
-			$formhewan->saveHewan($fk);
+        if ($validation->run()) {
+            $formhewan->saveHewan($fk);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             //redirect(base_url());
         }
 
-        redirect('admin/detailDataPasien/'.$fk);
-        
+        redirect('admin/detailDataPasien/' . $fk);
+
         // $this->load->view('admin/template/sidebar', $data);
         // $this->load->view('admin/dataPasien/detail/v_detailPasien');
         // $this->load->view('admin/template/sidebarfooter');
@@ -217,8 +205,5 @@ class Admin extends CI_Controller{
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('admin/laporan/v_listLaporan');
         $this->load->view('admin/template/sidebarfooter');
-
     }
-
 }
-
