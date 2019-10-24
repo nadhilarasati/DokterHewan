@@ -75,7 +75,7 @@ class Admin extends CI_Controller
             redirect(site_url('admin/dataPegawai'));
         }
 
-        
+
         $data['title'] = 'Form Data Pegawai';
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('admin/datapegawai/form/v_regPegawai');
@@ -170,9 +170,11 @@ class Admin extends CI_Controller
 
         //tipe hewan
         $data["tipe_hewan"] = $this->m_admin->getTipeHewan();
-        $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/dataPasien/detail/v_detailPasien');
-        $this->load->view('admin/template/sidebarfooter');
+        // $this->load->view('admin/template/sidebar', $data);
+        // $this->load->view('admin/dataPasien/detail/v_detailPasien');
+        // $this->load->view('admin/template/sidebarfooter');
+
+        print_r($data['data_hewan']);
     }
 
     //nambahin hewan peliharaan di dalam data pemilik hewan
