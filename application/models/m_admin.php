@@ -312,7 +312,7 @@ class m_admin extends CI_Model
         $this->jenisKelamin = $post["jenisKelamin"];
         $this->ras = $post["ras"];
         $this->warna = $post["warna"];
-        $this->status = $post["status"];
+        $this->status = 0;
         $this->idTipe = $post["jenisHewan"];
 
         $this->idPemilik = $fk;
