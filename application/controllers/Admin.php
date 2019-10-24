@@ -170,11 +170,9 @@ class Admin extends CI_Controller
 
         //tipe hewan
         $data["tipe_hewan"] = $this->m_admin->getTipeHewan();
-        // $this->load->view('admin/template/sidebar', $data);
-        // $this->load->view('admin/dataPasien/detail/v_detailPasien');
-        // $this->load->view('admin/template/sidebarfooter');
-
-        print_r($data['data_hewan']);
+        $this->load->view('admin/template/sidebar', $data);
+        $this->load->view('admin/dataPasien/detail/v_detailPasien');
+        $this->load->view('admin/template/sidebarfooter');
     }
 
     //nambahin hewan peliharaan di dalam data pemilik hewan
