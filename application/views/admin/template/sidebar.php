@@ -59,12 +59,16 @@
 <body id="page-top">
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    
+        <a class="navbar-brand mr-1" href="index.html">Selamat Datang!</a>
+      
+      
+        <a href="<?php echo site_url('login/logout') ?>" class="btn btn-info" style="margin-left:30.5cm">
+          <i class="fa fa-sign-out" ></i> Log out
+        </a>
+      
+    
 
-    <a class="navbar-brand mr-1" href="index.html">Selamat Datang!</a>
-
-    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-      <i class="fas fa-bars"></i>
-    </button>
 
     <!-- Navbar Search -->
     <!-- <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -89,7 +93,7 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-    <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link active" href="<?php echo base_url(); ?>admin/dataPasien">
           <i class="fas fa-fw fa-table"></i>
           <span>Data Pasien</span></a>
@@ -100,17 +104,17 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Data Pegawai</span></a>
       </li>
-  
+
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url(); ?>admin/laporan">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Laporan Rekam Medis</span></a>
       </li>
-      
+
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url(); ?>dokter/listRekamMedis">
           <i class="fas fa-fw fa-file"></i>
           <span>Antrian Pasien</span></a>
       </li>
-      
+
     </ul>
