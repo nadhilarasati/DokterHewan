@@ -10,21 +10,23 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>ID Hewan</th>
+                                <th>Nomor Antrian</th>
                                 <th>Nama Hewan</th>
-                                <th>Jenis</th>
+                                <th>Jenis Hewan</th>
+                                <th>Status</th>
                                 <th>Detail</th>
                             </tr>
                         </thead>
                         <tbody>
 
 
-                            <?php foreach ($data_hewan as $dh) { ?>
+                            <?php foreach ($data_antrian as $da) { ?>
                                 <tr>
-                                    <td><?php echo $dh->idHewan ?></td>
-                                    <td><?php echo $dh->namaHewan ?></td>
-                                    <td><?php echo $dh->jenis ?></td>
-                                    <td><a class="btn btn-primary" href="<?php echo site_url('dokter/detailMedis/'.$dh->idHewan); ?>"><i class="fas fa-pen"></i></a></td>
+                                    <td><?php echo $da->idAntrian ?></td>
+                                    <td><?php echo $da->namaHewan ?></td>
+                                    <td><?php echo $da->jenis ?></td>
+                                    <td><?php echo status($da->status) ?></td>
+                                    <td><a class="btn btn-primary" href="<?php echo site_url('dokter/detailMedis/' . $da->idAntrian); ?>"><i class="fas fa-pen"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -36,3 +38,16 @@
     </div>
 
 </div>
+
+<?php
+
+function status($code)
+{
+    if ($code == 0) {
+        return "Belum Diperiksa";
+    } else {
+        return "Sudah Diperiksa";
+    }
+}
+
+?>
