@@ -401,4 +401,5 @@ class m_admin extends CI_Model
         $this->db->where('idHewan', $idRekamMedis);
         return $this->db->get("rekam_medis")->result();
     }
+
 }
