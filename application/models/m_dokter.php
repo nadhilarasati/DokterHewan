@@ -7,17 +7,13 @@ class m_dokter extends CI_Model{
         return $this->db->get("daftar_hewan")->row();
     }
 
-    public function getHewan()
+    public function getAntrian()
     {
-        return $this->db->get('daftar_hewan')->result();
+        return $this->db->get('list_antrian')->result();
     }
 
     public function getRekamMedis($idRekamMedis){
         $this->db->where('idHewan', $idRekamMedis);
         return $this->db->get("rekam_medis")->result();
     }
-
-    // public function getPemilik(){
-    //     return $this->db->get("pemilik_peliharaan")->result();
-    // }
 }
