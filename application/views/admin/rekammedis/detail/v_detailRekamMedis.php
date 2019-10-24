@@ -76,10 +76,7 @@
 
         <div class="row">
             <div class="col-md-6">
-                
-            </div>
-            <div class="col-md-6">
-                <div style="margin-left:4cm">
+                <div style="margin-bottom:0.5cm">
                     <button class="btn btn-secondary" id="myBtn"><i class="fas fa-plus">Tambah Record Baru</i></button>
                     <button class="btn btn-secondary"><i class="fas fa-download">Download Form Record</i></button>
                     <!--<button class="btn btn-secondary">Delete Record</button>-->
