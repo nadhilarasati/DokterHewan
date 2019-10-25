@@ -1,26 +1,25 @@
 <?php
 
-class Dokter extends CI_Controller{
-    public function __construct() {
-		parent::__construct();
+class Dokter extends CI_Controller
+{
+    public function __construct()
+    {
+        parent::__construct();
         $this->load->model("m_dokter");
-        $this->load->library('form_validation');
-
-
-		//If not login, cannot access this.
-		// $data = $this->session->has_userdata('logged_in');
-		// if(!$data){
-		// 	redirect('admin');
-		// }
-	}
+        // $this->load->library('form_validation');
+        // if ($this->session->userdata('logged_in') !== TRUE) {
+        //     redirect('login');
+        // }
+    }
     /*
     * REKAM MEDIS DOKTER
     */
 
     //lihat rekam medis
+
     public function listRekamMedis()
     {
-        
+
         $data['title'] = 'Rekam Medis';
         $data["data_antrian"] = $this->m_dokter->getAntrian();
         $this->load->view('admin/template/sidebar', $data);
@@ -29,9 +28,9 @@ class Dokter extends CI_Controller{
     }
 
     //lihat detail rekam medis
-    public function detailMedis($idHewan=null)
+    public function detailMedis($idHewan = null)
     {
-        
+
         $data['title'] = 'Rekam Medis';
         //$data["data_owner"] = $this->m_dokter->getPemilik($idHewan);
         $data["data_pet"] = $this->m_dokter->getHewanById($idHewan);
