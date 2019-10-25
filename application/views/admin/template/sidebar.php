@@ -60,44 +60,22 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="">Selamat Datang <?php echo $this->session->userdata('username');?>!</a>
+    <a class="navbar-brand mr-1" style="font-size:25px;cursor:pointer" onclick="openNav()"href="">&#9776 Selamat Datang <?php echo $this->session->userdata('username'); ?>!</a>
 
 
-    <a href="<?php echo site_url('login/logout') ?>" class="btn btn-info" style="margin-left:70%">
+    <a href="<?php echo site_url('login/logout') ?>" class="btn btn-info" style="margin-left:65%">
       <i class="fa fa-sign-out"></i> Log out
     </a>
-
-
-
-
-    <!-- Navbar Search -->
-    <!-- <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form> -->
-
-    <!-- Navbar -->
-    <ul class="navbar-nav ml-auto ml-md-0">
-
-    </ul>
-
   </nav>
 
-  <div id="wrapper">
-
-
-
+  <div class="wrapper sidenav" id="mySidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <ul class="sidebar navbar-nav">
       <!-- Menu untuk paramedis -->
       <?php if ($this->session->userdata('role') === '2') : ?>
+
         <li class="nav-item">
-          <a class="nav-link active" href="<?php echo base_url(); ?>admin/dataPasien">
+          <a class="nav-link" href="<?php echo base_url(); ?>admin/dataPasien">
             <i class="fas fa-fw fa-table"></i>
             <span>Data Pasien</span></a>
         </li>
@@ -113,14 +91,66 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Laporan Rekam Medis</span></a>
         </li>
-
-        <?php elseif ($this->session->userdata('role') === '1') : ?>
+        <!-- Menu untuk dokter -->
+      <?php elseif ($this->session->userdata('role') === '1') : ?>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>dokter/listRekamMedis">
             <i class="fas fa-fw fa-file"></i>
             <span>Antrian Pasien</span></a>
         </li>
+      <?php endif; ?>
     </ul>
-  <?php endif; ?>
   </div>
 </body>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+<style>
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
