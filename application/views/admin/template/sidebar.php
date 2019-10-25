@@ -59,15 +59,15 @@
 <body id="page-top">
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-    
-        <a class="navbar-brand mr-1" href="index.html">Selamat Datang!</a>
-      
-      
-        <a href="<?php echo site_url('login/logout') ?>" class="btn btn-info" style="margin-left:30.5cm">
-          <i class="fa fa-sign-out" ></i> Log out
-        </a>
-      
-    
+
+    <a class="navbar-brand mr-1" href="">Selamat Datang <?php echo $this->session->userdata('username');?>!</a>
+
+
+    <a href="<?php echo site_url('login/logout') ?>" class="btn btn-info" style="margin-left:70%">
+      <i class="fa fa-sign-out"></i> Log out
+    </a>
+
+
 
 
     <!-- Navbar Search -->
@@ -91,30 +91,36 @@
 
   <div id="wrapper">
 
-    <!-- Sidebar -->
+
+
     <ul class="sidebar navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="<?php echo base_url(); ?>admin/dataPasien">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Data Pasien</span></a>
-      </li>
+      <!-- Menu untuk paramedis -->
+      <?php if ($this->session->userdata('role') === '2') : ?>
+        <li class="nav-item">
+          <a class="nav-link active" href="<?php echo base_url(); ?>admin/dataPasien">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Data Pasien</span></a>
+        </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>admin/dataPegawai">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Data Pegawai</span></a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>admin/dataPegawai">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Data Pegawai</span></a>
+        </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>admin/laporan">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Laporan Rekam Medis</span></a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>admin/laporan">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Laporan Rekam Medis</span></a>
+        </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>dokter/listRekamMedis">
-          <i class="fas fa-fw fa-file"></i>
-          <span>Antrian Pasien</span></a>
-      </li>
-
+        <?php elseif ($this->session->userdata('role') === '1') : ?>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>dokter/listRekamMedis">
+            <i class="fas fa-fw fa-file"></i>
+            <span>Antrian Pasien</span></a>
+        </li>
     </ul>
+  <?php endif; ?>
+  </div>
+</body>
