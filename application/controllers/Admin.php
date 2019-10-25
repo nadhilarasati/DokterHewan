@@ -141,13 +141,9 @@ class Admin extends CI_Controller
     {
         $data['title'] = 'Data Pasien';
         $data['daftar_pemilik'] = $this->m_admin->getPemilikHewan();
-        if ($this->session->userdata('role') === '2') {
-            $this->load->view('admin/template/sidebar', $data);
-            $this->load->view('admin/dataPasien/v_listPasien');
-            $this->load->view('admin/template/sidebarfooter');
-        } else {
-            echo "Access Denied";
-        }
+        $this->load->view('admin/template/sidebar', $data);
+        $this->load->view('admin/dataPasien/v_listPasien');
+        $this->load->view('admin/template/sidebarfooter');
     }
 
 
