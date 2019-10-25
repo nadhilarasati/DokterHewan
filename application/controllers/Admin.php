@@ -9,13 +9,9 @@ class Admin extends CI_Controller
         parent::__construct();
         $this->load->model("m_admin");
         $this->load->library('form_validation');
-
-
-        //If not login, cannot access this.
-        // $data = $this->session->has_userdata('logged_in');
-        // if(!$data){
-        // 	redirect('admin');
-        // }
+        if ($this->session->userdata('logged_in') !== TRUE) {
+            redirect('login');
+        }
     }
 
     public function loginAdmin()
@@ -24,6 +20,9 @@ class Admin extends CI_Controller
 
         $this->load->view('admin/login/v_loginAdmin');
     }
+
+
+
 
     /*
     * REKAM MEDIS
@@ -142,9 +141,13 @@ class Admin extends CI_Controller
     {
         $data['title'] = 'Data Pasien';
         $data['daftar_pemilik'] = $this->m_admin->getPemilikHewan();
-        $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/dataPasien/v_listPasien');
-        $this->load->view('admin/template/sidebarfooter');
+        if ($this->session->userdata('role') === '2') {
+            $this->load->view('admin/template/sidebar', $data);
+            $this->load->view('admin/dataPasien/v_listPasien');
+            $this->load->view('admin/template/sidebarfooter');
+        } else {
+            echo "Access Denied";
+        }
     }
 
 
