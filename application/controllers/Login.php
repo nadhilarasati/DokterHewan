@@ -9,41 +9,70 @@ class Login extends CI_Controller
         $this->load->library('form_validation');
     }
 
-    function index(){
-		$this->load->view('admin/login/v_loginAdmin');
-	}
-
-    function aksi_login(){
-		$email = $this->input->post('email');
-		$password = $this->input->post('password');
-		$where = array(
-			'email' => $email,
-			'password' => $password
-			);
-		$cek = $this->m_login->cek_login("staff_klinik",$where)->num_rows();
-		if($cek > 0){
- 
-			$data_session = array(
-				// 'nama' => $email,
-                'logged_in' => TRUE
-				);
- 
-			$this->session->set_userdata($data_session);
- 
-			redirect(base_url("admin/dataPasien"));
- 
-		}else{
-            $this->session->set_flashdata('wrong', 'Password salah!');
-            redirect(base_url('login'));
-		}
+    function index()
+    {
+        $this->load->view('admin/login/v_loginAdmin');
     }
 
-    private function setLogoutSession(){
-        $this->session->unset_userdata('logged_in');
-      }
-    
-    function logout(){
-		$this->setLogoutSession();
-		redirect(base_url('login'));
-	}
+    function loginAuth()
+    {
+        $email    = $this->input->post('email', TRUE);
+        $password = $this->input->post('password', TRUE);
+        $validate = $this->m_login->validate($email, $password);
+        if ($validate->num_rows() > 0) {
+            $data  = $validate->row_array();
+            $name  = $data['namaPegawai'];
+            $email = $data['email'];
+            $role = $data['role'];
+            $sesdata = array(
+                'username'  => $name,
+                'email'     => $email,
+                'role'     => $role,
+                'logged_in' => TRUE
+            );
+            $this->session->set_userdata($sesdata);
+            // access login for paramedis
+            if ($role === '1') {
+                redirect('dokter/listRekamMedis');
+
+                // access login for dokter
+            } elseif ($role === '2') {
+                redirect('admin/dataPasien');
+            }
+        } else {
+            echo $this->session->set_flashdata('msg', 'Username or Password is Wrong');
+            redirect('login');
+        }
+    }
+
+    function aksi_login()
+    {
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        $where = array(
+            'email' => $email,
+            'password' => $password
+        );
+        $cek = $this->m_login->cek_login("staff_klinik", $where)->num_rows();
+        if ($cek > 0) {
+
+            $data_session = array(
+                // 'nama' => $email,
+                'logged_in' => TRUE
+            );
+
+            $this->session->set_userdata($data_session);
+
+            redirect(base_url("admin/dataPasien"));
+        } else {
+            $this->session->set_flashdata('wrong', 'Password salah!');
+            redirect(base_url('login'));
+        }
+    }
+
+    function logout()
+    {
+        $this->session->sess_destroy();
+        redirect(base_url('login'));
+    }
 }
