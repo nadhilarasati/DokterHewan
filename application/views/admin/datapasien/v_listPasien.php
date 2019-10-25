@@ -6,18 +6,18 @@
     <div class="card">
       <div class="card-header">
         <div class="row">
-        <div class="col-md-8">
-            
-              <a class="btn btn-secondary" href="<?php echo base_url(); ?>admin/formDataPasien"><i class="fas fa-plus"></i>Registrasi</a>
-              <a class="btn btn-secondary" href="<?php echo base_url(); ?>laporan/formulirRegistrasi"><i class="fas fa-download"></i>Download Formulir</a>
-            
+          <div class="col-md-8">
+
+            <a class="btn btn-secondary" href="<?php echo base_url(); ?>admin/formDataPasien"><i class="fas fa-plus"></i>Registrasi</a>
+            <a class="btn btn-secondary" href="<?php echo base_url(); ?>laporan/formulirRegistrasi"><i class="fas fa-download"></i>Download Formulir</a>
+
 
           </div>
           <div class="col-md-4">
             <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
           </div>
 
-          
+
         </div>
 
 
@@ -65,9 +65,8 @@
 </div>
 
 
-<!-- <script type="text/javascript" src="<?php echo base_url();?>/lib/js/addons/datatables.min.js"></script> -->
+<!-- <script type="text/javascript" src="<?php echo base_url(); ?>/lib/js/addons/datatables.min.js"></script> -->
 <script>
-  
   function myFunction() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
