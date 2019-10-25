@@ -47,8 +47,8 @@
                                 <?php endif; ?>
                             </div>
                             <div class="card-body">
-                                <?php echo form_open('login/aksi_login'); ?>
-                                <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" action="<?php echo base_url('login/aksi_login'); ?>" method="POST">
+                                <?php echo form_open('login/loginAuth'); ?>
+                                <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" action="<?php echo base_url('login/loginAuth'); ?>" method="POST">
                                     <div class="form-group">
                                         <label for="uname1">Email</label>
                                         <input type="text" class="form-control form-control-lg rounded-0" name="email" id="email" value="<?=set_value('email')?>"required="required">
@@ -59,7 +59,7 @@
                                         <input type="password" name="password" class="form-control form-control-lg rounded-0" id="password" required="required" autocomplete="new-password">
                                         <div class="invalid-feedback">Enter your password too!</div>
                                     </div>
-                                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin" href="<?php echo base_url('admin/dataPasien') ?>">Login</button>
+                                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin" href="">Login</button>
                                 </form>
                                 <?php echo form_close(); ?>
                             </div>
