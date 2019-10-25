@@ -52,12 +52,10 @@
                                     <div class="form-group">
                                         <label for="uname1">Email</label>
                                         <input type="text" class="form-control form-control-lg rounded-0" name="email" id="email" value="<?=set_value('email')?>"required="required">
-                                        <div class="invalid-feedback">Oops, you missed this one.</div>
                                     </div>
                                     <div class="form-group">
                                         <label>Password</label>
                                         <input type="password" name="password" class="form-control form-control-lg rounded-0" id="password" required="required" autocomplete="new-password">
-                                        <div class="invalid-feedback">Enter your password too!</div>
                                     </div>
                                     <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin" href="">Login</button>
                                 </form>
