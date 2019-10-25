@@ -10672,6 +10672,7 @@ body {
   width: 90px !important;
   background-color: #212529;
   min-height: calc(100vh - 56px);
+  position: fixed;
 }
 
 .sidebar .nav-item:last-child {
@@ -10912,3 +10913,4 @@ body.sidebar-toggled footer.sticky-footer {
     width: calc(100% - 90px);
   }
 }
+
