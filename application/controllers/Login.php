@@ -24,8 +24,8 @@ class Login extends CI_Controller
 		if($cek > 0){
  
 			$data_session = array(
-				'nama' => $email,
-				'status' => "login"
+				// 'nama' => $email,
+                'logged_in' => TRUE
 				);
  
 			$this->session->set_userdata($data_session);
@@ -33,12 +33,17 @@ class Login extends CI_Controller
 			redirect(base_url("admin/dataPasien"));
  
 		}else{
-			echo "Username dan Password Salah!";
+            $this->session->set_flashdata('wrong', 'Password salah!');
+            redirect(base_url('login'));
 		}
     }
 
+    private function setLogoutSession(){
+        $this->session->unset_userdata('logged_in');
+      }
+    
     function logout(){
-		$this->session->sess_destroy();
+		$this->setLogoutSession();
 		redirect(base_url('login'));
 	}
 }
