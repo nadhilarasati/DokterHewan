@@ -1,6 +1,6 @@
-<div id="content-wrapper">
+<div id="content-wrapper" style="float:right; width:80vw">
     <div class="container-fluid">
-        <h2 class="text-center" style="margin-bottom:1cm; margin-top:1cm">Registrasi Pasien Baru</h2>
+        <h2 class="text-center" style="margin-bottom:1cm; margin-top:3cm">Registrasi Pasien Baru</h2>
         <form class="data-pasien" action="<?php site_url('admin/formDataPasien'); ?>" method="post" enctype="multipart/form-data">
             <div class="row">
 
