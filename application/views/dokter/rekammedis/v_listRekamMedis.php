@@ -1,9 +1,9 @@
-<div id="content-wrapper">
+<div id="content-wrapper" style="float:right; width:80vw">
 
     <div class="container-fluid">
 
         <!-- DataTables Example -->
-        <div class="card">
+        <div class="card" style="margin-top: 80px;">
 
             <div class="card-body">
                 <div class="table-responsive">
