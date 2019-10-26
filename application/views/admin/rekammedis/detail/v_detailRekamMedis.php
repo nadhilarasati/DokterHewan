@@ -1,7 +1,7 @@
-<div id="content-wrapper">
+<div id="content-wrapper" style="float:right; width:80vw">
     <div class="container-fluid">
         <form class="data-pasien" action="<?php site_url('admin/detailRekamMedis/' . $data_pet->idHewan); ?>" method="post">
-            <h2 class="text-center" style="margin-bottom:2cm; margin-top:1cm">Rekam Medis Pasien</h2>
+            <h2 class="text-center" style="margin-bottom:2cm; margin-top:3cm">Rekam Medis Pasien</h2>
             <?php if ($this->session->flashdata('success')) : ?>
                 <div class="alert alert-success" role="alert">
                     <?php echo $this->session->flashdata('success'); ?>
