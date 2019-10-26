@@ -1,7 +1,7 @@
 <div id="content-wrapper">
-    <div class="container-fluid">
+    <div class="container-fluid" style="float:right; width:80vw">
         <form class="data-pasien" action="<?php site_url('admin/detailDataPegawai/' . $data_pegawai->idPegawai); ?>" method="post">
-            <h2 class="text-center" style="margin-bottom:2cm">Data Pegawai</h2>
+            <h2 class="text-center"style="margin-bottom:2cm">Data Pegawai</h2>
 
             <?php if ($this->session->flashdata('success')) : ?>
                 <div class="alert alert-success" role="alert">
