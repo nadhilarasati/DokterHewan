@@ -58,9 +58,9 @@
 
 <body id="page-top">
 
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top" style="position: fixed; width: 100vw;z-index: 10;">
 
-    <a class="navbar-brand mr-1" style="font-size:25px;cursor:pointer" onclick="openNav()"href="">&#9776 Selamat Datang <?php echo $this->session->userdata('username'); ?>!</a>
+    <a class="navbar-brand mr-1" style="font-size:25px;cursor:pointer; color:#f1f1f1">&#9776;Selamat Datang <?php echo $this->session->userdata('username'); ?>!</a>
 
 
     <a href="<?php echo site_url('login/logout') ?>" class="btn btn-info" style="margin-left:65%">
@@ -68,14 +68,14 @@
     </a>
   </nav>
 
+
   <div class="wrapper sidenav" id="mySidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <ul class="sidebar navbar-nav">
+    <ul class="sidebar navbar-nav" style="width:20vw !important">
       <!-- Menu untuk paramedis -->
       <?php if ($this->session->userdata('role') === '2') : ?>
-
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url(); ?>admin/dataPasien">
+          <a class="nav-link active" href="<?php echo base_url(); ?>admin/dataPasien">
             <i class="fas fa-fw fa-table"></i>
             <span>Data Pasien</span></a>
         </li>
@@ -91,29 +91,23 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Laporan Rekam Medis</span></a>
         </li>
-        <!-- Menu untuk dokter -->
-      <?php elseif ($this->session->userdata('role') === '1') : ?>
+      <!-- Menu untuk dokter -->
+        <?php elseif ($this->session->userdata('role') === '1') : ?>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>dokter/listRekamMedis">
             <i class="fas fa-fw fa-file"></i>
             <span>Antrian Pasien</span></a>
         </li>
-      <?php endif; ?>
+        <?php endif; ?>
     </ul>
+    
   </div>
 </body>
 
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-</script>
-
 <style>
+body {
+  font-family: "Lato", sans-serif;
+}
 
 .sidenav {
   height: 100%;
@@ -154,3 +148,13 @@ function closeNav() {
   .sidenav a {font-size: 18px;}
 }
 </style>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
