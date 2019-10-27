@@ -57,6 +57,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('pages/login') ?>">LOGIN</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url('pages/profile') ?>">PROFILE</a>
+                </li>
                 
             </ul>
             <ul class="navbar-nav right-item">
