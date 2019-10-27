@@ -1,73 +1,74 @@
 <div id="content-wrapper" style="float:right; width:80vw">
     <div class="container-fluid">
-        <form class="data-pasien" action="<?php site_url('admin/detailDataPasien/' . $data_pemilik->idPemilik); ?>" method="post">
-            <h2 class="text-center" style="margin-bottom:2cm; margin-top:3cm">Data Pasien</h2>
-            <?php if ($this->session->flashdata('success')) : ?>
-                <div class="alert alert-success" role="alert">
-                    <?php echo $this->session->flashdata('success'); ?>
-                </div>
-            <?php endif; ?>
-            <div class="row">
-                <div class="col-md-6" >
-                    <h3 style="margin-bottom:1cm">Data Pemilik Hewan</h3>
-                    <div class="form-group row">
-                        <label for="idPemilik" class="col-sm-4 col-form-label">ID Pemilik Hewan</label>
-                        <div class="col-sm-8">
-                            <input type="text" name="idPemilik" class="form-control" id="" value="<?php echo $data_pemilik->idPemilik ?>" readonly>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="noKTP" class="col-sm-4 col-form-label">No. KTP</label>
-                        <div class="col-sm-8">
-                            <input type="text" name="noKTP" class="form-control" id="" value="<?php echo $data_pemilik->noKTP ?>">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="namaPemilik" class="col-sm-4 col-form-label">Nama Pemilik Hewan</label>
-                        <div class="col-sm-8">
-                            <input type="text" name="namaPemilik" class="form-control" id="" value="<?php echo $data_pemilik->namaPemilik ?>">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="alamat" class="col-sm-4 col-form-label">Alamat</label>
-                        <div class="col-sm-8">
-                            <input type="text" name="alamat" class="form-control" id="" value="<?php echo $data_pemilik->alamat ?>">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="telepon" class="col-sm-4 col-form-label">No. Telepon</label>
-                        <div class="col-sm-8">
-                            <input type="text" name="telepon" class="form-control" value="<?php echo $data_pemilik->telepon ?>">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="email" class="col-sm-4 col-form-label">Email</label>
-                        <div class="col-sm-8">
-                            <input type="text" name="email" class="form-control" id="" value="<?php echo $data_pemilik->email ?>">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="password" class="col-sm-4 col-form-label">Password</label>
-                        <div class="col-sm-8">
-                            <input id="pw" type="password" name="password" class="form-control " id="" value="<?php echo $data_pemilik->password ?>">
-                            <span toggle="#pw" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-secondary" style="margin-top:0.5cm">Simpan</button>
-                </div>
-            </div>
-        </form>
-
-
-
         <div class="row">
             <div class="col">
+                <form class="data-pasien" action="<?php site_url('admin/detailDataPasien/' . $data_pemilik->idPemilik); ?>" method="post">
+                    <h2 class="text-center" style="margin-bottom:2cm; margin-top:3cm">Data Pasien</h2>
+                    <?php if ($this->session->flashdata('success')) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 style="margin-bottom:1cm">Data Pemilik Hewan</h3>
+                            <div class="form-group row">
+                                <label for="idPemilik" class="col-sm-4 col-form-label">ID Pemilik Hewan</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="idPemilik" class="form-control" id="" value="<?php echo $data_pemilik->idPemilik ?>" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="noKTP" class="col-sm-4 col-form-label">No. KTP</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="noKTP" class="form-control" id="" value="<?php echo $data_pemilik->noKTP ?>">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="namaPemilik" class="col-sm-4 col-form-label">Nama Pemilik Hewan</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="namaPemilik" class="form-control" id="" value="<?php echo $data_pemilik->namaPemilik ?>">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="alamat" class="col-sm-4 col-form-label">Alamat</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="alamat" class="form-control" id="" value="<?php echo $data_pemilik->alamat ?>">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="telepon" class="col-sm-4 col-form-label">No. Telepon</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="telepon" class="form-control" value="<?php echo $data_pemilik->telepon ?>">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="email" class="col-sm-4 col-form-label">Email</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="email" class="form-control" id="" value="<?php echo $data_pemilik->email ?>">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="password" class="col-sm-4 col-form-label">Password</label>
+                                <div class="col-sm-8">
+                                    <input id="pw" type="password" name="password" class="form-control " id="" value="<?php echo $data_pemilik->password ?>">
+                                    <span toggle="#pw" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-secondary" style="margin-top:0.5cm">Simpan</button>
+                        </div>
+                    </div>
+                </form>
+
+
+
+
                 <h3 style="margin-bottom:1cm; margin-top:1cm">Data Hewan Peliharaan</h3>
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <tr>
-                                <th>ID</th>
+                            <tr class="text-center">
+                                <th>ID Hewan</th>
                                 <th>Nama Hewan</th>
                                 <th>Jenis Hewan</th>
                                 <th>Tanggal Lahir</th>
@@ -81,7 +82,7 @@
                         </thead>
                         <tbody>
                             <?php foreach ($data_hewan as $d) { ?>
-                                <tr>
+                                <tr class="text-center">
                                     <td><?php echo $d->idHewan ?></td>
                                     <td><?php echo $d->namaHewan ?></td>
                                     <td><?php echo $d->jenis ?></td>
@@ -140,7 +141,7 @@
                 <label for="jenisHewan" class="">Jenis Hewan</label>
                 <div class="input-group mb-3">
                     <select name="jenisHewan" class="custom-select" id="inputGroupSelect01">
-                        <option selected>Choose...</option>
+                        <option selected>Pilih...</option>
                         <?php foreach ($tipe_hewan as $th) { ?>
                             <option value="<?php echo $th->idJenis ?>"><?php echo $th->jenis ?></option>
                         <?php } ?>
