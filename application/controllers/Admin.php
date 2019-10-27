@@ -129,6 +129,7 @@ class Admin extends CI_Controller
         if ($validation->run()) {
             $formpasien->savePasien();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
+            redirect(site_url('admin/dataPasien'));
         }
         $data['title'] = 'Form Data Pasien';
         $this->load->view('admin/template/sidebar', $data);
