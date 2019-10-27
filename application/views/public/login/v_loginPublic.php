@@ -20,7 +20,7 @@
                                         <input name="password" type="password" class="form-control form-control-lg rounded-0" id="pwd1" required="" autocomplete="new-password">
                                         <div class="invalid-feedback">Enter your password too!</div>
                                     </div>
-                                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Login</button>
+                                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin" href="<?php echo base_url('UserProfile/seeProfile'); ?>">Login</button>
                                 </form>
                             </div>
                         </div>
