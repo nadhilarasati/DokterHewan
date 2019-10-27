@@ -65,7 +65,7 @@
 
 
     <div style="width:100%">
-      <a class="navbar-brand mr-1" style="font-size:25px;cursor:pointer; color:#f1f1f1">&#9776;Selamat Datang <?php echo $this->session->userdata('username'); ?>!</a>
+      <a class="navbar-brand mr-1" style="font-size:20px;cursor:pointer; color:#f1f1f1">&#9776; Selamat Datang <?php echo $this->session->userdata('username'); ?>!</a>
 
       <a href="<?php echo site_url('login/logout') ?>" class="btn btn-info" style="float:right">
         <i class="fa fa-sign-out"></i> Log out
@@ -74,8 +74,7 @@
   </nav>
 
 
-  <div class="wrapper sidenav" id="mySidenav" style="width:250px">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="wrapper sidenav" style="width:250px">
     <ul class="sidebar navbar-nav" style="width:20vw !important">
       <!-- Menu untuk paramedis -->
       <?php if ($this->session->userdata('role') === '2') : ?>
@@ -158,13 +157,3 @@
     }
   }
 </style>
-
-<script>
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-  }
-
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
-</script>
