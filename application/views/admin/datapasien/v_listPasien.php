@@ -27,9 +27,9 @@
         <div class="table-responsive">
           <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
             <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nama</th>
+              <tr class="text-center">
+                <th>ID Pemilik</th>
+                <th>Nama Pemilik</th>
                 <th>Alamat</th>
                 <th>No. Telepon</th>
                 <th>Action</th>
@@ -37,7 +37,7 @@
             </thead>
             <tbody>
               <?php foreach ($daftar_pemilik as $d) { ?>
-                <tr>
+                <tr class="text-center">
                   <td>
                     <?php echo $d->idPemilik ?>
                   </td>
