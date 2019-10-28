@@ -46,10 +46,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="<?php echo base_url('pages/aboutus') ?>">ABOUT US</a>
+                    <a class="nav-link " href="<?php echo base_url('pages/aboutus') ?>">TENTANG KAMI</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('pages/facilities') ?>">FACILITIES</a>
+                    <a class="nav-link" href="<?php echo base_url('pages/facilities') ?>">FASILITAS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">EVENTS</a>
@@ -57,9 +57,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('pages/login') ?>">LOGIN</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('pages/profile') ?>">PROFILE</a>
-                </li>
+                </li> -->
                 
             </ul>
             <ul class="navbar-nav right-item">
