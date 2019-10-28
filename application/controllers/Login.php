@@ -45,31 +45,6 @@ class Login extends CI_Controller
         }
     }
 
-    function aksi_login()
-    {
-        $email = $this->input->post('email');
-        $password = $this->input->post('password');
-        $where = array(
-            'email' => $email,
-            'password' => $password
-        );
-        $cek = $this->m_login->cek_login("staff_klinik", $where)->num_rows();
-        if ($cek > 0) {
-
-            $data_session = array(
-                // 'nama' => $email,
-                'logged_in' => TRUE
-            );
-
-            $this->session->set_userdata($data_session);
-
-            redirect(base_url("admin/dataPasien"));
-        } else {
-            $this->session->set_flashdata('wrong', 'Password salah!');
-            redirect(base_url('login'));
-        }
-    }
-
     function logout()
     {
         $this->session->sess_destroy();
