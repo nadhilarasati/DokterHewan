@@ -24,12 +24,12 @@ class LoginUser extends CI_Controller{
         if ($cek > 0) {
 
             $data_session = array(
-                'nama' => $email,
+                'namaPemilik' => $email,
                 'logged_in' => TRUE
             );
 
             $this->session->set_userdata($data_session);
-            redirect(base_url("pages/index"));
+            redirect(base_url("pages/profile"));
         } else {
             $this->session->set_flashdata('wrong', 'Password salah!');
             redirect(base_url('pages/login'));
