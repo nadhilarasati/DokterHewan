@@ -18,11 +18,6 @@ class UserProfile extends CI_Controller
         //     redirect('pages/login');
         // }
     }
-
-
-    public function afterLogin(){
-        
-    }
     
     public function seeProfile()
     {
