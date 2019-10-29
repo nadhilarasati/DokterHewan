@@ -23,6 +23,7 @@ class UserProfile extends CI_Controller
     {
         $data['title'] = 'Profile';
         $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebarProfile', $data);
         $this->load->view('public/profile/v_userProfile');
         $this->load->view('templates/footer');
     }
