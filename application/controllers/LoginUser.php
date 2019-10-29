@@ -32,8 +32,7 @@ class LoginUser extends CI_Controller{
             redirect("pages/index");
         } else {
             $this->session->set_flashdata('wrong', 'Password salah!');
-            print_r($cek);
-            //redirect('pages/about');
+            redirect('pages/login');
         }
     }
 
