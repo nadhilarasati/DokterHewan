@@ -1,7 +1,7 @@
-<div class="bc" style="float:right; width:70vw">
-    <div class="card" style="margin-top:50px; margin-left:30px; margin-right:30px; background-color: #ffcccc">
+<div class="bc" style="float:right; width:70vw; height:100%">
+    <div class="card" style="margin-top:50px; margin-left:30px; margin-right:30px; margin-bottom: 30px; background-color: #ffcccc">
         <h4 style="margin-left:20px; margin-top:20px">Ini adalah data diri anda sebagai pemilik hewan!</h4>
-        <p style="margin-left:20px">Anda hanya bisa mengubah password anda. Jika terjadi kesalahan data diri, silahkan hubungi pihak klinik.</p>
+        <p style="margin-left:20px">Anda hanya bisa mengubah password anda. Jika terjadi kesalahan data lain, silahkan hubungi pihak klinik.</p>
         <div class="row" style="margin-top:20px">
             <div class="col" style="margin-left:20px">
                 <div class="form-group row">
