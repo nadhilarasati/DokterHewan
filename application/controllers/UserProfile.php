@@ -27,4 +27,22 @@ class UserProfile extends CI_Controller
         $this->load->view('public/profile/v_userProfile');
         $this->load->view('templates/footer');
     }
+
+    public function seePets()
+    {
+        $data['title'] = 'Profile';
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebarProfile', $data);
+        $this->load->view('public/profile/v_petsProfile');
+        $this->load->view('templates/footer');
+    }
+
+    public function seeDetail()
+    {
+        $data['title'] = 'Profile';
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebarProfile', $data);
+        $this->load->view('public/profile/v_detail');
+        $this->load->view('templates/footer');
+    }
 }
