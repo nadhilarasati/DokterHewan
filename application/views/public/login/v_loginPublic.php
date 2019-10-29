@@ -17,8 +17,8 @@
                                 <?php echo form_open('LoginUser/aksi_login'); ?>
                                 <form class="form" action="<?php echo base_url('LoginUser/aksi_login'); ?>" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST">
                                     <div class="form-group">
-                                        <label for="uname1">Email</label>
-                                        <input name="email " type="text" class="form-control form-control-lg rounded-0" required="required">
+                                        <label for="email">Email</label>
+                                        <input name="email " type="text" class="form-control form-control-lg rounded-0" required="required" autocomplete="new-email">
                                         <div class="invalid-feedback">Oops, you missed this one.</div>
                                     </div>
                                     <div class="form-group">
