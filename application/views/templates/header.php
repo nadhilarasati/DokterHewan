@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>lib/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>lib/css/style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>lib/css/responsive.css">
-    
+
 
 
 
@@ -38,10 +38,10 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-            <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse " id="navbarSupportedContent-333">
+            <ul class="navbar-nav mr-auto navbar">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url()?>">HOME
+                    <a class="nav-link" href="<?php echo base_url() ?>">HOME
                         <!-- <span class="sr-only">(current)</span> -->
                     </a>
                 </li>
@@ -52,34 +52,69 @@
                     <a class="nav-link" href="<?php echo base_url('pages/facilities') ?>">FASILITAS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">EVENTS</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('pages/login') ?>">LOGIN</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('pages/profile') ?>">PROFILE</a>
-                </li> -->
-                
-            </ul>
-            <ul class="navbar-nav right-item">
-                <!-- <li class="nav-item">
-                    <a class="nav-link">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                </li>
                 <li class="nav-item">
-                    <a class="nav-link">
-                        <i class="fa fa-twitter"></i>
-                    </a>
+                    <div class="dropdown">
+                        <button class="dropbtn">PROFILE
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="<?php echo base_url('UserProfile/seeProfile')?>">Lihat Profile</a>
+                            <a href="#">Logout</a>
+                        </div>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                </li> -->
-                
             </ul>
         </div>
     </nav>
-</div>
+</body>
+
+<style>
+
+    .navbar a {
+        padding: 14px 16px;
+    }
+
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+        background-color: teal;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>
