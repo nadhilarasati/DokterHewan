@@ -17,7 +17,6 @@ class Admin extends CI_Controller
     public function loginAdmin()
     {
         $data['title'] = 'Login Admin';
-
         $this->load->view('admin/login/v_loginAdmin');
     }
 
