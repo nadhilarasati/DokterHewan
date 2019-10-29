@@ -1,4 +1,4 @@
-<div class="bg" style="float:left; width:30vw">
+<div class="bg" style="float:left; width:30vw; position:fixed">
     <div class="menu" style="margin-top:200px; margin-left:40px">
         <h2>Selamat Datang!</h2>
         <div class="row">
@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <a href="#" class="nav-link ">Data Hewan Peliharaan</a>
+                <a href="<?php echo base_url('UserProfile/seePets') ?>" class="nav-link ">Data Hewan Peliharaan</a>
             </div>
         </div>
     </div>
@@ -47,6 +47,5 @@
 
     .bc {
         background-color: rgb(255, 249, 229);
-        height: 100%;
     }
 </style>
