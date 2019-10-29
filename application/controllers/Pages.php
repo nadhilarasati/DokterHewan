@@ -41,14 +41,6 @@ class Pages extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function profile()
-    {
-        $data['title'] = 'Profile';
-        $this->load->view('templates/headerLogin', $data);
-        $this->load->view('public/login/v_userProfile');
-        $this->load->view('templates/footer');
-    }
-
     // ADMIN PAGE
     
 }
