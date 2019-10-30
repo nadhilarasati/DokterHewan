@@ -7,16 +7,7 @@ class UserProfile extends CI_Controller
         parent::__construct();
         $this->load->model("m_user");
         $this->load->library('form_validation');
-        // if($this->session->userdata('status') != "login"){
-		// 	redirect(base_url("pages/login"));
-		// }
-        // if ($this->session->userdata('logged_in') == TRUE) {
-        //     $this->load->view('templates/headerLogin');
-        //     $this->load->view('public/profile/v_userProfile');
-        //     $this->load->view('templates/footer');
-        // } else {
-        //     redirect('pages/login');
-        // }
+        
     }
 
     //Navbar Login
@@ -48,10 +39,11 @@ class UserProfile extends CI_Controller
 
     //profile
     
-    public function seeProfile()
+    public function seeProfile($idPemilik=null)
     {
         $data['title'] = 'Profile';
-        $this->load->view('templates/header', $data);
+        $data["data_pemilik"] = $this->m_user->getPemilikById($idPemilik);
+        $this->load->view('templates/headerLogin', $data);
         $this->load->view('templates/sidebarProfile', $data);
         $this->load->view('public/profile/v_userProfile');
         $this->load->view('templates/footer');
@@ -60,7 +52,7 @@ class UserProfile extends CI_Controller
     public function seePets()
     {
         $data['title'] = 'Profile';
-        $this->load->view('templates/header', $data);
+        $this->load->view('templates/headerLogin', $data);
         $this->load->view('templates/sidebarProfile', $data);
         $this->load->view('public/profile/v_petsProfile');
         $this->load->view('templates/footer');
@@ -69,7 +61,7 @@ class UserProfile extends CI_Controller
     public function seeDetail()
     {
         $data['title'] = 'Profile';
-        $this->load->view('templates/header', $data);
+        $this->load->view('templates/headerLogin', $data);
         $this->load->view('templates/sidebarProfile', $data);
         $this->load->view('public/profile/v_detail');
         $this->load->view('templates/footer');
