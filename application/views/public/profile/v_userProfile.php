@@ -4,42 +4,44 @@
         <p style="margin-left:20px">Anda hanya bisa mengubah password anda. Jika terjadi kesalahan data lain, silahkan hubungi pihak klinik.</p>
         <div class="row" style="margin-top:20px">
             <div class="col" style="margin-left:20px">
-                <div class="form-group row">
-                    <label for="noKTP" class="col-sm-4 col-form-label">No. KTP</label>
-                    <div class="col-sm-6">
-                        <input type="text" name="noKTP" class="form-control" id="" readonly>
+                <form action="<?php site_url('UserProfile/seeProfile'); ?>" method="post">
+                    <div class="form-group row">
+                        <label for="noKTP" class="col-sm-4 col-form-label">No. KTP</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="noKTP" class="form-control" id="" value="" readonly>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="namaPemilik" class="col-sm-4 col-form-label">Nama Pemilik Hewan</label>
-                    <div class="col-sm-6">
-                        <input type="text" name="namaPemilik" class="form-control" id="" readonly>
+                    <div class="form-group row">
+                        <label for="namaPemilik" class="col-sm-4 col-form-label">Nama Pemilik Hewan</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="namaPemilik" class="form-control" id="" readonly>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="alamat" class="col-sm-4 col-form-label">Alamat</label>
-                    <div class="col-sm-6">
-                        <input type="text" name="alamat" class="form-control" id="" readonly>
+                    <div class="form-group row">
+                        <label for="alamat" class="col-sm-4 col-form-label">Alamat</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="alamat" class="form-control" id="" readonly>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="telepon" class="col-sm-4 col-form-label">Telepon</label>
-                    <div class="col-sm-6">
-                        <input type="text" name="telepon" class="form-control" id="" readonly>
+                    <div class="form-group row">
+                        <label for="telepon" class="col-sm-4 col-form-label">Telepon</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="telepon" class="form-control" id="" readonly>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="email" class="col-sm-4 col-form-label">Email</label>
-                    <div class="col-sm-6">
-                        <input type="text" name="email" class="form-control" id="" readonly>
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-4 col-form-label">Email</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="email" class="form-control" id="" readonly>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="password" class="col-sm-4 col-form-label">Password</label>
-                    <div class="col-sm-6">
-                        <button class="btn btn-secondary" id="myButton">Ubah Password</button>
+                    <div class="form-group row">
+                        <label for="password" class="col-sm-4 col-form-label">Password</label>
+                        <div class="col-sm-6">
+                            <button class="btn btn-secondary" id="myButton">Ubah Password</button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
