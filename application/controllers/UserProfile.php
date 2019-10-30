@@ -42,7 +42,8 @@ class UserProfile extends CI_Controller
     public function seeProfile($idPemilik=null)
     {
         $data['title'] = 'Profile';
-        $data["data_pemilik"] = $this->m_user->getPemilikById($idPemilik);
+        $data['data_pemilik'] = $this->m_user->getPemilikById($idPemilik);
+        print_r($data);
         $this->load->view('templates/headerLogin', $data);
         $this->load->view('templates/sidebarProfile', $data);
         $this->load->view('public/profile/v_userProfile');
