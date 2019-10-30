@@ -54,17 +54,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('pages/login') ?>">LOGIN</a>
                 </li>
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <button class="dropbtn">PROFILE
-                            <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="<?php echo base_url('UserProfile/seeProfile')?>">Lihat Profile</a>
-                            <a href="<?php echo site_url('LoginUser/logout') ?>">Logout</a>
-                        </div>
-                    </div>
-                </li>
             </ul>
         </div>
     </nav>
