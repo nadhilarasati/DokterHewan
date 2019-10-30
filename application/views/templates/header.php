@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent-333">
             <ul class="navbar-nav mr-auto navbar">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url() ?>">HOME
+                    <a class="nav-link" href="<?php echo base_url() ?>">BERANDA
                         <!-- <span class="sr-only">(current)</span> -->
                     </a>
                 </li>
