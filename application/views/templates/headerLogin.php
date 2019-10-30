@@ -38,21 +38,18 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-            <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse " id="navbarSupportedContent-333">
+            <ul class="navbar-nav mr-auto navbar">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url() ?>">HOME
+                    <a class="nav-link" href="<?php echo base_url('UserProfile/index') ?>">HOME
                         <!-- <span class="sr-only">(current)</span> -->
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="<?php echo base_url('pages/aboutus') ?>">TENTANG KAMI</a>
+                    <a class="nav-link " href="<?php echo base_url('UserProfile/aboutus') ?>">TENTANG KAMI</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('pages/facilities') ?>">FASILITAS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">EVENTS</a>
+                    <a class="nav-link" href="<?php echo base_url('UserProfile/facilities') ?>">FASILITAS</a>
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">
@@ -60,98 +57,61 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="#">Lihat Profile</a>
-                            <a href="#">Logout</a>
+                            <a href="<?php echo base_url('UserProfile/seeProfile')?>">Lihat Profile</a>
+                            <a href="<?php echo site_url('LoginUser/logout') ?>">Logout</a>
                         </div>
                     </div>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('pages/profile') ?>">PROFILE</a>
-                </li> -->
-
-            </ul>
-            <ul class="navbar-nav right-item">
-                <!-- <li class="nav-item">
-                    <a class="nav-link">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                </li> -->
-
             </ul>
         </div>
     </nav>
-    </div>
 </body>
 
 <style>
 
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-}
+    .navbar a {
+        padding: 14px 16px;
+    }
 
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+        background-color: teal;
+    }
 
-.dropdown .dropbtn {
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
 
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 </style>
