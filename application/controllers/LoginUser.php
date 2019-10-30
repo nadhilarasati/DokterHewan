@@ -29,7 +29,7 @@ class LoginUser extends CI_Controller{
             );
 
             $this->session->set_userdata($data_session);
-            redirect("pages/index");
+            redirect("UserProfile/index");
         } else {
             $this->session->set_flashdata('wrong', 'Password salah!');
             redirect('pages/login');
