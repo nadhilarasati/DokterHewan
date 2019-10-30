@@ -4,7 +4,7 @@
         <p style="margin-left:20px">Anda hanya bisa mengubah password anda. Jika terjadi kesalahan data lain, silahkan hubungi pihak klinik.</p>
         <div class="row" style="margin-top:20px">
             <div class="col" style="margin-left:20px">
-                <form action="<?php site_url('UserProfile/seeProfile'); ?>" method="post">
+                <form action="<?php site_url('UserProfile/seeProfile/'.$data_pemilik->idPemilik); ?>" method="post">
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">No. KTP</label>
                         <div class="col-sm-6">
