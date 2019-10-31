@@ -30,7 +30,6 @@
     <script src="../../lib/popper.min.js"></script>
     <script src="../../lib/bootstrap.min.js"></script> -->
 </head>
-
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark default-color">
         <a class="navbar-brand glow" href="#">Klinik Nyanko</a>
@@ -38,6 +37,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        
         <div class="collapse navbar-collapse " id="navbarSupportedContent-333">
             <ul class="navbar-nav mr-auto navbar">
                 <li class="nav-item">
@@ -57,13 +57,14 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="<?php echo base_url('UserProfile/seeProfile')?>">Lihat Profile</a>
+                            <a href="<?php echo base_url('UserProfile/seeProfile/'.$data_pemilik->idPemilik)?>">Lihat Profile</a>
                             <a href="<?php echo site_url('LoginUser/logout') ?>">Logout</a>
                         </div>
                     </div>
                 </li>
             </ul>
         </div>
+        
     </nav>
 </body>
 
