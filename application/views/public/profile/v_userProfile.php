@@ -8,7 +8,7 @@
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">No. KTP</label>
                         <div class="col-sm-6">
-                            <input type="text" name="noKTP" class="form-control" id="" value="" readonly>
+                            <input type="text" name="noKTP" class="form-control" id="" value="<?php echo $data_pemilik->noKTP?>" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
