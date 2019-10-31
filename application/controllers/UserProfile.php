@@ -7,7 +7,9 @@ class UserProfile extends CI_Controller
         parent::__construct();
         $this->load->model("m_user");
         $this->load->library('form_validation');
-        
+        if ($this->session->userdata('logged_in') !== TRUE) {
+            redirect('pages/login');
+        }
     }
 
     //Navbar Login
@@ -43,7 +45,6 @@ class UserProfile extends CI_Controller
     {
         $data['title'] = 'Profile';
         $data['data_pemilik'] = $this->m_user->getPemilikById($idPemilik);
-        print_r($data);
         $this->load->view('templates/headerLogin', $data);
         $this->load->view('templates/sidebarProfile', $data);
         $this->load->view('public/profile/v_userProfile');
