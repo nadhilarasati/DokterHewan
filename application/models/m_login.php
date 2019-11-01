@@ -2,9 +2,13 @@
 
 class M_login extends CI_Model
 {
-  function cek_login($table, $where)
+  function cek_login($post)
   {
-    return $this->db->get_where($table, $where);
+    $this->db->from('pemilik_hewan');
+    $this->db->where('email', $post['email']);
+    $this->db->where('password', $post['password']);
+    $query = $this->db->get();
+    return $query;
   }
 
   function validate($email, $password)
