@@ -57,7 +57,7 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="<?php echo base_url('UserProfile/seeProfile/'.$data_pemilik->idPemilik)?>">Lihat Profile</a>
+                            <a href="<?php echo base_url('UserProfile/seeProfile')?>">Lihat Profile</a>
                             <a href="<?php echo site_url('LoginUser/logout') ?>">Logout</a>
                         </div>
                     </div>
