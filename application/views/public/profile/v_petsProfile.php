@@ -16,16 +16,19 @@
                         <th>Detail</th>
                     </tr>
                 </thead>
+                <?php foreach ($data_hewan as $d): ?>
                 <tbody class="text-center">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a class="btn btn-primary" style="background-color:black" href="<?php echo site_url('UserProfile/seeDetail')?>"><i class="fa fa-file"></i></a></td>
+                    <td><?php echo $d->namaHewan ?></td>
+                    <td><?php echo $d->jenis ?></td>
+                    <td><?php echo $d->tanggalLahir ?></td>
+                    <td><?php echo gender($d->jenisKelamin) ?></td>
+                    <td><?php echo $d->ras ?></td>
+                    <td><?php echo $d->warna ?></td>
+                    <td><?php echo status($d->status) ?></td>
+                    <td><a class="btn btn-primary" style="background-color:black" href="<?php echo site_url('UserProfile/seeDetail/'.$d->idHewan)?>"><i class="fa fa-file"></i></a></td>
+                    
                 </tbody>
+                <?php endforeach; ?>
             </table>
         </div>
     </div>
@@ -43,3 +46,25 @@
         border: 2px solid black;
     }
 </style>
+
+<?php
+
+function gender($code)
+{
+    if ($code == 1) {
+        return "Betina";
+    } else {
+        return "Jantan";
+    }
+}
+
+function status($code)
+{
+    if ($code == 0) {
+        return "Hidup";
+    } else {
+        return "Mati";
+    }
+}
+
+?>
