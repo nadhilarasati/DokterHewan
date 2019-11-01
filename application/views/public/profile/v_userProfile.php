@@ -4,35 +4,35 @@
         <p style="margin-left:20px">Anda hanya bisa mengubah password anda. Jika terjadi kesalahan data lain, silahkan hubungi pihak klinik.</p>
         <div class="row" style="margin-top:20px">
             <div class="col" style="margin-left:20px">
-                <form action="<?php site_url('UserProfile/seeProfile/'.$data_pemilik->idPemilik); ?>" method="post">
+                <form action="<?php site_url('UserProfile/seeProfile'); ?>" method="post">
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">No. KTP</label>
                         <div class="col-sm-6">
-                            <input type="text" name="noKTP" class="form-control" id="" value="<?php echo $data_pemilik->noKTP?>" readonly>
+                            <input type="text" name="noKTP" class="form-control" id="" value="<?php echo $data_pemilik->noKTP ?>" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="namaPemilik" class="col-sm-4 col-form-label">Nama Pemilik Hewan</label>
                         <div class="col-sm-6">
-                            <input type="text" name="namaPemilik" class="form-control" id="" readonly>
+                            <input type="text" name="namaPemilik" class="form-control" id="" value="<?php echo $data_pemilik->namaPemilik ?>"readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="alamat" class="col-sm-4 col-form-label">Alamat</label>
                         <div class="col-sm-6">
-                            <input type="text" name="alamat" class="form-control" id="" readonly>
+                            <input type="text" name="alamat" class="form-control" id="" value="<?php echo $data_pemilik->alamat ?>" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="telepon" class="col-sm-4 col-form-label">Telepon</label>
                         <div class="col-sm-6">
-                            <input type="text" name="telepon" class="form-control" id="" readonly>
+                            <input type="text" name="telepon" class="form-control" id="" value="<?php echo $data_pemilik->telepon ?>" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-sm-4 col-form-label">Email</label>
                         <div class="col-sm-6">
-                            <input type="text" name="email" class="form-control" id="" readonly>
+                            <input type="text" name="email" class="form-control" id=""value="<?php echo $data_pemilik->email ?>" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
