@@ -20,7 +20,7 @@ class LoginUser extends CI_Controller{
             'email' => $email,
             'password' => $password
         );
-        $cek = $this->m_login->cek_login("pemilik_hewan",$where)->num_rows();
+        $cek = $this->m_login->cek_login($where)->num_rows();
         if ($cek > 0) {
 
             $data_session = array(
