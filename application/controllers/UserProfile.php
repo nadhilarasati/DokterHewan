@@ -72,4 +72,34 @@ class UserProfile extends CI_Controller
         $this->load->view('public/profile/v_detail');
         $this->load->view('templates/footer');
     }
+
+    public function ubahPassword()
+    {
+        $data['title'] = 'Password';
+        
+        $this->load->view('templates/headerLogin', $data);
+        $this->load->view('templates/sidebarProfile', $data);
+        $this->load->view('public/profile/v_ubahPassword');
+        $this->load->view('templates/footer');
+    }
+
+    public function ganti(){
+        $email = $this->session->userdata['email'];
+        $this->form_validation->set_rules('password baru','password baru','required');
+        $this->form_validation->set_rules('password kedua','password kedua','required|matches[pw_baru]');
+        $this->form_validation->set_message('required','%s wajib diisi');
+
+        if( $this->form_validation->run() == FALSE ){
+            $this->load->view('UserProfile/ubahPassword');
+        } else {
+            $post = $this->input->post();
+            
+            $data = array(
+                'password' => $post['password baru']
+            );
+
+            $this->m_user->editPassword($email, $data, 'pemilik_hewan');
+
+        }
+    }
 }
