@@ -10,6 +10,12 @@
         <div class="row">
             <div class="col">
                 <a href="<?php echo base_url('UserProfile/seePets') ?>" class="nav-link ">Data Hewan Peliharaan</a>
+                |
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="<?php echo base_url('UserProfile/ubahPassword') ?>" class="nav-link ">Pengaturan</a>
             </div>
         </div>
     </div>
