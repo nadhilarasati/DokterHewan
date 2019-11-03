@@ -1,10 +1,10 @@
 <div class="bc" style="float:right; width:70vw; height:100%">
     <div class="card" style="margin-top:50px; margin-left:30px; margin-right:30px; margin-bottom: 30px; background-color: #ffcccc">
-        <h4 style="margin-left:20px; margin-top:20px">Ini adalah data diri anda sebagai pemilik hewan!</h4>
-        <p style="margin-left:20px">Anda hanya bisa mengubah password anda. Jika terjadi kesalahan data lain, silahkan hubungi pihak klinik.</p>
+        <h4 style="margin-left:20px; margin-top:20px">Data Pemilik Hewan</h4>
+        <p style="margin-left:20px">Ini adalah data diri anda sebagai pemilik hewan! Anda hanya bisa mengubah password anda di menu Pengaturan. Jika terjadi kesalahan data lain, silahkan hubungi pihak klinik.</p>
         <div class="row" style="margin-top:20px">
             <div class="col" style="margin-left:20px">
-                <form action="<?php site_url('UserProfile/seeProfile'); ?>" method="post">
+                <form class="data-pasien" action="<?php site_url('UserProfile/seeProfile') ?>" method="post">
                     <div class="form-group row">
                         <label for="noKTP" class="col-sm-4 col-form-label">No. KTP</label>
                         <div class="col-sm-6">
@@ -14,7 +14,7 @@
                     <div class="form-group row">
                         <label for="namaPemilik" class="col-sm-4 col-form-label">Nama Pemilik Hewan</label>
                         <div class="col-sm-6">
-                            <input type="text" name="namaPemilik" class="form-control" id="" value="<?php echo $data_pemilik->namaPemilik ?>"readonly>
+                            <input type="text" name="namaPemilik" class="form-control" id="" value="<?php echo $data_pemilik->namaPemilik ?>" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -32,13 +32,7 @@
                     <div class="form-group row">
                         <label for="email" class="col-sm-4 col-form-label">Email</label>
                         <div class="col-sm-6">
-                            <input type="text" name="email" class="form-control" id=""value="<?php echo $data_pemilik->email ?>" readonly>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="password" class="col-sm-4 col-form-label">Password</label>
-                        <div class="col-sm-6">
-                            <button class="btn btn-secondary" id="myButton">Ubah Password</button>
+                            <input type="text" name="email" class="form-control" id="" value="<?php echo $data_pemilik->email ?>" readonly>
                         </div>
                     </div>
                 </form>
@@ -48,11 +42,11 @@
 </div>
 
 <!-- Modal ubah password button-->
-<div class="modal fade" id="myMdl" role="dialog">
-    <div class="modal-dialog">
+<!-- <div class="modal fade" id="myMdl" role="dialog">
+    <div class="modal-dialog"> -->
 
-        <!-- Modal content-->
-        <div class="modal-content" style="padding:40px 50px;">
+<!-- Modal content-->
+<!-- <div class="modal-content" style="padding:40px 50px;">
             <div class="modal-header">
                 <h4 class="modal-title">Ubah Password</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -69,15 +63,15 @@
             </div>
 
             <div class="modal-footer">
-                <button type="submit" class="btn btn-secondary">Simpan</button>
-                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-            </div>
+                <button type="submit" class="btn btn-secondary">Simpan</button> -->
+<!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+<!-- </div>
 
         </div>
     </div>
-</div>
+</div> -->
 
-<script>
+<!-- <script>
     $(document).ready(function() {
         $("#myBtn").click(function() {
             $("#myModal").modal();
@@ -89,4 +83,4 @@
             $("#myMdl").modal();
         });
     });
-</script>
+</script> -->
