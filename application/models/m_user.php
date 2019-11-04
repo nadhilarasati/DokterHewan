@@ -41,4 +41,25 @@ class m_user extends CI_Model{
         return $this->db->update("pemilik_hewan", $this);
     }
 
+    //upload foto
+    private function uploadFotoPariwisata($id){
+		$currName = $this->nama;
+		$new_name = $id." ".$currName;
+
+		$config['upload_path']	= './img/Pariwisata/';
+		$config['allowed_types']= 'gif|jpg|jpeg|png';
+		$config['file_name']		= $new_name;
+		$config['overwrite']		= true;
+		$config['max_size']			= 1024; // 1MB
+		
+
+		$this->load->library('upload', $config);
+
+		if ($this->upload->do_upload('foto')) {
+			return $this->upload->data("file_name"); //nama file + jpg nya
+		}else{
+			return "default.jpg";
+		}
+	}
+
 }
