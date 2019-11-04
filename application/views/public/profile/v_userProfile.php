@@ -1,86 +1,149 @@
 <div class="bc" style="float:right; width:70vw; height:100%">
     <div class="card" style="margin-top:50px; margin-left:30px; margin-right:30px; margin-bottom: 30px; background-color: #ffcccc">
-        <h4 style="margin-left:20px; margin-top:20px">Data Pemilik Hewan</h4>
-        <p style="margin-left:20px">Ini adalah data diri anda sebagai pemilik hewan! Anda hanya bisa mengubah password anda di menu Pengaturan. Jika terjadi kesalahan data lain, silahkan hubungi pihak klinik.</p>
-        <div class="row" style="margin-top:20px">
-            <div class="col" style="margin-left:20px">
-                <form class="data-pasien" action="<?php site_url('UserProfile/seeProfile') ?>" method="post">
-                    <div class="form-group row">
-                        <label for="noKTP" class="col-sm-4 col-form-label">No. KTP</label>
-                        <div class="col-sm-6">
-                            <input type="text" name="noKTP" class="form-control" id="" value="<?php echo $data_pemilik->noKTP ?>" readonly>
+
+        <div class="tab">
+            <button class="tablinks" onclick="openData(event, 'DataPemilik')" id="defaultOpen">Data Pemilik</button>
+            <button class="tablinks" onclick="openData(event, 'UbahPassword')">Ubah Password</button>
+        </div>
+        <div id="DataPemilik" class="tabcontent">
+            <?php if ($this->session->flashdata('success')) : ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $this->session->flashdata('success'); ?>
+                </div>
+            <?php endif; ?>
+            <h4 style="margin-left:20px; margin-top:20px">Data Pemilik Hewan</h4>
+            <p style="margin-left:20px">Ini adalah data diri anda sebagai pemilik hewan! Anda hanya bisa mengubah password anda. Jika terjadi kesalahan data lain, silahkan hubungi pihak klinik.</p>
+            <div class="row" style="margin-top:20px">
+                <div class="col" style="margin-left:20px">
+                    <form class="data-pasien" action="<?php site_url('UserProfile/seeProfile') ?>" method="post">
+                        <div class="form-group row">
+                            <label for="noKTP" class="col-sm-4 col-form-label">No. KTP</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="noKTP" class="form-control" id="" value="<?php echo $data_pemilik->noKTP ?>" readonly>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="namaPemilik" class="col-sm-4 col-form-label">Nama Pemilik Hewan</label>
-                        <div class="col-sm-6">
-                            <input type="text" name="namaPemilik" class="form-control" id="" value="<?php echo $data_pemilik->namaPemilik ?>" readonly>
+                        <div class="form-group row">
+                            <label for="namaPemilik" class="col-sm-4 col-form-label">Nama Pemilik Hewan</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="namaPemilik" class="form-control" id="" value="<?php echo $data_pemilik->namaPemilik ?>" readonly>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="alamat" class="col-sm-4 col-form-label">Alamat</label>
-                        <div class="col-sm-6">
-                            <input type="text" name="alamat" class="form-control" id="" value="<?php echo $data_pemilik->alamat ?>" readonly>
+                        <div class="form-group row">
+                            <label for="alamat" class="col-sm-4 col-form-label">Alamat</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="alamat" class="form-control" id="" value="<?php echo $data_pemilik->alamat ?>" readonly>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="telepon" class="col-sm-4 col-form-label">Telepon</label>
-                        <div class="col-sm-6">
-                            <input type="text" name="telepon" class="form-control" id="" value="<?php echo $data_pemilik->telepon ?>" readonly>
+                        <div class="form-group row">
+                            <label for="telepon" class="col-sm-4 col-form-label">Telepon</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="telepon" class="form-control" id="" value="<?php echo $data_pemilik->telepon ?>" readonly>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="email" class="col-sm-4 col-form-label">Email</label>
-                        <div class="col-sm-6">
-                            <input type="text" name="email" class="form-control" id="" value="<?php echo $data_pemilik->email ?>" readonly>
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-4 col-form-label">Email</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="email" class="form-control" id="" value="<?php echo $data_pemilik->email ?>" readonly>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-4 col-form-label">Password</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="email" class="form-control" id="" value="<?php echo $data_pemilik->password ?>" readonly>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="UbahPassword" class="tabcontent">
+            <h4 style="margin-left:20px; margin-top:20px">Ubah Password</h4>
+            <p style="margin-left:20px">Ubahlah password anda di sini. Anda bisa mengombinasikan huruf dan angka dengan panjang minimum 5 karakter dan maksimal 12 karakter.</p>
+            <div class="row" style="margin-top:20px">
+                <div class="col" style="margin-left:20px">
+                    <form class="data-pasien" action="<?php site_url('UserProfile/ubahPassword') ?>" method="post">
+                        <div class="form-group row">
+                            <label for="passLama" class="col-sm-4 col-form-label">Password Lama</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" placeholder="Password Lama" name="passLama">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="passBaru" class="col-sm-4 col-form-label">Password Baru</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" placeholder="Password Baru" name="passBaru">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="passKonf" class="col-sm-4 col-form-label">Konfirmasi Password</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" placeholder="Konfirmasi Password" name="passKonf">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Simpan</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Modal ubah password button-->
-<!-- <div class="modal fade" id="myMdl" role="dialog">
-    <div class="modal-dialog"> -->
+<script>
+    function openData(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
 
-<!-- Modal content-->
-<!-- <div class="modal-content" style="padding:40px 50px;">
-            <div class="modal-header">
-                <h4 class="modal-title">Ubah Password</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
 
-            <div class="form-group" style="margin-top:10px">
-                <label for="obat" class="">Password lama anda</label>
-                <input type="text" name="email" class="form-control" id="" readonly>
-            </div>
+<style>
+    /* Style the tab */
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #2c3e50;
+    }
 
-            <div class="form-group">
-                <label for="obat" class="">Password baru</label>
-                <input type="text" name="email" class="form-control" id="">
-            </div>
+    /* Style the buttons inside the tab */
+    .tab button {
+        color: white;
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+    }
 
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-secondary">Simpan</button> -->
-<!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-<!-- </div>
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+        background-color: #ddd;
+    }
 
-        </div>
-    </div>
-</div> -->
+    /* Create an active/current tablink class */
+    .tab button.active {
+        background-color: teal;
+    }
 
-<!-- <script>
-    $(document).ready(function() {
-        $("#myBtn").click(function() {
-            $("#myModal").modal();
-        });
-    });
-
-    $(document).ready(function() {
-        $("#myButton").click(function() {
-            $("#myMdl").modal();
-        });
-    });
-</script> -->
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+</style>
