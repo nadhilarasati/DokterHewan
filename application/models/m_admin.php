@@ -184,6 +184,11 @@ class m_admin extends CI_Model
                 'field' => 'obat',
                 'label' => 'obat',
                 'rules' => 'required'
+            ],
+            [
+                'field' => 'idPegawai',
+                'label' => 'idPegawai',
+                'rules' => 'required'
             ]
         ];
     }
@@ -383,6 +388,7 @@ class m_admin extends CI_Model
         $this->diagnosa = $post["diagnosa"];
         $this->tindakan = $post["tindakan"];
         $this->obat = $post["obat"];
+        $this->idPegawai = $post["idPegawai"];
 
         $this->idHewan = $fk;
         $this->db->insert("rekam_medis", $this);
@@ -395,6 +401,14 @@ class m_admin extends CI_Model
     {
         $this->db->where('idHewan', $idRekamMedis);
         return $this->db->get("rekam_medis")->result();
+    }
+
+    public function getDokter(){
+        $this->db->select('namaPegawai');
+        $this->db->from('staff_klinik');
+        $this->db->where('role',1);
+        $query = $this->db->get()->result();
+        return $query;
     }
 
 }
