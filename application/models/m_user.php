@@ -1,16 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 class m_user extends CI_Model{
-
-    public function rules_pemilik(){
-        return [
-            [
-                'field' => 'password',
-                'label' => 'Password',
-                'rules' => 'required'
-            ]
-        ];
-    }
     public function getIdByEmail($email){
         $this->db->select('idPemilik');
         $this->db->from('pemilik_hewan');
