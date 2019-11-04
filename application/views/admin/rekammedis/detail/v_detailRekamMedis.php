@@ -123,7 +123,7 @@
                     </table>
                 </div>
             </div>
-            
+
         </div>
         <button class="btn btn-secondary" id="myButton">Kirim</button>
     </div>
@@ -195,11 +195,14 @@
             </div>
 
             <div class="form-group">
-                <label for="idDokter" class="">Diperiksa Oleh</label>
+                <label for="idPegawai" class="">Diperiksa Oleh</label>
 
                 <div class="input-group mb-3">
-                    <select name="role" class="custom-select" id="inputGroupSelect01">
-                        <option selected>Choose...</option>
+                    <select name="idPegawai" class="custom-select" id="inputGroupSelect01">
+                        <option selected>Pilih...</option>
+                        <?php foreach ($dokter_praktek as $dp) { ?>
+                            <option value="<?php echo $dp->namaPegawai ?>"><?php echo $dp->namaPegawai ?></option>
+                        <?php } ?>
                     </select>
                 </div>
 
@@ -226,7 +229,7 @@
             </div>
 
             <div class="form-group">
-                <label for="idDokter" class=""style="margin-top:0.5cm">Tujuan</label>
+                <label for="idDokter" class="" style="margin-top:0.5cm">Tujuan</label>
 
                 <div class="input-group mb-3">
                     <select name="role" class="custom-select" id="inputGroupSelect01">
@@ -240,7 +243,7 @@
                 <button type="submit" class="btn btn-secondary">Kirim</button>
                 <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
             </div>
-            
+
         </div>
     </div>
 </div>
