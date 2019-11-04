@@ -1,4 +1,9 @@
 <div class="bc" style="float:right; width:70vw; height:100%">
+    <?php if ($this->session->flashdata('success')) : ?>
+        <div class="alert alert-success" role="alert">
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <?php endif; ?>
     <div class="card" style="margin-top:50px; margin-left:30px; margin-right:30px; margin-bottom: 30px; background-color: #ffcccc">
 
         <div class="tab">
@@ -6,11 +11,7 @@
             <button class="tablinks" onclick="openData(event, 'UbahPassword')">Ubah Password</button>
         </div>
         <div id="DataPemilik" class="tabcontent">
-            <?php if ($this->session->flashdata('success')) : ?>
-                <div class="alert alert-success" role="alert">
-                    <?php echo $this->session->flashdata('success'); ?>
-                </div>
-            <?php endif; ?>
+
             <h4 style="margin-left:20px; margin-top:20px">Data Pemilik Hewan</h4>
             <p style="margin-left:20px">Ini adalah data diri anda sebagai pemilik hewan! Anda hanya bisa mengubah password anda. Jika terjadi kesalahan data lain, silahkan hubungi pihak klinik.</p>
             <div class="row" style="margin-top:20px">
@@ -62,11 +63,14 @@
             <p style="margin-left:20px">Ubahlah password anda di sini. Anda bisa mengombinasikan huruf dan angka dengan panjang minimum 5 karakter dan maksimal 12 karakter.</p>
             <div class="row" style="margin-top:20px">
                 <div class="col" style="margin-left:20px">
-                    <form class="data-pasien" action="<?php site_url('UserProfile/ubahPassword') ?>" method="post">
+                    <form class="data-pasien" action="<?php base_url('UserProfile/ubahPassword') ?>" method="post">
                         <div class="form-group row">
                             <label for="passLama" class="col-sm-4 col-form-label">Password Lama</label>
                             <div class="col-sm-6">
                                 <input type="password" class="form-control" placeholder="Password Lama" name="passLama">
+                            </div>
+                            <div class="invalid-feedback">
+                                <?php echo form_error('passLama') ?>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -74,11 +78,17 @@
                             <div class="col-sm-6">
                                 <input type="password" class="form-control" placeholder="Password Baru" name="passBaru">
                             </div>
+                            <div class="invalid-feedback">
+                                <?php echo form_error('passBaru') ?>
+                            </div>
                         </div>
                         <div class="form-group row">
                             <label for="passKonf" class="col-sm-4 col-form-label">Konfirmasi Password</label>
                             <div class="col-sm-6">
                                 <input type="password" class="form-control" placeholder="Konfirmasi Password" name="passKonf">
+                            </div>
+                            <div class="invalid-feedback">
+                                <?php echo form_error('passKonf') ?>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-secondary">Simpan</button>
