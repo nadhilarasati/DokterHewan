@@ -124,7 +124,7 @@
                                     <td><?php echo $dm->diagnosa ?></td>
                                     <td><?php echo $dm->tindakan ?></td>
                                     <td><?php echo $dm->obat ?></td>
-                                    <td></td>
+                                    <td><?php echo $dm->namaPegawai ?></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -136,8 +136,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div style="margin-bottom:0.5cm">
-                    <button class="btn btn-secondary">Selesai</button>
-                    <button class="btn btn-secondary">Hapus Antrian</button>
+                    <!-- <button class="btn btn-secondary" href="<?php echo site_url('dokter/hapusAntrian/'.$data_medis->$idAntrian); ?>">Selesai</button> -->
                     <!--<button class="btn btn-secondary">Delete Record</button>-->
                 </div>
             </div>
