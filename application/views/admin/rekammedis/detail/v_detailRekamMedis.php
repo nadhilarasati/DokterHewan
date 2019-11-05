@@ -125,7 +125,7 @@
             </div>
 
         </div>
-        <button class="btn btn-secondary" id="myButton" style="margin-bottom:0.5cm"></button>Kirim</button>
+        <button class="btn btn-secondary" id="myButton" style="margin-bottom:0.5cm">Kirim</button>
     </div>
 </div>
 
