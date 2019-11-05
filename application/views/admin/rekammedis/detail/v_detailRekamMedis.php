@@ -116,7 +116,7 @@
                                     <td><?php echo $dm->diagnosa ?></td>
                                     <td><?php echo $dm->tindakan ?></td>
                                     <td><?php echo $dm->obat ?></td>
-                                    <td></td>
+                                    <td><?php echo $dm->namaPegawai ?></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
