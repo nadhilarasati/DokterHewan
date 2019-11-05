@@ -46,10 +46,11 @@ class UserProfile extends CI_Controller
     {
         $data['title'] = 'Profile';
         $data['data_pemilik'] = $this->m_user->getPemilikById($this->session->userdata('email'));
-        $validation = $this->form_validation->set_rules('passBaru', 'Password Baru', 'trim|required|min_length[5]|max_length[12]|matches[passKonf]');
+        $validation = $this->form_validation->set_rules('passBaru', 'Password Baru', 'required');
         if ($validation->run()) {
-            $data->editPassword($this->session->userdata('email'));
+            $this->m_user->editPassword($this->session->userdata('email'));
             $this->session->set_flashdata('success', 'Berhasil diperbarui');
+            redirect('UserProfile/seeProfile');
         }
         $this->load->view('templates/headerLogin', $data);
         $this->load->view('templates/sidebarProfile', $data);
@@ -77,37 +78,4 @@ class UserProfile extends CI_Controller
         $this->load->view('public/profile/v_detail');
         $this->load->view('templates/footer');
     }
-
-    // public function ubahPassword()
-    // {
-    //     $this->form_validation->set_rules('passLama', 'Password Lama', 'trim|required');
-    //     $this->form_validation->set_rules('passBaru', 'Password Baru', 'trim|required|min_length[5]|max_length[12]|matches[passKonf]');
-    //     $this->form_validation->set_rules('passKonf', 'Password Konfirmasi', 'trim|required|min_length[5]|max_length[12]|matches[passBaru]');
-
-    //     $email = $this->session->userdata('email');
-    //     if ($this->form_validation->run() == true) {
-    //         if (password_verify($this->input->post('passLama'), $this->session->userdata('password'))) {
-    //             if ($this->input->post('passBaru') != $this->input->post('passKonf')) {
-    //                 $this->session->set_flashdata('msg', show_err_msg('Password Baru dan Konfirmasi Password harus sama'));
-    //                 redirect('UserProfile/seeProfile');
-    //             } else {
-    //                 $data = ['password' => $this->input->post('passBaru')];
-    //                 $result = $this->m_user->editPassword($email);
-    //                 if ($result > 0) {
-    //                     $this->session->set_flashdata('msg', show_succ_msg('Password Berhasil diubah'));
-    //                     redirect('UserProfile/seeProfile');
-    //                 } else {
-    //                     $this->session->set_flashdata('msg', show_err_msg('Password Gagal diubah'));
-    //                     redirect('UserProfile/seeProfile');
-    //                 }
-    //             }
-    //         } else {
-    //             $this->session->set_flashdata('msg', show_err_msg('Password Salah'));
-    //             redirect('UserProfile/seeProfile');
-    //         }
-    //     } else {
-    //         $this->session->set_flashdata('msg', show_err_msg(validation_errors()));
-    //         redirect('UserProfile/seeProfile');
-    //     }
-    // }
 }
