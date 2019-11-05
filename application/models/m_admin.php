@@ -405,6 +405,7 @@ class m_admin extends CI_Model
     }
 
     public function getDokter(){
+        $this->db->select('idPegawai');
         $this->db->select('namaPegawai');
         $this->db->from('staff_klinik');
         $this->db->where('role',1);
@@ -412,4 +413,10 @@ class m_admin extends CI_Model
         return $query;
     }
 
+    public function kirim($idHewan){
+        $post = $this->input->post();
+        $this->idPegawai = $post["idPegawai"];
+        $this->idHewan = $idHewan;
+        $this->db->insert("antrian_registrasi", $this);
+    }
 }
