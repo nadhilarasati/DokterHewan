@@ -125,7 +125,7 @@
             </div>
 
         </div>
-        <button class="btn btn-secondary" id="myButton">Kirim</button>
+        <button class="btn btn-secondary" id="myButton" style="margin-bottom:0.5cm">Kirim</button>
     </div>
 </div>
 
@@ -209,7 +209,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="submit" class="btn btn-secondary">Simpan</button>
+                <button type="submit" class="btn btn-secondary" >Simpan</button>
                 <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
             </div>
             <?php echo form_close(); ?>
@@ -227,13 +227,16 @@
                 <h4 class="modal-title">Kirim Rekam Medis</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-
+            <?php echo form_open('Admin/formKirim/' . $data_pet->idHewan) ?>
             <div class="form-group">
                 <label for="idDokter" class="" style="margin-top:0.5cm">Tujuan</label>
 
                 <div class="input-group mb-3">
-                    <select name="role" class="custom-select" id="inputGroupSelect01">
+                    <select name="idPegawai" class="custom-select" id="inputGroupSelect01">
                         <option selected>Choose...</option>
+                        <?php foreach ($dokter_praktek as $dp) { ?>
+                            <option value="<?php echo $dp->idPegawai ?>"><?php echo $dp->namaPegawai ?></option>
+                        <?php } ?>
                     </select>
                 </div>
 
@@ -243,7 +246,7 @@
                 <button type="submit" class="btn btn-secondary">Kirim</button>
                 <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
             </div>
-
+            <?php echo form_close(); ?>
         </div>
     </div>
 </div>
