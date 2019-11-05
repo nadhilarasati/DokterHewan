@@ -143,6 +143,53 @@ class m_admin extends CI_Model
         ];
     }
 
+    public function rules_edithewan()
+    {
+        return [
+            [
+                'field' => 'namaHewan',
+                'label' => 'namaHewan',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'tanggalLahir',
+                'label' => 'tanggalLahir',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'jenisKelamin',
+                'label' => 'jenisKelamin',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'ras',
+                'label' => 'ras',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'warna',
+                'label' => 'warna',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'jenisHewan',
+                'label' => 'jenisHewan',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'status',
+                'label' => 'status',
+                'rules' => 'required'
+            ]
+        ];
+    }
+
     /*
 	* Method untuk menentukan aturan input form insert rekam medis
 	*/
@@ -418,5 +465,28 @@ class m_admin extends CI_Model
         $this->idPegawai = $post["idPegawai"];
         $this->idHewan = $idHewan;
         $this->db->insert("antrian_registrasi", $this);
+    }
+
+    public function editHewan($idHewan)
+    {
+        $post = $this->input->post();
+
+        $this->namaHewan = $post["namaHewan"];
+        $this->tanggalLahir = $post["tanggalLahir"];
+        $this->jenisKelamin = $post["jenisKelamin"];
+        $this->ras = $post["ras"];
+        $this->warna = $post["warna"];
+        $this->idTipe = $post["jenisHewan"];
+        $this->status = $post["status"];
+
+
+        $this->db->where('idHewan', $idHewan);
+        return $this->db->update("hewan_peliharaan", $this);
+    }
+
+    //laporan
+    public function getListLaporan()
+    {
+        return $this->db->get("laporan_kunjungan_view")->result();
     }
 }
