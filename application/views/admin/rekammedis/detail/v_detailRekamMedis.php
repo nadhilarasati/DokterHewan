@@ -105,10 +105,7 @@
                                 <tr>
                                     <td><?php echo $dm->idRekamMedis ?></td>
                                     <td>
-                                        <?php
-                                            $d = strtotime("today");
-                                            echo date("d-m-y", $d) . "<br>";
-                                            ?>
+                                        <?php echo $dm->tanggal?>
                                     </td>
                                     <td><?php echo $dm->gejalaKlinis ?></td>
                                     <td><?php echo $dm->suhuBadan ?></td>
@@ -201,7 +198,7 @@
                     <select name="idPegawai" class="custom-select" id="inputGroupSelect01">
                         <option selected>Pilih...</option>
                         <?php foreach ($dokter_praktek as $dp) { ?>
-                            <option value="<?php echo $dp->namaPegawai ?>"><?php echo $dp->namaPegawai ?></option>
+                            <option value="<?php echo $dp->idPegawai ?>"><?php echo $dp->namaPegawai ?></option>
                         <?php } ?>
                     </select>
                 </div>
