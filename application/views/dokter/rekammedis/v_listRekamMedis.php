@@ -15,6 +15,7 @@
                                 <th>Jenis Hewan</th>
                                 <th>Status</th>
                                 <th>Detail</th>
+                                <th>Hapus</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -27,6 +28,7 @@
                                     <td><?php echo $da->jenis ?></td>
                                     <td><?php echo status($da->status) ?></td>
                                     <td><a class="btn btn-primary" href="<?php echo site_url('dokter/detailMedis/' . $da->idHewan); ?>"><i class="fas fa-pen"></i></a></td>
+                                    <td><a class="btn btn-primary" href="<?php echo site_url('dokter/hapusAntrian/' . $da->idAntrian); ?>"><i class="fas fa-pen"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
