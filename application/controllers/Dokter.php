@@ -21,7 +21,7 @@ class Dokter extends CI_Controller
     {
 
         $data['title'] = 'Rekam Medis';
-        $data["data_antrian"] = $this->m_dokter->getAntrian();
+        $data["data_antrian"] = $this->m_dokter->getAntrian($this->session->userdata('email'));
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('dokter/rekammedis/v_listRekamMedis');
         $this->load->view('admin/template/sidebarfooter');
