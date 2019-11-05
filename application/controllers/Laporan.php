@@ -8,7 +8,29 @@ class Laporan extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        $this->load->model("m_laporan");
         $this->load->library('pdf');
+    }
+
+    /*
+    * LAPORAN
+    */
+    public function laporan()
+    {
+        $data['title'] = 'Laporan';
+        $data['laporan'] = $this->m_laporan->getListLaporan();
+        $this->load->view('admin/template/sidebar', $data);
+        $this->load->view('admin/laporan/v_listLaporan');
+        $this->load->view('admin/template/sidebarfooter');
+    }
+
+    public function detailLaporan($jenis,$tanggal)
+    {
+        $data['title'] = 'Detail Laporan';
+        $data['detail'] = $this->m_laporan->detail($jenis,$tanggal);
+        $this->load->view('admin/template/sidebar', $data);
+        $this->load->view('admin/laporan/v_detailLaporan', $data);
+        $this->load->view('admin/template/sidebarfooter');
     }
 
 
@@ -16,6 +38,7 @@ class Laporan extends CI_Controller
 
     function formulirRegistrasi()
     {
+        
         $pdf = new FPDF('p', 'mm', 'A4');
         // membuat halaman baru
         $pdf->AddPage();
