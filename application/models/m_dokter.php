@@ -23,6 +23,10 @@ class m_dokter extends CI_Model{
 
     public function getRekamMedis($idRekamMedis){
         $this->db->where('idHewan', $idRekamMedis);
-        return $this->db->get("rekam_medis")->result();
+        return $this->db->get("data_medis_view")->result();
+    }
+
+    public function hapus($idAntrian){
+        return $this->db->delete("antrian_registrasi", ["idAntrian" => $idAntrian]);
     }
 }
