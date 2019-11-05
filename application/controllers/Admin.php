@@ -21,7 +21,11 @@ class Admin extends CI_Controller
     }
 
 
-
+    public function resetAntrian()
+    { 
+        $this->m_admin->resetQ();
+        redirect('admin/dataPasien');
+    }
 
     /*
     * REKAM MEDIS
@@ -61,7 +65,7 @@ class Admin extends CI_Controller
     {
         $formmedis = $this->m_admin;
         $validation = $this->form_validation;
-        $validation->set_rules('idPegawai', 'idPegawai','required');
+        $validation->set_rules('idPegawai', 'idPegawai', 'required');
 
         if ($validation->run()) {
             $formmedis->kirim($fk);
@@ -211,7 +215,7 @@ class Admin extends CI_Controller
     }
 
     //edit data hewan
-    public function editDataHewan($idHewan=null)
+    public function editDataHewan($idHewan = null)
     {
         $data['title'] = 'Data Hewan';
         $datahewan = $this->m_admin;
@@ -227,18 +231,6 @@ class Admin extends CI_Controller
 
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('admin/dataPasien/detail/v_detailHewan');
-        $this->load->view('admin/template/sidebarfooter');
-    }
-
-    /*
-    * LAPORAN
-    */
-    public function laporan()
-    {
-        $data['title'] = 'Laporan';
-        $data['laporan'] = $this->m_admin->getListLaporan();
-        $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/laporan/v_listLaporan');
         $this->load->view('admin/template/sidebarfooter');
     }
 }
