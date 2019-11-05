@@ -91,9 +91,14 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url(); ?>admin/laporan">
+          <a class="nav-link" href="<?php echo base_url(); ?>Laporan/laporan">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Laporan Rekam Medis</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>Admin/resetAntrian">
+            <i class="fas fa-fw fa-file"></i>
+            <span>Reset Antrian</span></a>
         </li>
         <!-- Menu untuk dokter -->
       <?php elseif ($this->session->userdata('role') === '1') : ?>
