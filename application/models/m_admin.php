@@ -429,16 +429,16 @@ class m_admin extends CI_Model
     {
         $post = $this->input->post();
 
+        $this->tanggal = date("Y/m/d");
         $this->gejalaKlinis = $post["gejalaKlinis"];
         $this->suhuBadan = $post["suhuBadan"];
         $this->beratBadan = $post["beratBadan"];
         $this->diagnosa = $post["diagnosa"];
         $this->tindakan = $post["tindakan"];
         $this->obat = $post["obat"];
-        // $this->idPegawai = $post["namaPegawai"];
+        $this->idPegawai = $post["idPegawai"];
 
         $this->idHewan = $fk;
-        $this->namaPegawai = $fk;
         $this->db->insert("rekam_medis", $this);
     }
 
@@ -448,7 +448,7 @@ class m_admin extends CI_Model
     public function getRekamMedis($idRekamMedis)
     {
         $this->db->where('idHewan', $idRekamMedis);
-        return $this->db->get("rekam_medis")->result();
+        return $this->db->get("data_medis_view")->result();
     }
 
     public function getDokter(){
@@ -484,9 +484,7 @@ class m_admin extends CI_Model
         return $this->db->update("hewan_peliharaan", $this);
     }
 
-    //laporan
-    public function getListLaporan()
-    {
-        return $this->db->get("laporan_kunjungan_view")->result();
+    public function resetQ(){
+        $this->db->truncate("antrian_registrasi");
     }
 }
