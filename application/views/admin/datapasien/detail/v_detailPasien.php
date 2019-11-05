@@ -92,7 +92,7 @@
                                     <td><?php echo $d->warna ?></td>
                                     <td><?php echo status($d->status) ?></td>
                                     <td><a class="btn btn-primary" href="<?php echo site_url('admin/detailRekamMedis/' . $d->idHewan); ?>"><i class="fa fa-file"></i></a></td>
-                                    <td></td>
+                                    <td><a class="btn btn-primary" href="<?php echo site_url('admin/editDataHewan/'. $d->idHewan); ?>"><i class="fas fa-pen"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -103,7 +103,7 @@
 
         <div class="row">
             <div class="col">
-                <button class="btn btn-secondary" href="#" id="myBtn">Tambah Hewan Baru</button>
+                <button class="btn btn-secondary" href="#" style="margin-bottom:0.5cm"id="myBtn">Tambah Hewan Baru</button>
 
             </div>
         </div>
