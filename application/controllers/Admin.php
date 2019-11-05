@@ -57,6 +57,22 @@ class Admin extends CI_Controller
         redirect('admin/detailRekamMedis/' . $fk);
     }
 
+    public function formKirim($fk)
+    {
+        $formmedis = $this->m_admin;
+        $validation = $this->form_validation;
+        $validation->set_rules('idPegawai', 'idPegawai','required');
+
+        if ($validation->run()) {
+            $formmedis->kirim($fk);
+            $this->session->set_flashdata('success', 'Berhasil di kirim');
+            //redirect(base_url());
+        }
+
+        redirect('admin/detailRekamMedis/' . $fk);
+    }
+
+
     /*
     * DATA PEGAWAI
     */
@@ -73,8 +89,6 @@ class Admin extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             redirect(site_url('admin/dataPegawai'));
         }
-
-
         $data['title'] = 'Form Data Pegawai';
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('admin/datapegawai/form/v_regPegawai');
