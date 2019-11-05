@@ -47,12 +47,7 @@
                                 <input type="text" name="email" class="form-control" id="" value="<?php echo $data_pemilik->email ?>" readonly>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label">Password</label>
-                            <div class="col-sm-6">
-                                <input type="text" name="email" class="form-control" id="" value="<?php echo $data_pemilik->password ?>" readonly>
-                            </div>
-                        </div>
+
                     </form>
                 </div>
             </div>
@@ -64,15 +59,12 @@
             <div class="row" style="margin-top:20px">
                 <div class="col" style="margin-left:20px">
                     <form class="data-pasien" action="<?php base_url('UserProfile/seeProfile') ?>" method="post">
-                        <!-- <div class="form-group row">
-                            <label for="passLama" class="col-sm-4 col-form-label">Password Lama</label>
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-4 col-form-label">Password</label>
                             <div class="col-sm-6">
-                                <input type="password" class="form-control" placeholder="Password Lama" name="passLama">
+                                <input type="text" name="email" class="form-control" id="" value="<?php echo $data_pemilik->password ?>" readonly>
                             </div>
-                            <div class="invalid-feedback">
-                                <?php echo form_error('passLama') ?>
-                            </div>
-                        </div> -->
+                        </div>
                         <div class="form-group row">
                             <label for="passBaru" class="col-sm-4 col-form-label">Password Baru</label>
                             <div class="col-sm-6">
@@ -82,15 +74,6 @@
                                 <?php echo form_error('passBaru') ?>
                             </div>
                         </div>
-                        <!-- <div class="form-group row">
-                            <label for="passKonf" class="col-sm-4 col-form-label">Konfirmasi Password</label>
-                            <div class="col-sm-6">
-                                <input type="password" class="form-control" placeholder="Konfirmasi Password" name="passKonf">
-                            </div>
-                            <div class="invalid-feedback">
-                                <?php echo form_error('passKonf') ?>
-                            </div>
-                        </div> -->
                         <button type="submit" class="btn btn-secondary">Simpan</button>
                     </form>
                 </div>
