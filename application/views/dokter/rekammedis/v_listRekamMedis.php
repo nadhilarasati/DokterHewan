@@ -26,7 +26,7 @@
                                     <td><?php echo $da->namaHewan ?></td>
                                     <td><?php echo $da->jenis ?></td>
                                     <td><?php echo status($da->status) ?></td>
-                                    <td><a class="btn btn-primary" href="<?php echo site_url('dokter/detailMedis/' . $da->idAntrian); ?>"><i class="fas fa-pen"></i></a></td>
+                                    <td><a class="btn btn-primary" href="<?php echo site_url('dokter/detailMedis/' . $da->idHewan); ?>"><i class="fas fa-pen"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
