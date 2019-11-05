@@ -1,7 +1,7 @@
 <div id="content-wrapper">
     <div class="container-fluid" style="float:right; width:80vw">
         <form class="data-pasien" action="<?php site_url('admin/detailDataPegawai/' . $data_pegawai->idPegawai); ?>" method="post">
-            <h2 class="text-center"style="margin-bottom:2cm">Data Pegawai</h2>
+            <h2 class="text-center" style="margin-bottom:2cm">Data Pegawai</h2>
 
             <?php if ($this->session->flashdata('success')) : ?>
                 <div class="alert alert-success" role="alert">
@@ -38,9 +38,12 @@
                 <div class="col-sm-6">
                     <div class="input-group mb-3">
                         <select name="role" class="custom-select" id="inputGroupSelect01">
-                            <option selected><?php echo roleName($data_pegawai->role) ?></option>
-                            <option value="1">Dokter</option>
-                            <option value="2">Paramedis</option>
+                            <option value="<?php echo roleName($data_pegawai->role) ?>"><?php echo roleName($data_pegawai->role) ?></option>
+                            <?php if (roleName($data_pegawai->role) != 'Dokter') { ?>
+                                <option value="1">Dokter</option>
+                            <?php } else { ?>
+                                <option value="2">Paramedis</option>
+                            <?php } ?>
                         </select>
                     </div>
                 </div>
