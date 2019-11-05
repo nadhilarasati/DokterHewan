@@ -210,12 +210,33 @@ class Admin extends CI_Controller
         // $this->load->view('admin/template/sidebarfooter');
     }
 
+    //edit data hewan
+    public function editDataHewan($idHewan=null)
+    {
+        $data['title'] = 'Data Hewan';
+        $datahewan = $this->m_admin;
+        $validation = $this->form_validation;
+        $validation->set_rules($datahewan->rules_edithewan());
+
+        if ($validation->run()) {
+            $datahewan->editHewan($idHewan);
+            $this->session->set_flashdata('success', 'Berhasil diperbarui');
+        }
+        $data["data_hewan"] = $this->m_admin->getHewan($idHewan);
+        $data["tipe_hewan"] = $this->m_admin->getTipeHewan();
+
+        $this->load->view('admin/template/sidebar', $data);
+        $this->load->view('admin/dataPasien/detail/v_detailHewan');
+        $this->load->view('admin/template/sidebarfooter');
+    }
+
     /*
     * LAPORAN
     */
     public function laporan()
     {
         $data['title'] = 'Laporan';
+        $data['laporan'] = $this->m_admin->getListLaporan();
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('admin/laporan/v_listLaporan');
         $this->load->view('admin/template/sidebarfooter');
