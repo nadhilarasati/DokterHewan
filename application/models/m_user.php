@@ -35,9 +35,8 @@ class m_user extends CI_Model{
     public function editPassword($idPemilik)
     {
         $post = $this->input->post();
-
-        $this->password = $post["password"];
-        $this->db->where('idPemilik', $idPemilik);
+        $this->password = $post["passBaru"];
+        $this->db->where('email', $idPemilik);
         return $this->db->update("pemilik_hewan", $this);
     }
 
