@@ -2,24 +2,13 @@
     <div class="container-fluid">
         <form class="data-pasien" action="<?php site_url('dokter/detailMedis/' . $data_pet->idHewan); ?>" method="post">
             <h2 class="text-center" style="margin-bottom:2cm; margin-top:3cm">Rekam Medis Pasien</h2>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
                             <div class="row">
                                 <div class="col">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="row">
-                                <div class="col">
+                                    <h4 style="margin-bottom:1cm">Data Hewan</h4>
                                     <div class="form-group row">
                                         <label for="noKTP" class="col-sm-4 col-form-label">Nama Hewan</label>
                                         <div class="col-sm-8">
@@ -60,35 +49,48 @@
                                             <label for="noKTP" name="warna" class="col-sm-4 col-form-label"><?php echo $data_pet->warna ?></label>
                                         </div>
                                     </div>
-
+                                    <div class="form-group row">
+                                        <label for="noKTP" class="col-sm-4 col-form-label">Status</label>
+                                        <div class="col-sm-8">
+                                            <label for="noKTP" name="warna" class="col-sm-4 col-form-label"><?php echo status($data_pet->status) ?></label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                    </div>
-                </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col">
+                                    <h4 style="margin-bottom:1cm">Data Pemilik Hewan</h4>
+                                    <div class="form-group row">
+                                        <label for="noKTP" class="col-sm-4 col-form-label">Nama Pemilik</label>
+                                        <div class="col-sm-8">
+                                            <label for="namaHewan" name="namaHewan" class="col-sm-4 col-form-label"></label>
+                                        </div>
+                                    </div>
 
-            </div>
+                                    <div class="form-group row">
+                                        <label for="noKTP" class="col-sm-4 col-form-label">Alamat</label>
+                                        <div class="col-sm-8">
+                                            <label for="noKTP" name="jenisHewan" class="col-sm-4 col-form-label"></label>
+                                        </div>
+                                    </div>
 
-        </form>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group row">
-                    <label for="status" class="col-sm-4 col-form-label">Status Hewan</label>
-                    <div class="col-sm-8">
-                        <div class="input-group mb-3">
-                            <select class="custom-select" id="inputGroupSelect01">
-                                <option selected>Choose...</option>
-                                <option value="1">Hidup</option>
-                                <option value="2">Mati</option>
-                            </select>
+                                    <div class="form-group row">
+                                        <label for="name" class="col-sm-4 col-form-label">Telepon</label>
+                                        <div class="col-md-8">
+                                            <label for="noKTP" name="tanggalLahir" class="col-sm-4 col-form-label"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-        </div>
+        </form>
+
         <div class="row">
             <div class="col">
                 <div class="table-responsive">
@@ -130,6 +132,16 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div style="margin-bottom:0.5cm">
+                    <button class="btn btn-secondary">Selesai</button>
+                    <button class="btn btn-secondary">Hapus Antrian</button>
+                    <!--<button class="btn btn-secondary">Delete Record</button>-->
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -146,6 +158,13 @@ function gender($code)
     }
 }
 
-
+function status($code)
+{
+    if ($code == 0) {
+        return "Hidup";
+    } else {
+        return "Mati";
+    }
+}
 
 ?>
