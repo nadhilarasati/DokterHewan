@@ -68,7 +68,8 @@
                         <div class="form-group row">
                             <label for="passBaru" class="col-sm-4 col-form-label">Password Baru</label>
                             <div class="col-sm-6">
-                                <input type="password" class="form-control" placeholder="Password Baru" name="passBaru">
+                                <input id= "pw" type="password" class="form-control " placeholder="Password Baru" name="passBaru">
+                                <span toggle="#pw" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
                             <div class="invalid-feedback">
                                 <?php echo form_error('passBaru') ?>
@@ -99,6 +100,16 @@
 
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
+
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
 </script>
 
 <style>
