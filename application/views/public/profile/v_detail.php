@@ -5,9 +5,10 @@
         <div class="row">
             <div class="col-md-4">
                 <div style="margin-left:20px; margin-top:20px">
-                    <img src="../../lib/img/profile3.jpg" style="width:100%">
+                    <img src="../../lib/img/default.jpg" style="width:100%">
                     <div style="margin-top:20px">
                         <button>Ubah Foto</button>
+                        <button>Simpan</button>
                     </div>
                 </div>
             </div>
@@ -84,14 +85,14 @@
                 </thead>
                 <?php foreach ($data_medis as $dm) : ?>
                     <tbody class="text-center">
-                        <td></td>
+                        <td><?php echo $dm->tanggal ?></td>
                         <td><?php echo $dm->gejalaKlinis ?></td>
                         <td><?php echo $dm->beratBadan ?></td>
                         <td><?php echo $dm->suhuBadan ?></td>
                         <td><?php echo $dm->diagnosa ?></td>
                         <td><?php echo $dm->tindakan ?></td>
                         <td><?php echo $dm->obat ?></td>
-                        <td></td>
+                        <td><?php echo $dm->namaPegawai ?></td>
                     </tbody>
                 <?php endforeach; ?>
             </table>
