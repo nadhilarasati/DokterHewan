@@ -14,4 +14,13 @@ class m_laporan extends CI_Model
         $this->db->where('tanggal', $tanggal);
         return $this->db->get("detail_laporan_view")->result();
     }
+
+    public function getTanggal(){
+        $data = $this->input->post();
+        $this->db->select('*');
+        $this->db->from("laporan_kunjungan_view");
+        $this->db->where('tanggal >=',$data["tanggalAwal"]);
+        $this->db->where('tanggal <=',$data["tanggalAkhir"]);
+        return $this->db->get()->result();
+    }
 }
