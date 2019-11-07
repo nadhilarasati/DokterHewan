@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-sm-6">
                             <div class="form-group row">
                                 <label for="idHewan" class="col-sm-4 col-form-label">ID Hewan</label>
                                 <div class="col-sm-8">
@@ -65,7 +65,14 @@
                                     <label for="noKTP" name="warna" class="col-sm-4 col-form-label"><?php echo status($data_pet->status) ?></label>
                                 </div>
                             </div>
-
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group row">
+                                <label for="foto" class="col-sm-4 col-form-label">Foto</label>
+                                <div class="col-sm-8">
+                                    <label for="foto" name="foto" class="col-sm-4 col-form-label"><?php echo $data_pet->foto ?></label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -78,7 +85,7 @@
             <div class="col-md-6">
                 <div style="margin-bottom:0.5cm">
                     <button class="btn btn-secondary" id="myBtn"><i class="fas fa-plus">Tambah Rekam Medis Baru</i></button>
-                    <a class="btn btn-secondary" href="<?php echo site_url('Laporan/rekamMedisPDF/'.$data_pet->idHewan);?>"><i class="fas fa-download">Unduh Formulir Rekam Medis</i></a>
+                    <a class="btn btn-secondary" href="<?php echo site_url('Laporan/rekamMedisPDF/' . $data_pet->idHewan); ?>"><i class="fas fa-download">Unduh Formulir Rekam Medis</i></a>
                     <!--<button class="btn btn-secondary">Delete Record</button>-->
                 </div>
             </div>
@@ -106,7 +113,7 @@
                                 <tr class="text-center">
                                     <td><?php echo $dm->idRekamMedis ?></td>
                                     <td>
-                                        <?php echo $dm->tanggal?>
+                                        <?php echo $dm->tanggal ?>
                                     </td>
                                     <td><?php echo $dm->gejalaKlinis ?></td>
                                     <td><?php echo $dm->suhuBadan ?></td>
@@ -115,7 +122,7 @@
                                     <td><?php echo $dm->tindakan ?></td>
                                     <td><?php echo $dm->obat ?></td>
                                     <td><?php echo $dm->namaPegawai ?></td>
-                                    <td><a class="btn btn-primary" href="<?php echo site_url('admin/editRekamMedis/'.$dm->idRekamMedis); ?>"><i class="fas fa-pen"></i></a></td>
+                                    <td><a class="btn btn-primary" href="<?php echo site_url('admin/editRekamMedis/' . $dm->idRekamMedis); ?>"><i class="fas fa-pen"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -208,7 +215,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="submit" class="btn btn-secondary" >Simpan</button>
+                <button type="submit" class="btn btn-secondary">Simpan</button>
                 <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
             </div>
             <?php echo form_close(); ?>
