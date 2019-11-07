@@ -86,6 +86,13 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="foto" class="col-sm-4 col-form-label">Foto</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control-file <?php echo form_error('foto')? 'is-invalid':''?>" type="file" name="foto">
+                                    <input type="hidden" name="foto_lama">
+                                </div>
+                            </div>
                             <button type="submit" class="btn btn-secondary" style="margin-top:0.5cm">Simpan</button>
                         </div>
                     </div>
