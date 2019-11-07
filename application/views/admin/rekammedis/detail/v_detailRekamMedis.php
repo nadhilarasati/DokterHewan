@@ -88,7 +88,7 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <tr>
+                            <tr class="text-center">
                                 <th>ID Rekam Medis</th>
                                 <th>Tanggal</th>
                                 <th>Gejala Klinis</th>
@@ -98,11 +98,12 @@
                                 <th>Tindakan</th>
                                 <th>Obat</th>
                                 <th>Diperiksa Oleh</th>
+                                <th>Ubah</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($data_medis as $dm) { ?>
-                                <tr>
+                                <tr class="text-center">
                                     <td><?php echo $dm->idRekamMedis ?></td>
                                     <td>
                                         <?php echo $dm->tanggal?>
@@ -114,6 +115,7 @@
                                     <td><?php echo $dm->tindakan ?></td>
                                     <td><?php echo $dm->obat ?></td>
                                     <td><?php echo $dm->namaPegawai ?></td>
+                                    <td><a class="btn btn-primary" href="<?php echo site_url('admin/editRekamMedis'); ?>"><i class="fas fa-pen"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
