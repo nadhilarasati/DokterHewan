@@ -9,7 +9,7 @@
           <div class="col-md-8">
 
             <a class="btn btn-secondary" href="<?php echo base_url(); ?>admin/formDataPasien"><i class="fas fa-plus"></i>Registrasi</a>
-            <a class="btn btn-secondary" href="<?php echo base_url(); ?>laporan/formulirRegistrasi"><i class="fas fa-download"></i>Download Formulir</a>
+            <a class="btn btn-secondary" href="<?php echo base_url(); ?>laporan/formulirRegistrasi"><i class="fas fa-download"></i>Unduh Formulir</a>
 
 
           </div>
