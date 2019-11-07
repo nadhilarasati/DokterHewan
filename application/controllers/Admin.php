@@ -76,6 +76,15 @@ class Admin extends CI_Controller
         redirect('admin/detailRekamMedis/' . $fk);
     }
 
+    public function editRekamMedis()
+    {
+
+        $data['title'] = 'Detail Rekam Medis';
+        $this->load->view('admin/template/sidebar', $data);
+        $this->load->view('admin/rekammedis/detail/v_editMedis');
+        $this->load->view('admin/template/sidebarfooter');
+    }
+
 
     /*
     * DATA PEGAWAI
