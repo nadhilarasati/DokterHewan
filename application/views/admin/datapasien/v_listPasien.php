@@ -14,7 +14,7 @@
 
           </div>
           <div class="col-md-4">
-            <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+            <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Cari..." aria-label="Search" aria-describedby="basic-addon2">
           </div>
 
 
