@@ -77,8 +77,8 @@
         <div class="row">
             <div class="col-md-6">
                 <div style="margin-bottom:0.5cm">
-                    <button class="btn btn-secondary" id="myBtn"><i class="fas fa-plus">Tambah Record Baru</i></button>
-                    <button class="btn btn-secondary"><i class="fas fa-download">Download Form Record</i></button>
+                    <button class="btn btn-secondary" id="myBtn"><i class="fas fa-plus">Tambah Rekam Medis Baru</i></button>
+                    <a class="btn btn-secondary" href="<?php echo site_url('Laporan/rekamMedisPDF/'.$data_pet->idHewan);?>"><i class="fas fa-download">Unduh Formulir Rekam Medis</i></a>
                     <!--<button class="btn btn-secondary">Delete Record</button>-->
                 </div>
             </div>
