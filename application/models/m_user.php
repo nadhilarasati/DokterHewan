@@ -1,7 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class m_user extends CI_Model{
-    public function getIdByEmail($email){
+class m_user extends CI_Model
+{
+    public function getIdByEmail($email)
+    {
         $this->db->select('idPemilik');
         $this->db->from('pemilik_hewan');
         $this->db->where('email', $email);
@@ -29,7 +31,7 @@ class m_user extends CI_Model{
     public function getRekamMedis($idRekamMedis)
     {
         $this->db->where('idHewan', $idRekamMedis);
-        return $this->db->get("rekam_medis")->result();
+        return $this->db->get("data_medis_view")->result();
     }
 
     public function editPassword($idPemilik)
@@ -39,26 +41,5 @@ class m_user extends CI_Model{
         $this->db->where('email', $idPemilik);
         return $this->db->update("pemilik_hewan", $this);
     }
-
-    //upload foto
-    private function uploadFotoPariwisata($id){
-		$currName = $this->nama;
-		$new_name = $id." ".$currName;
-
-		$config['upload_path']	= './img/Pariwisata/';
-		$config['allowed_types']= 'gif|jpg|jpeg|png';
-		$config['file_name']		= $new_name;
-		$config['overwrite']		= true;
-		$config['max_size']			= 1024; // 1MB
-		
-
-		$this->load->library('upload', $config);
-
-		if ($this->upload->do_upload('foto')) {
-			return $this->upload->data("file_name"); //nama file + jpg nya
-		}else{
-			return "default.jpg";
-		}
-	}
 
 }
