@@ -186,7 +186,12 @@ class m_admin extends CI_Model
                 'field' => 'status',
                 'label' => 'status',
                 'rules' => 'required'
-            ]
+            ], 
+            [
+                'field' => 'foto',
+                'label' => 'foto',
+                'rules' => 'required'
+            ], 
         ];
     }
 
@@ -501,6 +506,17 @@ class m_admin extends CI_Model
         $this->idTipe = $post["jenisHewan"];
         $this->status = $post["status"];
 
+        // $fileName = $this->uploadFoto($idHewan); //Upload FILE + Nomori foto dgn ID
+		// $pathFoto = "upload\\hewan\\".$fileName; //PATH untuk di DB
+        // $this->foto = $pathFoto;
+        
+        if (empty($_FILES["foto"]["name"])) {
+			$fileName = $this->uploadFoto($idHewan); //Upload FILE + Nomori foto dgn ID
+			$pathFoto = "upload\\hewan\\".$fileName; //PATH untuk di DB
+			$this->foto = $pathFoto;
+		} else {
+			$this->foto = $post["foto_lama"];
+		}
 
         $this->db->where('idHewan', $idHewan);
         return $this->db->update("hewan_peliharaan", $this);
@@ -508,5 +524,28 @@ class m_admin extends CI_Model
 
     public function resetQ(){
         $this->db->truncate("antrian_registrasi");
+    }
+
+    //upload foto
+    private function uploadFoto($idHewan)
+    {
+        $currName = $this->namaHewan;
+		$new_name = $idHewan." ".$currName;
+
+        $config['upload_path']    = './upload/hewan';
+        $config['allowed_types'] = 'gif|jpg|jpeg|png';
+        $config['file_name']        = $new_name;
+        $config['overwrite']        = true;
+        $config['max_size']            = 1024; // 1MB
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('foto')) {
+            return $this->upload->data("file_name"); //nama file + jpg nya
+        } else {
+            return "default.jpg";
+        }
     }
 }
