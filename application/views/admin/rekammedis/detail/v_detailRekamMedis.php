@@ -115,7 +115,7 @@
                                     <td><?php echo $dm->tindakan ?></td>
                                     <td><?php echo $dm->obat ?></td>
                                     <td><?php echo $dm->namaPegawai ?></td>
-                                    <td><a class="btn btn-primary" href="<?php echo site_url('admin/editRekamMedis'); ?>"><i class="fas fa-pen"></i></a></td>
+                                    <td><a class="btn btn-primary" href="<?php echo site_url('admin/editRekamMedis/'.$dm->idRekamMedis); ?>"><i class="fas fa-pen"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
