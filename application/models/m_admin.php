@@ -451,6 +451,28 @@ class m_admin extends CI_Model
         return $this->db->get("data_medis_view")->result();
     }
 
+    public function getMedis($idRekamMedis)
+    {
+        $this->db->where('idRekamMedis', $idRekamMedis);
+        return $this->db->get("data_medis_view")->row();
+    }
+
+    public function editMedis($idRekamMedis)
+    {
+        $post = $this->input->post();
+
+        $this->tanggal = date("Y/m/d");
+        $this->gejalaKlinis = $post["gejalaKlinis"];
+        $this->suhuBadan = $post["suhuBadan"];
+        $this->beratBadan = $post["beratBadan"];
+        $this->diagnosa = $post["diagnosa"];
+        $this->tindakan = $post["tindakan"];
+        $this->obat = $post["obat"];
+        $this->idPegawai = $post["idPegawai"];
+
+        $this->db->where('idRekamMedis', $idRekamMedis);
+        return $this->db->update("rekam_medis", $this);    }
+
     public function getDokter(){
         $this->db->select('idPegawai');
         $this->db->select('namaPegawai');
