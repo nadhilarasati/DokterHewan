@@ -46,11 +46,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="<?php echo base_url('UserProfile/aboutus') ?>">TENTANG KAMI</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('UserProfile/facilities') ?>">FASILITAS</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="<?php echo base_url('UserProfile/aboutus') ?>">TENTANG KAMI</a>
+                </li>
+                
                 <li class="nav-item">
                     <div class="dropdown">
                         <button class="dropbtn">PROFILE
