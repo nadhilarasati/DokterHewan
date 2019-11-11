@@ -30,6 +30,7 @@ class Pages extends CI_Controller
         $data['title'] = 'Facilities';
         $this->load->view('templates/header', $data);
         $this->load->view('public/facilities/v_facilities');
+        $this->load->view('templates/sidebarFasilitas');
         $this->load->view('templates/footer');
     }
 
