@@ -46,11 +46,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="<?php echo base_url('pages/aboutus') ?>">TENTANG KAMI</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('pages/facilities') ?>">FASILITAS</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="<?php echo base_url('pages/aboutus') ?>">TENTANG KAMI</a>
+                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('pages/login') ?>">LOGIN</a>
                 </li>
