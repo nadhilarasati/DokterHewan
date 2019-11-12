@@ -1,15 +1,39 @@
 <div class="side" style="float:left; width:25vw; height: 100%; position:fixed">
-    <div class="fasilitas" style="margin-top:200px; margin-left:35px">
+    <div class="fasilitas" style="margin-top:150px; margin-left:35px">
         <h3>FASILITAS KLINIK NYANKO</h3>
         <div class="row">
             <div class="col nav-item">
-                <a href="">VAKSIN</a>
+                <a href="" style="color:white">VAKSIN</a>
             </div>
         </div>
         |
         <div class="row">
             <div class="col nav-item">
-                <a href="">VAKSIN</a>
+                <a href="" style="color:white">OPERASI BESAR</a>
+            </div>
+        </div>
+        |
+        <div class="row">
+            <div class="col nav-item">
+                <a href="" style="color:white">STERIL DAN KEBIRI</a>
+            </div>
+        </div>
+        |
+        <div class="row">
+            <div class="col nav-item">
+                <a href="" style="color:white">USG</a>
+            </div>
+        </div>
+        |
+        <div class="row">
+            <div class="col nav-item">
+                <a href="" style="color:white">XRAY</a>
+            </div>
+        </div>
+        |
+        <div class="row">
+            <div class="col nav-item">
+                <a href="" style="color:white">MINI PET SHOP</a>
             </div>
         </div>
     </div>
