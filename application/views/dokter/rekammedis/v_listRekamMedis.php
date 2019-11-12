@@ -9,7 +9,7 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <tr>
+                            <tr class="text-center">
                                 <th>Nomor Antrian</th>
                                 <th>Nama Hewan</th>
                                 <th>Jenis Hewan</th>
@@ -22,13 +22,13 @@
 
 
                             <?php foreach ($data_antrian as $da) { ?>
-                                <tr>
+                                <tr class="text-center">
                                     <td><?php echo $da->idAntrian ?></td>
                                     <td><?php echo $da->namaHewan ?></td>
                                     <td><?php echo $da->jenis ?></td>
                                     <td><?php echo status($da->status) ?></td>
                                     <td><a class="btn btn-primary" href="<?php echo site_url('dokter/detailMedis/' . $da->idHewan); ?>"><i class="fas fa-pen"></i></a></td>
-                                    <td><a class="btn btn-primary" href="<?php echo site_url('dokter/hapusAntrian/' . $da->idAntrian); ?>"><i class="fas fa-pen"></i></a></td>
+                                    <td><a class="btn btn-primary" href="<?php echo site_url('dokter/hapusAntrian/' . $da->idAntrian); ?>"><i class="fas fa-trash"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
