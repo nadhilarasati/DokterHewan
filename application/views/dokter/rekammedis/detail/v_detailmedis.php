@@ -12,47 +12,47 @@
                                     <div class="form-group row">
                                         <label for="noKTP" class="col-sm-4 col-form-label">Nama Hewan</label>
                                         <div class="col-sm-8">
-                                            <label for="namaHewan" name="namaHewan" class="col-sm-4 col-form-label"><?php echo $data_pet->namaHewan ?></label>
+                                            <label for="namaHewan" name="namaHewan" class="col-form-label"><?php echo $data_pet->namaHewan ?></label>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="noKTP" class="col-sm-4 col-form-label">Jenis Hewan</label>
                                         <div class="col-sm-8">
-                                            <label for="noKTP" name="jenisHewan" class="col-sm-4 col-form-label"><?php echo $data_pet->jenis ?></label>
+                                            <label for="noKTP" name="jenisHewan" class="col-form-label"><?php echo $data_pet->jenis ?></label>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="name" class="col-sm-4 col-form-label">Tanggal Lahir</label>
                                         <div class="col-md-8">
-                                            <label for="noKTP" name="tanggalLahir" class="col-sm-4 col-form-label"><?php echo $data_pet->tanggalLahir ?></label>
+                                            <label for="noKTP" name="tanggalLahir" class="col-form-label"><?php echo $data_pet->tanggalLahir ?></label>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="noKTP" class="col-sm-4 col-form-label">Jenis Kelamin</label>
                                         <div class="col-sm-8">
-                                            <label for="noKTP" name="jenisKelamin" class="col-sm-4 col-form-label"><?php echo gender($data_pet->jenisKelamin) ?></label>
+                                            <label for="noKTP" name="jenisKelamin" class="col-form-label"><?php echo gender($data_pet->jenisKelamin) ?></label>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="noKTP" class="col-sm-4 col-form-label">Ras</label>
                                         <div class="col-sm-8">
-                                            <label for="noKTP" name="ras" class="col-sm-4 col-form-label"><?php echo $data_pet->ras ?></label>
+                                            <label for="noKTP" name="ras" class="col-form-label"><?php echo $data_pet->ras ?></label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="noKTP" class="col-sm-4 col-form-label">Warna</label>
                                         <div class="col-sm-8">
-                                            <label for="noKTP" name="warna" class="col-sm-4 col-form-label"><?php echo $data_pet->warna ?></label>
+                                            <label for="noKTP" name="warna" class="col-form-label"><?php echo $data_pet->warna ?></label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="noKTP" class="col-sm-4 col-form-label">Status</label>
                                         <div class="col-sm-8">
-                                            <label for="noKTP" name="warna" class="col-sm-4 col-form-label"><?php echo status($data_pet->status) ?></label>
+                                            <label for="noKTP" name="warna" class="col-form-label"><?php echo status($data_pet->status) ?></label>
                                         </div>
                                     </div>
                                 </div>
@@ -66,21 +66,21 @@
                                     <div class="form-group row">
                                         <label for="noKTP" class="col-sm-4 col-form-label">Nama Pemilik</label>
                                         <div class="col-sm-8">
-                                            <label for="namaHewan" name="namaHewan" class="col-sm-4 col-form-label"></label>
+                                            <label for="namaHewan" name="namaHewan" class="col-form-label"><?php echo $data_pet->namaPemilik ?></label>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="noKTP" class="col-sm-4 col-form-label">Alamat</label>
                                         <div class="col-sm-8">
-                                            <label for="noKTP" name="jenisHewan" class="col-sm-4 col-form-label"></label>
+                                            <label for="noKTP" name="jenisHewan" class="col-form-label"><?php echo $data_pet->alamat ?></label>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="name" class="col-sm-4 col-form-label">Telepon</label>
-                                        <div class="col-md-8">
-                                            <label for="noKTP" name="tanggalLahir" class="col-sm-4 col-form-label"></label>
+                                        <div class="col-sm-8">
+                                            <label for="noKTP" name="tanggalLahir" class="col-form-label"><?php echo $data_pet->telepon ?></label>
                                         </div>
                                     </div>
                                 </div>
