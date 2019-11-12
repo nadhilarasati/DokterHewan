@@ -4,7 +4,7 @@ class m_dokter extends CI_Model{
     
     public function getHewanById($idHewan){
         $this->db->where('idHewan', $idHewan);
-        return $this->db->get("daftar_hewan")->row();
+        return $this->db->get("pemilik_peliharaan")->row();
     }
 
     public function getIdByEmail($email){
