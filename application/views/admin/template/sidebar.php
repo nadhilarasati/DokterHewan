@@ -93,7 +93,7 @@
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>Laporan/laporan">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Laporan Rekam Medis</span></a>
+            <span>Laporan</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>Admin/resetAntrian">
@@ -105,7 +105,7 @@
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>dokter/listRekamMedis">
             <i class="fas fa-fw fa-file"></i>
-            <span>Antrian Pasien</span></a>
+            <span>Antrian Registrasi</span></a>
         </li>
       <?php endif; ?>
     </ul>
