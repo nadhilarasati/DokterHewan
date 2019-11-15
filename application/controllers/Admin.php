@@ -8,6 +8,7 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         $this->load->model("m_admin");
+        $this->load->library('upload');
         $this->load->library('form_validation');
         if ($this->session->userdata('logged_in') !== TRUE) {
             redirect('login');
@@ -233,7 +234,7 @@ class Admin extends CI_Controller
     }
 
     //edit data hewan
-    public function editDataHewan($idHewan = null)
+    public function editDataHewan($idHewan)
     {
         $data['title'] = 'Data Hewan';
         $datahewan = $this->m_admin;
