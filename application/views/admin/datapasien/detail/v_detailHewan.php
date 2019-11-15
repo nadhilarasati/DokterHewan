@@ -11,6 +11,7 @@
                     <?php endif; ?>
                     <div class="row">
                         <div class="col-md-6">
+                        <?php echo form_open_multipart('admin/editDataHewan/'.$data_hewan->idHewan);?>
                             <div class="form-group row">
                                 <label for="idHewan" class="col-sm-4 col-form-label">ID Hewan</label>
                                 <div class="col-sm-8">
