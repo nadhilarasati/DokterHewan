@@ -139,7 +139,7 @@ class m_admin extends CI_Model
                 'label' => 'jenisHewan',
                 'rules' => 'required'
             ]
-            
+
         ];
     }
 
@@ -186,12 +186,12 @@ class m_admin extends CI_Model
                 'field' => 'status',
                 'label' => 'status',
                 'rules' => 'required'
-            ], 
+            ],
             [
                 'field' => 'foto',
                 'label' => 'foto',
                 'rules' => 'required'
-            ], 
+            ],
         ];
     }
 
@@ -476,18 +476,21 @@ class m_admin extends CI_Model
         $this->idPegawai = $post["idPegawai"];
 
         $this->db->where('idRekamMedis', $idRekamMedis);
-        return $this->db->update("rekam_medis", $this);    }
+        return $this->db->update("rekam_medis", $this);
+    }
 
-    public function getDokter(){
+    public function getDokter()
+    {
         $this->db->select('idPegawai');
         $this->db->select('namaPegawai');
         $this->db->from('staff_klinik');
-        $this->db->where('role',1);
+        $this->db->where('role', 1);
         $query = $this->db->get()->result();
         return $query;
     }
 
-    public function kirim($idHewan){
+    public function kirim($idHewan)
+    {
         $post = $this->input->post();
         $this->idPegawai = $post["idPegawai"];
         $this->idHewan = $idHewan;
@@ -505,24 +508,27 @@ class m_admin extends CI_Model
         $this->warna = $post["warna"];
         $this->idTipe = $post["jenisHewan"];
         $this->status = $post["status"];
+        $this->foto = $post["foto"];
 
         // $fileName = $this->uploadFoto($idHewan); //Upload FILE + Nomori foto dgn ID
-		// $pathFoto = "upload\\hewan\\".$fileName; //PATH untuk di DB
+        // $pathFoto = "upload\\hewan\\".$fileName; //PATH untuk di DB
         // $this->foto = $pathFoto;
-        
+
         if (empty($_FILES["foto"]["name"])) {
-			$fileName = $this->uploadFoto($idHewan); //Upload FILE + Nomori foto dgn ID
-			$pathFoto = "upload\\hewan\\".$fileName; //PATH untuk di DB
-			$this->foto = $pathFoto;
-		} else {
-			$this->foto = $post["foto_lama"];
-		}
+            $fileName = $this->uploadFoto($idHewan); //Upload FILE + Nomori foto dgn ID
+            $pathFoto = "aplication\\models\\img\\" . $fileName; //PATH untuk di DB
+            $this->foto = $pathFoto;
+        } else {
+            $this->foto = $post["foto"];
+        }
 
         $this->db->where('idHewan', $idHewan);
         return $this->db->update("hewan_peliharaan", $this);
     }
 
-    public function resetQ(){
+    //reset antrian
+    public function resetQ()
+    {
         $this->db->truncate("antrian_registrasi");
     }
 
@@ -530,22 +536,26 @@ class m_admin extends CI_Model
     private function uploadFoto($idHewan)
     {
         $currName = $this->namaHewan;
-		$new_name = $idHewan." ".$currName;
+        $new_name = $idHewan . " " . $currName;
 
-        $config['upload_path']    = './upload/hewan';
+        $config['upload_path']    = './application/models/img/';
         $config['allowed_types'] = 'gif|jpg|jpeg|png';
         $config['file_name']        = $new_name;
-        $config['overwrite']        = true;
-        $config['max_size']            = 1024; // 1MB
-        // $config['max_width']            = 1024;
-        // $config['max_height']           = 768;
+        $config['overwrite']        = TRUE;
+        $config['max_size']            = 0; // 1MB kb
+        $config['max_width']            = 1024;
+        $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
+        // $data = array('upload_data' => $this->upload->data());
+        // var_dump($data);
 
         if ($this->upload->do_upload('foto')) {
             return $this->upload->data("file_name"); //nama file + jpg nya
         } else {
             return "default.jpg";
         }
+        // return $this->upload->data("file_name"); //nama file + jpg nya
+
     }
 }
