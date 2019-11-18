@@ -36,7 +36,9 @@ class Laporan extends CI_Controller
 
     function laporanTanggal()
     {
-
+        $data = $this->input->post();
+        $awal = $data["tanggalAwal"];
+        $akhir = $data["tanggalAkhir"];
         $pdf = new FPDF('p', 'mm', 'A4');
         // membuat halaman baru
         $pdf->AddPage();
@@ -44,21 +46,54 @@ class Laporan extends CI_Controller
         $pdf->SetFont('Arial', 'B', 16);
         // mencetak string 
         $pdf->Cell(190, 25, 'REKAP LAPORAN KUNJUNGAN KLINIK NYANKO', 0, 1, 'C');
-
+        $pdf->SetFont('Arial', 'B', 10);
+        $pdf->Cell(190, 10, 'Periode '.$awal.' sampai '.$akhir, 0, 1, 'C');
         // Memberikan space kebawah agar tidak terlalu rapat
         $pdf->Cell(10, 15, '', 0, 1);
         $pdf->SetFont('Arial', 'B', 10);
         $pdf->Cell(80, 6, 'Tanggal', 1, 0, 'C');
         $pdf->Cell(55, 6, 'Jenis Hewan', 1, 0, 'C');
         $pdf->Cell(55, 6, 'Jumlah Kunjungan', 1, 1, 'C');
-        $laporan = $this->m_laporan->getTanggal();
+        
+        $laporan = $this->m_laporan->getTanggal($awal,$akhir);
 
+        $sebelum = $awal;
+        $counter = 0;
+        $subtotal = 0;
+        $total = 0;
         foreach ($laporan as $l) {
-            $pdf->SetFont('Arial', '', 10);
-            $pdf->Cell(80, 6, $l->tanggal, 1, 0, 'C');
-            $pdf->Cell(55, 6, $l->jenis, 1, 0, 'C');
-            $pdf->Cell(55, 6, $l->Jumlah, 1, 1, 'C');
+            if($sebelum == $l->tanggal || $counter == 0){
+                $pdf->SetFont('Arial', '', 10);
+                $pdf->Cell(80, 6, $l->tanggal, 1, 0, 'C');
+                $pdf->Cell(55, 6, $l->jenis, 1, 0, 'C');
+                $pdf->Cell(55, 6, $l->Jumlah, 1, 1, 'C');
+                $sebelum = $l->tanggal;
+                $counter ='1';
+                $subtotal += $l->Jumlah;
+                $total += $l->Jumlah;
+            }else{
+                $pdf->SetFont('Arial', 'B', 10);
+                $pdf->Cell(80, 6,"" , 1, 0, 'C');
+                $pdf->Cell(55, 6,'Subtotal' , 1, 0, 'C');
+                $pdf->Cell(55, 6, $subtotal, 1, 1, 'C');
+                $subtotal = 0;
+                $pdf->SetFont('Arial', '', 10);
+                $pdf->Cell(80, 6, $l->tanggal, 1, 0, 'C');
+                $pdf->Cell(55, 6, $l->jenis, 1, 0, 'C');
+                $pdf->Cell(55, 6, $l->Jumlah, 1, 1, 'C');
+                $subtotal += $l->Jumlah;
+                $sebelum = $l->tanggal;
+                $total += $l->Jumlah;
+            }     
         }
+        $pdf->SetFont('Arial', 'B', 10);
+                $pdf->Cell(80, 6,"" , 1, 0, 'C');
+                $pdf->Cell(55, 6,'Subtotal' , 1, 0, 'C');
+                $pdf->Cell(55, 6, $subtotal, 1, 1, 'C');
+                $pdf->SetFont('Arial', 'B', 10);
+                $pdf->Cell(80, 6,"" , 1, 0, 'C');
+                $pdf->Cell(55, 6,'Total' , 1, 0, 'C');
+                $pdf->Cell(55, 6, $total, 1, 1, 'C');
 
         $pdf->Output();
     }
