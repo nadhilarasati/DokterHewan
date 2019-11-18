@@ -153,7 +153,7 @@
                         </div>
 
                     </div>-->
-                    <button class="btn btn-secondary" style="margin-top:1cm">Submit</button>
+                    <button class="btn btn-secondary" style="margin-top:1cm">Simpan</button>
                 </div>
             </div>
         </form>
