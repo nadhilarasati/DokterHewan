@@ -48,7 +48,8 @@ class Dokter extends CI_Controller
     public function profilDokter()
     {
 
-        $data['title'] = 'Rekam Medis';
+        $data['title'] = 'Profil Dokter';
+        $data["profil_dokter"] = $this->m_dokter->getDokterById($this->session->userdata('email'));
         $this->load->view('admin/template/sidebar', $data);
         $this->load->view('dokter/v_profil');
         $this->load->view('admin/template/sidebarfooter');
