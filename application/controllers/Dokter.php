@@ -44,4 +44,13 @@ class Dokter extends CI_Controller
         $this->m_dokter->hapus($idAntrian);
         redirect('dokter/listRekamMedis');
     }
+
+    public function profilDokter()
+    {
+
+        $data['title'] = 'Rekam Medis';
+        $this->load->view('admin/template/sidebar', $data);
+        $this->load->view('dokter/v_profil');
+        $this->load->view('admin/template/sidebarfooter');
+    }
 }
