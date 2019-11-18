@@ -1,52 +1,48 @@
 <div id="content-wrapper">
     <div class="container-fluid" style="float:right; width:80vw">
-        <form class="data-pasien" action="<?php site_url(); ?>" method="post">
+        <form class="data-pasien" action="<?php site_url('Dokter/profilDokter') ?>" method="post">
             <h2 class="text-center" style="margin-top:2cm; margin-bottom:2cm">Data Dokter</h2>
             <div class="form-group row">
-                <label for="noKTP" name="id" class="col-sm-4 col-form-label">ID Pegawai</label>
+                <label for="idPegawai" name="id" class="col-sm-4 col-form-label">ID Pegawai</label>
                 <div class="col-sm-6">
-                    <input type="text" name="idPegawai" class="form-control" id="" value="" readonly>
+                    <input type="text" name="idPegawai" class="form-control" id="" value="<?php echo $profil_dokter->idPegawai ?>" readonly>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="noKTP" class="col-sm-4 col-form-label">Nama Pegawai</label>
                 <div class="col-sm-6">
-                    <input type="text" name="nama" class="form-control" id="" value="" readonly>
+                    <input type="text" name="nama" class="form-control" id="" value="<?php echo $profil_dokter->namaPegawai ?>" readonly>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="noKTP" class="col-sm-4 col-form-label">Alamat</label>
                 <div class="col-sm-6">
-                    <input type="text" name="alamat" class="form-control" id="" value="" readonly>
+                    <input type="text" name="alamat" class="form-control" id="" value="<?php echo $profil_dokter->alamat ?>" readonly>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="noKTP" class="col-sm-4 col-form-label">No. Telepon</label>
                 <div class="col-sm-6">
-                    <input type="text" name="telepon" class="form-control" id="" value="" readonly>
+                    <input type="text" name="telepon" class="form-control" id="" value="<?php echo $profil_dokter->telepon ?>" readonly>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="status" class="col-sm-4 col-form-label">Role</label>
+                <label for="noKTP" class="col-sm-4 col-form-label">Peran</label>
                 <div class="col-sm-6">
-                    <div class="input-group mb-3">
-                        <select name="role" class="custom-select" id="inputGroupSelect01">
-                            <option value=""></option>
-                        </select>
-                    </div>
+                    <input type="text" name="role" class="form-control" id="" value="<?php echo roleName($profil_dokter->role) ?>" readonly>
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="noKTP" class="col-sm-4 col-form-label">Email</label>
                 <div class="col-sm-6">
-                    <input type="text" name="email" class="form-control" id="" value="" readonly>
+                    <input type="text" name="email" class="form-control" id="" value="<?php echo $profil_dokter->email ?>" readonly>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="noKTP" class="col-sm-4 col-form-label">Password</label>
                 <div class="col-sm-6">
-                    <input type="password" name="password" class="form-control" id="pw" value="" readonly>
+                    <input type="password" name="password" class="form-control" id="pw" value="<?php echo $profil_dokter->password ?>" readonly>
                     <span toggle="#pw" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                 </div>
             </div>
