@@ -107,11 +107,17 @@
             <i class="fas fa-fw fa-file"></i>
             <span>Antrian Registrasi</span></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>dokter/profilDokter">
+            <i class="fas fa-fw fa-user"></i>
+            <span>Profil Dokter</span></a>
+        </li>
       <?php endif; ?>
     </ul>
 
   </div>
 </body>
+
 
 <style>
   body {
