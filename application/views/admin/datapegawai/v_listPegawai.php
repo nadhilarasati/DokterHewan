@@ -10,7 +10,7 @@
             <a class="btn btn-secondary" href="<?php echo base_url(); ?>admin/formDataPegawai"><i class="fas fa-plus"></i>Tambah Data Pegawai</a>
           </div>
           <div class="col-md-4">
-            <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Cari..." aria-label="Search" aria-describedby="basic-addon2">
+            <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Cari Nama Pegawai..." aria-label="Search" aria-describedby="basic-addon2">
           </div>
         </div>
       </div>
@@ -21,8 +21,8 @@
               <tr class="text-center">
                 <th>ID Pegawai</th>
                 <th>Nama Pegawai</th>
-                <th>Role</th>
-                <th>Action</th>
+                <th>Peran</th>
+                <th>Detail</th>
               </tr>
             </thead>
             <tbody>
