@@ -29,4 +29,10 @@ class m_dokter extends CI_Model{
     public function hapus($idAntrian){
         return $this->db->delete("antrian_registrasi", ["idAntrian" => $idAntrian]);
     }
+
+    public function getDokterById($idPegawai)
+    {
+        $this->db->where('email', $idPegawai);
+        return $this->db->get('staff_klinik')->row();
+    }
 }
