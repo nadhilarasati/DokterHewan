@@ -208,7 +208,7 @@
 
 
             <div class="modal-footer">
-                <button type="submit" class="btn btn-secondary">Save</button>
+                <button type="submit" class="btn btn-secondary">Simpan</button>
                 <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
             </div>
             <!-- </form> -->
