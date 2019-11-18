@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col">
                             <div class="form-group row">
                                 <label for="idHewan" class="col-sm-4 col-form-label">ID Hewan</label>
                                 <div class="col-sm-8">
@@ -66,14 +66,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="form-group row">
-                                <label for="foto" class="col-sm-4 col-form-label">Foto</label>
-                                <div class="col-sm-8">
-                                    <label for="foto" name="foto" class="col-sm-4 col-form-label"><?php echo $data_pet->foto ?></label>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -105,7 +98,6 @@
                                 <th>Tindakan</th>
                                 <th>Obat</th>
                                 <th>Diperiksa Oleh</th>
-                                <th>Ubah</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -122,7 +114,6 @@
                                     <td><?php echo $dm->tindakan ?></td>
                                     <td><?php echo $dm->obat ?></td>
                                     <td><?php echo $dm->namaPegawai ?></td>
-                                    <td><a class="btn btn-primary" href="<?php echo site_url('admin/editRekamMedis/' . $dm->idRekamMedis); ?>"><i class="fas fa-pen"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -151,7 +142,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <?php echo form_open('Admin/formRekamMedis/' . $data_pet->idHewan) ?>
-
+            <h6 style="margin-top:0.5cm; color:red">Anda tidak bisa mengubah isi rekam medis setelah menyimpannya. Mohon diteliti kembali sebelum disimpan!</h6>
             <div class="form-group" style="margin-top:0.5cm">
                 <label for="gejalaKlinis" class="">Gejala Klinis</label>
                 <input type="text" name="gejalaKlinis" class="form-control <?php echo form_error('gejalaKlinis') ? 'is-invalid' : '' ?>" id="" placeholder="gejala klinis">
