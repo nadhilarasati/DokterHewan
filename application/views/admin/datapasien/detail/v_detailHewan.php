@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col">
                 <form class="data-pasien" action="<?php site_url('admin/editDataHewan/' . $data_hewan->idHewan); ?>" method="post">
-                    <h2 class="text-center" style="margin-bottom:2cm; margin-top:3cm">Edit Data Hewan</h2>
+                    <h2 class="text-center" style="margin-bottom:2cm; margin-top:3cm">Ubah Data Hewan</h2>
                     <?php if ($this->session->flashdata('success')) : ?>
                         <div class="alert alert-success" role="alert">
                             <?php echo $this->session->flashdata('success'); ?>
@@ -87,13 +87,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="foto" class="col-sm-4 col-form-label">Foto</label>
-                                <div class="col-sm-8">
-                                    <input class="form-control-file <?php echo form_error('foto')? 'is-invalid':''?>" type="file" name="foto">
-                                    <input type="hidden" name="foto_lama">
-                                </div>
-                            </div>
+                            
                             <button type="submit" class="btn btn-secondary" style="margin-top:0.5cm">Simpan</button>
                         </div>
                     </div>
