@@ -1,7 +1,6 @@
 <div id="content-wrapper" style="float:right; width:80vw">
 
   <div class="container-fluid">
-
     <!-- DataTables Example -->
     <div class="card" style="margin-top: 80px;">
       <div class="card-header">
