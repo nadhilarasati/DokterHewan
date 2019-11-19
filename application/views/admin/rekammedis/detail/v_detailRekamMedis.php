@@ -97,7 +97,7 @@
                                 <th>Diagnosa</th>
                                 <th>Tindakan</th>
                                 <th>Obat</th>
-                                <th>Diperiksa Oleh</th>
+                                <th>Dokter Pemeriksa</th>
                             </tr>
                         </thead>
                         <tbody>
