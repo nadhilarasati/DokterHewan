@@ -2,6 +2,7 @@
     <div class="container-fluid" style="float:right; width:80vw">
         <form class="data-pasien" action="<?php site_url('Dokter/profilDokter') ?>" method="post">
             <h2 class="text-center" style="margin-top:2cm; margin-bottom:2cm">Data Dokter</h2>
+            <p style="color:red">Anda hanya bisa melihat data anda tanpa bisa mengubahnya. Jika terjadi kesalahan, silahkan hubungi paramedis yang bertugas!</p>
             <div class="form-group row">
                 <label for="idPegawai" name="id" class="col-sm-4 col-form-label">ID Pegawai</label>
                 <div class="col-sm-6">
