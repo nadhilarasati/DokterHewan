@@ -11,7 +11,7 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr class="text-center">
-                                <th>Nama Pegawai</th>
+                                <th>Dokter Pemeriksa</th>
                                 <th>Nama Hewan</th>
                                 <th>Nama Pemilik</th>
                             </tr>
