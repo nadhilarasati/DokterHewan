@@ -211,14 +211,8 @@ class m_admin extends CI_Model
             ],
 
             [
-                'field' => 'tindakan',
-                'label' => 'tindakan',
-                'rules' => 'required'
-            ],
-
-            [
-                'field' => 'obat',
-                'label' => 'obat',
+                'field' => 'terapi',
+                'label' => 'terapi',
                 'rules' => 'required'
             ]
         ];
@@ -408,8 +402,7 @@ class m_admin extends CI_Model
         $this->suhuBadan = $post["suhuBadan"];
         $this->beratBadan = $post["beratBadan"];
         $this->diagnosa = $post["diagnosa"];
-        $this->tindakan = $post["tindakan"];
-        $this->obat = $post["obat"];
+        $this->terapi = $post["terapi"];
         $this->idPegawai = $post["idPegawai"];
 
         $this->idHewan = $fk;
@@ -429,23 +422,6 @@ class m_admin extends CI_Model
     {
         $this->db->where('idRekamMedis', $idRekamMedis);
         return $this->db->get("data_medis_view")->row();
-    }
-
-    public function editMedis($idRekamMedis)
-    {
-        $post = $this->input->post();
-
-        $this->tanggal = date("Y/m/d");
-        $this->gejalaKlinis = $post["gejalaKlinis"];
-        $this->suhuBadan = $post["suhuBadan"];
-        $this->beratBadan = $post["beratBadan"];
-        $this->diagnosa = $post["diagnosa"];
-        $this->tindakan = $post["tindakan"];
-        $this->obat = $post["obat"];
-        $this->idPegawai = $post["idPegawai"];
-
-        $this->db->where('idRekamMedis', $idRekamMedis);
-        return $this->db->update("rekam_medis", $this);
     }
 
     public function getDokter()
