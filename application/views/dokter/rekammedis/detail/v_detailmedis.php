@@ -96,19 +96,18 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <tr>
+                            <tr class="text-center">
                                 <th>ID Rekam Medis</th>
                                 <th>Tanggal</th>
                                 <th>Gejala Klinis</th>
                                 <th>Suhu Badan</th>
                                 <th>Berat Badan</th>
                                 <th>Diagnosa</th>
-                                <th>Tindakan</th>
-                                <th>Obat</th>
+                                <th>Terapi</th>
                                 <th>Diperiksa Oleh</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="text-center">
                             <?php foreach ($data_medis as $dm) { ?>
                                 <tr>
                                     <td><?php echo $dm->idRekamMedis ?></td>
@@ -122,8 +121,7 @@
                                     <td><?php echo $dm->suhuBadan ?></td>
                                     <td><?php echo $dm->beratBadan ?></td>
                                     <td><?php echo $dm->diagnosa ?></td>
-                                    <td><?php echo $dm->tindakan ?></td>
-                                    <td><?php echo $dm->obat ?></td>
+                                    <td><?php echo $dm->terapi ?></td>
                                     <td><?php echo $dm->namaPegawai ?></td>
                                 </tr>
                             <?php } ?>
