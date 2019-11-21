@@ -132,15 +132,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div style="margin-bottom:0.5cm">
-                    <!-- <button class="btn btn-secondary" href="<?php echo site_url('dokter/hapusAntrian/'.$data_medis->$idAntrian); ?>">Selesai</button> -->
-                    <!--<button class="btn btn-secondary">Delete Record</button>-->
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
