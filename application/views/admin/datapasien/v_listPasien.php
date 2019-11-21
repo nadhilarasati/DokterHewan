@@ -64,7 +64,6 @@
 </div>
 
 
-<!-- <script type="text/javascript" src="<?php echo base_url(); ?>/lib/js/addons/datatables.min.js"></script> -->
 <script>
   function myFunction() {
     var input, filter, table, tr, td, i, txtValue;
