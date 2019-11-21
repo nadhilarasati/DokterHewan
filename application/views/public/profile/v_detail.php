@@ -69,8 +69,7 @@
                         <th>Berat Badan</th>
                         <th>Suhu Badan</th>
                         <th>Diagnosa</th>
-                        <th>Tindakan</th>
-                        <th>Obat</th>
+                        <th>Terapi</th>
                         <th>Dokter Pemeriksa</th>
                     </tr>
                 </thead>
@@ -81,9 +80,8 @@
                         <td><?php echo $dm->beratBadan ?></td>
                         <td><?php echo $dm->suhuBadan ?></td>
                         <td><?php echo $dm->diagnosa ?></td>
-                        <td><?php echo $dm->tindakan ?></td>
-                        <td><?php echo $dm->obat ?></td>
-                        <td><?php echo $dm->namaPegawai ?></td>
+                        <td><?php echo $dm->terapi ?></td>
+\                        <td><?php echo $dm->namaPegawai ?></td>
                     </tbody>
                 <?php endforeach; ?>
             </table>
