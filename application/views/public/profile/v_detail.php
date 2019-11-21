@@ -3,16 +3,7 @@
         <h1 style="margin-left:20px; margin-top:20px">Halo!</h1>
         <h4 style="margin-left:20px; margin-top:30px">Data Hewan</h4>
         <div class="row">
-            <div class="col-md-4">
-                <div style="margin-left:20px; margin-top:20px">
-                    <img src="../../lib/img/default.jpg" style="width:100%">
-                    <div style="margin-top:20px">
-                        <button>Ubah Foto</button>
-                        <button>Simpan</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8">
+            <div class="col" style="margin-left:20px">
                 <form action="<?php site_url('UserProfile/seeDetail/' . $data_pet->idHewan); ?>" method="post">
 
                     <div style="margin-top:20px">
