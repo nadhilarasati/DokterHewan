@@ -42,7 +42,6 @@
             <ul class="navbar-nav mr-auto navbar">
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url() ?>">BERANDA
-                        <!-- <span class="sr-only">(current)</span> -->
                     </a>
                 </li>
                 <li class="nav-item">
