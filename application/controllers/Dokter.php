@@ -6,10 +6,6 @@ class Dokter extends CI_Controller
     {
         parent::__construct();
         $this->load->model("m_dokter");
-        // $this->load->library('form_validation');
-        // if ($this->session->userdata('logged_in') !== TRUE) {
-        //     redirect('login');
-        // }
     }
     /*
     * REKAM MEDIS DOKTER
@@ -32,7 +28,6 @@ class Dokter extends CI_Controller
     {
 
         $data['title'] = 'Rekam Medis';
-        //$data["data_owner"] = $this->m_dokter->getPemilik($idHewan);
         $data["data_pet"] = $this->m_dokter->getHewanById($idHewan);
         $data["data_medis"] = $this->m_dokter->getRekamMedis($idHewan);
         $this->load->view('admin/template/sidebar', $data);
