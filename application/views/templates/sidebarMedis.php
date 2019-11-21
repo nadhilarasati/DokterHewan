@@ -3,13 +3,13 @@
         <h2>Selamat Datang!</h2>
         <div class="row">
             <div class="col nav-item">
-                <a href="<?php echo base_url('UserProfile/seeProfile') ?>" class="nav-link">Data Pemilik Hewan</a>
+                <a href="<?php echo base_url('UserProfile/seeProfile') ?>" class="nav-link" style="color:white">Data Pemilik Hewan</a>
                 |
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <a href="<?php echo base_url('UserProfile/seePets') ?>" class="nav-link ">Data Hewan Peliharaan</a>
+                <a href="<?php echo base_url('UserProfile/seePets') ?>" class="nav-link " style="color:white">Data Hewan Peliharaan</a>
             </div>
         </div>
     </div>
@@ -21,8 +21,6 @@
 
 
         height: 100%;
-        /* filter: blur(1px); */
-        /* -webkit-filter: blur(1px); */
         background-size: cover;
         background-repeat: no-repeat;
     }
