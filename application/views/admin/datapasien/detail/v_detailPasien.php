@@ -92,7 +92,7 @@
                                     <td><?php echo $d->warna ?></td>
                                     <td><?php echo status($d->status) ?></td>
                                     <td><a class="btn btn-primary" href="<?php echo site_url('admin/detailRekamMedis/' . $d->idHewan); ?>"><i class="fa fa-file"></i></a></td>
-                                    <td><a class="btn btn-primary" href="<?php echo site_url('admin/editDataHewan/'. $d->idHewan); ?>"><i class="fas fa-pen"></i></a></td>
+                                    <td><a class="btn btn-primary" href="<?php echo site_url('admin/editDataHewan/' . $d->idHewan); ?>"><i class="fas fa-pen"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -103,7 +103,7 @@
 
         <div class="row">
             <div class="col">
-                <button class="btn btn-secondary" href="#" style="margin-bottom:0.5cm"id="myBtn">Tambah Hewan Baru</button>
+                <button class="btn btn-secondary" href="#" style="margin-bottom:0.5cm" id="myBtn">Tambah Hewan Baru</button>
 
             </div>
         </div>
@@ -127,8 +127,6 @@
             </div>
 
             <?php echo form_open('Admin/formDataHewan/' . $data_pemilik->idPemilik) ?>
-            <!-- <form class="data-pasien" role="form" style="margin-top:0.5cm" action="<?php //site_url('Admin/formDataHewan');
-                                                                                        ?>" method="post" enctype="multipart/form-data"> -->
             <div class="form-group" style="margin-top:0.5cm">
                 <label for="namaHewan" class="">Nama Hewan</label>
                 <input type="text" name="namaHewan" class="form-control <?php echo form_error('namaHewan') ? 'is-invalid' : '' ?>" id="" placeholder="nama hewan">
@@ -145,15 +143,6 @@
                         <?php foreach ($tipe_hewan as $th) { ?>
                             <option value="<?php echo $th->idJenis ?>"><?php echo $th->jenis ?></option>
                         <?php } ?>
-                        <!-- <option value="2">Anjing</option>
-            <option value="3">Kelinci</option>
-            <option value="4">Alap-Alap</option>
-            <option value="5">Hamster</option>
-            <option value="6">Landak</option>
-            <option value="7">Ular</option>
-            <option value="8">Burung</option>
-            <option value="9">Ayam</option>
-            <option value="10">Lain-Lain</option> -->
                     </select>
                 </div>
             </div>
@@ -195,21 +184,11 @@
                     <?php echo form_error('warna') ?>
                 </div>
             </div>
-            <!-- <div class="form-group">
-                <label for="status" class="">Status Hewan</label>
-                <div class="input-group mb-3">
-                    <select name="status" class="custom-select" id="inputGroupSelect01">
-                        <option value="0" selected>Hidup</option>
-                        <option value="1">Mati</option>
-                    </select>
-                </div>
-            </div> -->
 
 
 
             <div class="modal-footer">
                 <button type="submit" class="btn btn-secondary">Simpan</button>
-                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
             </div>
             <!-- </form> -->
             <?php echo form_close(); ?>
