@@ -40,10 +40,7 @@ class Pages extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('public/login/v_loginPublic');
         $this->load->view('templates/footer');
-    }
-
-    // ADMIN PAGE
-    
+    }    
 }
 
 
