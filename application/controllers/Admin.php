@@ -56,7 +56,6 @@ class Admin extends CI_Controller
         if ($validation->run()) {
             $formmedis->buatRekamMedis($fk);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            //redirect(base_url());
         }
 
         redirect('admin/detailRekamMedis/' . $fk);
@@ -71,7 +70,6 @@ class Admin extends CI_Controller
         if ($validation->run()) {
             $formmedis->kirim($fk);
             $this->session->set_flashdata('success', 'Berhasil di kirim');
-            //redirect(base_url());
         }
 
         redirect('admin/detailRekamMedis/' . $fk);
