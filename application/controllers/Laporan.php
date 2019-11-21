@@ -40,15 +40,11 @@ class Laporan extends CI_Controller
         $awal = $data["tanggalAwal"];
         $akhir = $data["tanggalAkhir"];
         $pdf = new FPDF('p', 'mm', 'A4');
-        // membuat halaman baru
         $pdf->AddPage();
-        // setting jenis font yang akan digunakan
         $pdf->SetFont('Arial', 'B', 16);
-        // mencetak string 
         $pdf->Cell(190, 25, 'REKAP LAPORAN KUNJUNGAN KLINIK NYANKO', 0, 1, 'C');
         $pdf->SetFont('Arial', 'B', 10);
         $pdf->Cell(190, 10, 'Periode '.$awal.' sampai '.$akhir, 0, 1, 'C');
-        // Memberikan space kebawah agar tidak terlalu rapat
         $pdf->Cell(10, 15, '', 0, 1);
         $pdf->SetFont('Arial', 'B', 10);
         $pdf->Cell(80, 6, 'Tanggal', 1, 0, 'C');
@@ -105,20 +101,14 @@ class Laporan extends CI_Controller
     {
 
         $pdf = new FPDF('p', 'mm', 'A4');
-        // membuat halaman baru
         $pdf->AddPage();
-        // setting jenis font yang akan digunakan
         $pdf->SetFont('Arial', 'B', 16);
-        // mencetak string 
         $pdf->Cell(195, 20, 'FORMULIR PENDAFTARAN PASIEN KLINIK NYANKO', 0, 1, 'C');
-        //bawahnya
         $pdf->SetFont('Arial', '', 12);
         $pdf->Cell(195, 0, 'Bukit Cimanggu City R2 no. 7, Tanah Sareal, Bogor', 0, 1, 'C');
         $pdf->SetFont('Arial', '', 12);
         $pdf->Cell(195, 15, '(0251) 7540402', 0, 1, 'C');
-        // Memberikan space kebawah agar tidak terlalu rapat
         $pdf->Cell(10, 5, '', 0, 1);
-        //isi formulir data pemilik
         $pdf->SetFont('Arial', 'B', 14);
         $pdf->Cell(195, 20, 'DATA PEMILIK HEWAN', 0, 1, 'L');
         $pdf->SetFont('Arial', '', 12);
@@ -158,14 +148,10 @@ class Laporan extends CI_Controller
     {
 
         $pdf = new FPDF('p', 'mm', 'A4');
-        // membuat halaman baru
         $pdf->AddPage();
-        // setting jenis font yang akan digunakan
         $pdf->SetFont('Arial', 'B', 16);
-        // mencetak string 
         $pdf->Cell(190, 25, 'REKAP LAPORAN KUNJUNGAN KLINIK NYANKO', 0, 1, 'C');
 
-        // Memberikan space kebawah agar tidak terlalu rapat
         $pdf->Cell(10, 15, '', 0, 1);
         $pdf->SetFont('Arial', 'B', 10);
         $pdf->Cell(80, 6, 'Tanggal', 1, 0, 'C');
@@ -188,11 +174,8 @@ class Laporan extends CI_Controller
         $hewan = $this->m_admin->getHewan($idHewan);
 
         $pdf = new FPDF('l', 'mm', 'A4');
-        // membuat halaman baru
         $pdf->AddPage();
-        // setting jenis font yang akan digunakan
         $pdf->SetFont('Arial', 'B', 16);
-        // mencetak string 
         $pdf->Cell(190, 25, '                                                       FORM REKAM MEDIS KLINIK NYANKO', 0, 1, 'C');
 
         $pdf->SetFont('Arial', 'B', 14);
