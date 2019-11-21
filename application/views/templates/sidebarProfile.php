@@ -21,8 +21,6 @@
 
 
         height: 100%;
-        /* filter: blur(1px); */
-        /* -webkit-filter: blur(1px); */
         background-size: cover;
         background-repeat: no-repeat;
     }
