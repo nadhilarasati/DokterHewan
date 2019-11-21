@@ -94,8 +94,7 @@
                                 <th>Suhu Badan</th>
                                 <th>Berat Badan</th>
                                 <th>Diagnosa</th>
-                                <th>Tindakan</th>
-                                <th>Obat</th>
+                                <th>Terapi</th>
                                 <th>Dokter Pemeriksa</th>
                             </tr>
                         </thead>
@@ -110,8 +109,7 @@
                                     <td><?php echo $dm->suhuBadan ?></td>
                                     <td><?php echo $dm->beratBadan ?></td>
                                     <td><?php echo $dm->diagnosa ?></td>
-                                    <td><?php echo $dm->tindakan ?></td>
-                                    <td><?php echo $dm->obat ?></td>
+                                    <td><?php echo $dm->terapi ?></td>
                                     <td><?php echo $dm->namaPegawai ?></td>
                                 </tr>
                             <?php } ?>
@@ -175,18 +173,10 @@
             </div>
 
             <div class="form-group">
-                <label for="tindakan" class="">Tindakan</label>
-                <input type="text" name="tindakan" class="form-control <?php echo form_error('tindakan') ? 'is-invalid' : '' ?>" id="" placeholder="tindakan">
+                <label for="terapi" class="">Terapi</label>
+                <input type="text" name="terapi" class="form-control <?php echo form_error('terapi') ? 'is-invalid' : '' ?>" id="" placeholder="terapi">
                 <div class="invalid-feedback">
-                    <?php echo form_error('tindakan') ?>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="obat" class="">Obat</label>
-                <input type="text" name="obat" class="form-control <?php echo form_error('obat') ? 'is-invalid' : '' ?>" id="" placeholder="obat">
-                <div class="invalid-feedback">
-                    <?php echo form_error('obat') ?>
+                    <?php echo form_error('terapi') ?>
                 </div>
             </div>
 
