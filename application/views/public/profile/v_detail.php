@@ -81,7 +81,7 @@
                         <td><?php echo $dm->suhuBadan ?></td>
                         <td><?php echo $dm->diagnosa ?></td>
                         <td><?php echo $dm->terapi ?></td>
-\                        <td><?php echo $dm->namaPegawai ?></td>
+                        <td><?php echo $dm->namaPegawai ?></td>
                     </tbody>
                 <?php endforeach; ?>
             </table>
