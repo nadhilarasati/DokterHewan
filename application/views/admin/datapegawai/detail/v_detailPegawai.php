@@ -38,12 +38,12 @@
                 <div class="col-sm-6">
                     <div class="input-group mb-3">
                         <select name="role" class="custom-select" id="inputGroupSelect01">
-                            <option value="<?php echo roleName($data_pegawai->role) ?>"><?php echo roleName($data_pegawai->role) ?></option>
+                            <option value="<?php echo $data_pegawai->role ?>"><?php echo roleName($data_pegawai->role) ?></option>
                             <?php if (roleName($data_pegawai->role) != 'Dokter') { ?>
                                 <option value="1">Dokter</option>
-                            <?php } else { ?>
-                                <option value="2">Paramedis</option>
-                            <?php } ?>
+                                <?php } else { ?>
+                                    <option value="2">Paramedis</option>
+                                    <?php } ?>
                         </select>
                     </div>
                 </div>
@@ -74,10 +74,10 @@
 
 function roleName($code)
 {
-    if ($code == 1) {
-        return "Dokter";
-    } else {
+    if ($code == 2) {
         return "Paramedis";
+    } else {
+        return "Dokter";
     }
 }
 
