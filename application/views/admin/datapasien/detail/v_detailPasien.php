@@ -92,7 +92,10 @@
                                     <td><?php echo $d->warna ?></td>
                                     <td><?php echo status($d->status) ?></td>
                                     <td><a class="btn btn-primary" href="<?php echo site_url('admin/detailRekamMedis/' . $d->idHewan); ?>"><i class="fa fa-file"></i></a></td>
-                                    <td><a class="btn btn-primary" href="<?php echo site_url('admin/editDataHewan/' . $d->idHewan); ?>"><i class="fas fa-pen"></i></a></td>
+                                    <td>
+                                        <?php if(status($d->status)=='Mati') {} else{?>
+                                        <a class="btn btn-primary" href="<?php echo site_url('admin/editDataHewan/' . $d->idHewan); ?>"><i class="fas fa-pen"></i></a></td>
+                                  <?php } ?>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -144,6 +147,9 @@
                             <option value="<?php echo $th->idJenis ?>"><?php echo $th->jenis ?></option>
                         <?php } ?>
                     </select>
+                    <div class="invalid-feedback">
+                        <?php echo form_error('jenisHewan') ?>
+                </div>
                 </div>
             </div>
 
