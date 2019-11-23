@@ -12,7 +12,6 @@ class m_admin extends CI_Model
                 'rules' => 'required'
             ],
 
-
             [
                 'field' => 'alamat',
                 'label' => 'Alamat',
@@ -59,8 +58,6 @@ class m_admin extends CI_Model
                 'label' => 'namaPemilik',
                 'rules' => 'required'
             ],
-
-
             [
                 'field' => 'alamat',
                 'label' => 'Alamat',
@@ -84,10 +81,6 @@ class m_admin extends CI_Model
                 'label' => 'Password',
                 'rules' => 'required'
             ]
-
-
-
-
         ];
     }
 
@@ -131,7 +124,6 @@ class m_admin extends CI_Model
                 'label' => 'jenisHewan',
                 'rules' => 'required'
             ]
-
         ];
     }
 
