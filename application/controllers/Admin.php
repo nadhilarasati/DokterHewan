@@ -218,7 +218,7 @@ class Admin extends CI_Controller
         $validation = $this->form_validation;
         $validation->set_rules($formhewan->rules_hewan());
 
-        if ($validation->run()) {
+        if ($validation->run()){
             $formhewan->saveHewan($fk);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             //redirect(base_url());
