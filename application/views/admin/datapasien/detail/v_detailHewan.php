@@ -49,7 +49,7 @@
                                 <label for="jenisKelamin" class="col-sm-4 col-form-label">Jenis Kelamin</label>
                                 <div class="col-sm-8">
                                     <select name="jenisKelamin" class="custom-select" id="inputGroupSelect01">
-                                        <option value="<?php echo gender($data_hewan->jenisKelamin) ?>"><?php echo gender($data_hewan->jenisKelamin) ?></option>
+                                        <option value="<?php echo $data_hewan->jenisKelamin ?>"><?php echo gender($data_hewan->jenisKelamin) ?></option>
                                         <?php if (gender($data_hewan->jenisKelamin) != 'Jantan') { ?>
                                             <option value="0">Jantan</option>
                                         <?php } else { ?>
@@ -78,7 +78,7 @@
                                 <label for="status" class="col-sm-4 col-form-label">Status</label>
                                 <div class="col-sm-8">
                                     <select name="status" class="custom-select" id="inputGroupSelect01">
-                                        <option value="<?php echo status($data_hewan->status) ?>"><?php echo status($data_hewan->status) ?></option>
+                                        <option value="<?php echo $data_hewan->status ?>"><?php echo status($data_hewan->status) ?></option>
                                         <?php if (status($data_hewan->status) != 'Hidup') { ?>
                                             <option value="0">Hidup</option>
                                         <?php } else { ?>
