@@ -202,8 +202,7 @@ class Laporan extends CI_Controller
         $pdf->Cell(30, 6, 'Suhu Badan', 1, 0, 'C');
         $pdf->Cell(30, 6, 'Berat Badan', 1, 0, 'C');
         $pdf->Cell(40, 6, 'Diagnosa', 1, 0, 'C');
-        $pdf->Cell(40, 6, 'Tindakan', 1, 0, 'C');
-        $pdf->Cell(35, 6, 'Obat', 1, 0, 'C');
+        $pdf->Cell(40, 6, 'Terapi', 1, 0, 'C');
         $pdf->Cell(30, 6, 'TTD Dokter', 1, 1, 'C');
         $pdf->Cell(30, 30, '', 1, 0, 'C');
         $pdf->Cell(40, 30, '', 1, 0, 'C');
@@ -211,7 +210,6 @@ class Laporan extends CI_Controller
         $pdf->Cell(30, 30, '', 1, 0, 'C');
         $pdf->Cell(40, 30, '', 1, 0, 'C');
         $pdf->Cell(40, 30, '', 1, 0, 'C');
-        $pdf->Cell(35, 30, '', 1, 0, 'C');
         $pdf->Cell(30, 30, '', 1, 1, 'C');
 
         $pdf->Output();
