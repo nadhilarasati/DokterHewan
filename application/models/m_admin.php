@@ -237,17 +237,6 @@ class m_admin extends CI_Model
         return $this->db->insert("staff_klinik", $this);
     }
 
-    public function saveDokter()
-    {
-        $post = $this->input->post();
-        $this->namaDokter = $post["nama"];
-        $this->alamat = $post["alamat"];
-        $this->telepon = $post["telepon"];
-        $this->email = $post["email"];
-        $this->password = $post["password"];
-
-        return $this->db->insert("dokter", $this);
-    }
 
     /*
 	* Method untuk menampilkan data dari seorang pegawai
