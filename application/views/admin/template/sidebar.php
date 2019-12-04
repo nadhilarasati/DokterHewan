@@ -89,17 +89,17 @@
             <i class="fas fa-fw fa-table"></i>
             <span>Data Pegawai</span></a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>Admin/antrianRawatJalan">
+            <i class="fas fa-fw fa-list"></i>
+            <span>Antrian Rawat Jalan</span></a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>Laporan/laporan">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Laporan</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url(); ?>Admin/resetAntrian">
-            <i class="fas fa-fw fa-file"></i>
-            <span>Reset Antrian</span></a>
-        </li>
+        
         <!-- Menu untuk dokter -->
       <?php elseif ($this->session->userdata('role') === '1') : ?>
         <li class="nav-item">
