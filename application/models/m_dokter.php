@@ -21,11 +21,6 @@ class m_dokter extends CI_Model{
         return $this->db->get_where('list_antrian',["idPegawai" => $idPegawai])->result();
     }
 
-    public function getRekamMedis($idRekamMedis){
-        $this->db->where('idHewan', $idRekamMedis);
-        return $this->db->get("data_medis_view")->result();
-    }
-
     public function hapus($idAntrian){
         return $this->db->delete("antrian_registrasi", ["idAntrian" => $idAntrian]);
     }
@@ -35,4 +30,5 @@ class m_dokter extends CI_Model{
         $this->db->where('email', $idPegawai);
         return $this->db->get('staff_klinik')->row();
     }
+
 }
