@@ -444,4 +444,9 @@ class m_admin extends CI_Model
     {
         $this->db->truncate("antrian_registrasi");
     }
+
+    //mendapatkan semua antrian
+    public function semuaAntrian(){
+        return $this->db->get("list_antrian")->result();
+    }
 }
