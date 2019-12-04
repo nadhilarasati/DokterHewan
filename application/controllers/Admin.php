@@ -75,23 +75,6 @@ class Admin extends CI_Controller
         redirect('admin/detailRekamMedis/' . $fk);
     }
 
-    public function editRekamMedis($idRekamMedis=null)
-    {
-        $data['title'] = 'Edit Rekam Medis';
-        $datamedis = $this->m_admin;
-        $validation = $this->form_validation;
-        $validation->set_rules($datamedis->rules_rekammedis());
-
-        if ($validation->run()) {
-            $datamedis->editMedis($idRekamMedis);
-            $this->session->set_flashdata('success', 'Berhasil diperbarui');
-        }
-        $data['data_medis'] = $this->m_admin->getMedis($idRekamMedis);
-        $data['dokter_praktek'] = $this->m_admin->getDokter();
-        $this->load->view('admin/template/sidebar', $data);
-        $this->load->view('admin/rekammedis/detail/v_editMedis');
-        $this->load->view('admin/template/sidebarfooter');
-    }
 
 
     /*
