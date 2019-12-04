@@ -18,11 +18,10 @@ class LoginUser extends CI_Controller{
         $password = $this->input->post('password');
         $where = array(
             'email' => $email,
-            'password' => $password
+            'password' => $password,
         );
         $cek = $this->m_login->cek_login($where)->num_rows();
         if ($cek > 0) {
-
             $data_session = array(
                 'email' => $email,
                 'logged_in' => TRUE
