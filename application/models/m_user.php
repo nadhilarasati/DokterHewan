@@ -10,6 +10,7 @@ class m_user extends CI_Model
         $query = $this->db->get()->row();
         return $query;
     }
+
     public function getPemilikById($idPemilik)
     {
         $this->db->where('email', $idPemilik);
@@ -20,18 +21,6 @@ class m_user extends CI_Model
     {
         $this->db->where('idPemilik', $this->getIdByEmail($idHewan)->idPemilik);
         return $this->db->get('daftar_hewan')->result();
-    }
-
-    public function getHewan($idHewan)
-    {
-        $this->db->where('idHewan', $idHewan);
-        return $this->db->get("daftar_hewan")->row();
-    }
-
-    public function getRekamMedis($idRekamMedis)
-    {
-        $this->db->where('idHewan', $idRekamMedis);
-        return $this->db->get("data_medis_view")->result();
     }
 
     public function editPassword($idPemilik)
