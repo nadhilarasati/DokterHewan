@@ -21,11 +21,22 @@ class Admin extends CI_Controller
         $this->load->view('admin/login/v_loginAdmin');
     }
 
+    /*
+    * Antrian
+    */
 
+    public function antrianRawatJalan(){
+        $data['title'] = 'Antrian';
+        $data['daftar_antrian']=$this->m_admin->semuaAntrian();
+        $this->load->view('admin/template/sidebar', $data);
+        $this->load->view('admin/antrian/v_antrian');
+        $this->load->view('admin/template/sidebarfooter');
+    }
+    
     public function resetAntrian()
     { 
         $this->m_admin->resetQ();
-        redirect('admin/dataPasien');
+        redirect('admin/antrianRawatJalan');
     }
 
     /*
@@ -69,7 +80,7 @@ class Admin extends CI_Controller
 
         if ($validation->run()) {
             $formmedis->kirim($fk);
-            $this->session->set_flashdata('success', 'Berhasil di kirim');
+            $this->session->set_flashdata('success', 'Berhasil dikirim');
         }
 
         redirect('admin/detailRekamMedis/' . $fk);
