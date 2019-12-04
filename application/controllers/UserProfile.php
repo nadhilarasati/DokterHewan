@@ -6,6 +6,7 @@ class UserProfile extends CI_Controller
     {
         parent::__construct();
         $this->load->model("m_user");
+        $this->load->model("m_admin");
         $this->load->library('session');
         $this->load->library('form_validation');
         if ($this->session->userdata('logged_in') !== TRUE) {
@@ -72,8 +73,8 @@ class UserProfile extends CI_Controller
     public function seeDetail($idHewan = null)
     {
         $data['title'] = 'Profile';
-        $data['data_pet'] = $this->m_user->getHewan($idHewan);
-        $data['data_medis'] = $this->m_user->getRekamMedis($idHewan);
+        $data['data_pet'] = $this->m_admin->getHewan($idHewan);
+        $data['data_medis'] = $this->m_admin->getRekamMedis($idHewan);
         $this->load->view('templates/headerLogin', $data);
         $this->load->view('templates/sidebarMedis', $data);
         $this->load->view('public/profile/v_detail');
