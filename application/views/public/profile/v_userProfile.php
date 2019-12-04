@@ -60,17 +60,11 @@
                 <div class="col" style="margin-left:20px">
                     <form class="data-pasien" action="<?php base_url('UserProfile/seeProfile') ?>" method="post">
                         <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label">Password</label>
-                            <div class="col-sm-6">
-                                <input type="text" name="email" class="form-control" id="" value="<?php echo $data_pemilik->password ?>" readonly>
-                            </div>
-                        </div>
-                        <div class="form-group row">
                             <label for="passBaru" class="col-sm-4 col-form-label">Password Baru</label>
                             <div class="col-sm-6">
-                                <input id= "pw" type="password" class="form-control " placeholder="Password Baru" name="passBaru">
-                                <span toggle="#pw" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                <input id="pw" type="password" class="form-control " placeholder="Password Baru" name="passBaru">
                             </div>
+                            <span toggle="#pw" class="fa fa-fw fa-eye field-icon toggle-password" style="margin-top:1%"></span>
                             <div class="invalid-feedback">
                                 <?php echo form_error('passBaru') ?>
                             </div>
