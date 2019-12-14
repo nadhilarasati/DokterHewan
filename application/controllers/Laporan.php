@@ -105,9 +105,9 @@ class Laporan extends CI_Controller
         $pdf->SetFont('Arial', 'B', 16);
         $pdf->Cell(195, 20, 'FORMULIR PENDAFTARAN PASIEN KLINIK NYANKO', 0, 1, 'C');
         $pdf->SetFont('Arial', '', 12);
-        $pdf->Cell(195, 0, 'Bukit Cimanggu City R2 no. 7, Tanah Sareal, Bogor', 0, 1, 'C');
+        $pdf->Cell(195, 0, 'Jalan Wira Angun-Angun no.16, Bandung', 0, 1, 'C');
         $pdf->SetFont('Arial', '', 12);
-        $pdf->Cell(195, 15, '(0251) 7540402', 0, 1, 'C');
+        $pdf->Cell(195, 15, '(022) 3528145', 0, 1, 'C');
         $pdf->Cell(10, 5, '', 0, 1);
         $pdf->SetFont('Arial', 'B', 14);
         $pdf->Cell(195, 20, 'DATA PEMILIK HEWAN', 0, 1, 'L');
@@ -137,7 +137,7 @@ class Laporan extends CI_Controller
         $pdf->SetFont('Arial', '', 12);
         $pdf->Cell(195, 10, 'Warna                               :        ...................................', 0, 1, 'L');
         $pdf->SetFont('Arial', '', 12);
-        $pdf->Cell(195, 55, 'Bogor, ......', 0, 1, 'L');
+        $pdf->Cell(195, 55, 'Bandung, ......', 0, 1, 'L');
         $pdf->SetFont('Arial', '', 12);
         $pdf->Cell(195, 20, '(Pemilik Hewan)', 0, 1, 'L');
 
