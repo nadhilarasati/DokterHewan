@@ -48,7 +48,7 @@
                     <a class="nav-link" href="<?php echo base_url('UserProfile/facilities') ?>">FASILITAS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="<?php echo base_url('UserProfile/aboutus') ?>">TENTANG KAMI</a>
+                    <a class="nav-link " href="<?php echo base_url('UserProfile/aboutus') ?>">KONTAK</a>
                 </li>
                 
                 <li class="nav-item">
