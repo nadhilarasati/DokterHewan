@@ -38,7 +38,6 @@ class UserProfile extends CI_Controller
         $data['title'] = 'Facilities';
         $this->load->view('templates/headerLogin', $data);
         $this->load->view('public/facilities/v_facilities');
-        $this->load->view('templates/sidebarFasilitas');
         $this->load->view('templates/footer');
     }
 
