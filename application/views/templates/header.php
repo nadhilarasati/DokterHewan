@@ -48,7 +48,7 @@
                     <a class="nav-link" href="<?php echo base_url('pages/facilities') ?>">FASILITAS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="<?php echo base_url('pages/aboutus') ?>">TENTANG KAMI</a>
+                    <a class="nav-link " href="<?php echo base_url('pages/aboutus') ?>">KONTAK</a>
                 </li>
                 
                 <li class="nav-item">
