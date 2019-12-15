@@ -39,6 +39,11 @@ class Admin extends CI_Controller
         redirect('admin/antrianRawatJalan');
     }
 
+    public function hapusAntrian($idAntrian=null){
+        $this->m_admin->hapus($idAntrian);
+        redirect('admin/antrianRawatJalan');
+    }
+
     /*
     * REKAM MEDIS
     */
