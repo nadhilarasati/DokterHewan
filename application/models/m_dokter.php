@@ -21,10 +21,6 @@ class m_dokter extends CI_Model{
         return $this->db->get_where('list_antrian',["idPegawai" => $idPegawai])->result();
     }
 
-    public function hapus($idAntrian){
-        return $this->db->delete("antrian_registrasi", ["idAntrian" => $idAntrian]);
-    }
-
     public function getDokterById($idPegawai)
     {
         $this->db->where('email', $idPegawai);
