@@ -36,10 +36,6 @@ class Dokter extends CI_Controller
         $this->load->view('admin/template/sidebarfooter');
     }
 
-    public function hapusAntrian($idAntrian=null){
-        $this->m_dokter->hapus($idAntrian);
-        redirect('dokter/listRekamMedis');
-    }
 
     public function profilDokter()
     {
