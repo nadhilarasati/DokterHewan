@@ -104,8 +104,8 @@
       <?php elseif ($this->session->userdata('role') === '1') : ?>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>dokter/listRekamMedis">
-            <i class="fas fa-fw fa-file"></i>
-            <span>Antrian Registrasi</span></a>
+            <i class="fas fa-fw fa-list"></i>
+            <span>Antrian Rawat Jalan</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>dokter/profilDokter">
