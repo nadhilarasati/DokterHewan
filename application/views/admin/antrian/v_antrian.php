@@ -19,6 +19,7 @@
                                 <th>Nama Hewan</th>
                                 <th>Jenis</th>
                                 <th>Dokter Pemeriksa</th>
+                                <th>Hapus</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -29,6 +30,7 @@
                                     <td><?php echo $d->namaHewan ?></td>
                                     <td><?php echo $d->jenis ?></td>
                                     <td><?php echo $d->namaPegawai ?></td>
+                                    <td><a class="btn btn-primary" href="<?php echo site_url('admin/hapusAntrian/' . $d->idAntrian); ?>"><i class="fas fa-trash"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
