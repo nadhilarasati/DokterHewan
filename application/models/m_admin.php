@@ -449,4 +449,9 @@ class m_admin extends CI_Model
     public function semuaAntrian(){
         return $this->db->get("list_antrian")->result();
     }
+
+    //hapus antrian
+    public function hapus($idAntrian){
+        return $this->db->delete("antrian_registrasi", ["idAntrian" => $idAntrian]);
+    }
 }
