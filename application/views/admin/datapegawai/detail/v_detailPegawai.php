@@ -59,7 +59,6 @@
                 <label for="noKTP" class="col-sm-4 col-form-label">Password</label>
                 <div class="col-sm-6">
                     <input type="password" name="password" class="form-control" id="pw" value="<?php echo $data_pegawai->password ?>">
-                    <span toggle="#pw" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                 </div>
             </div>
             <div style="margin-left:12cm; margin-top:2cm">
