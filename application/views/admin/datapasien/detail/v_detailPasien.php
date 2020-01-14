@@ -52,7 +52,6 @@
                                 <label for="password" class="col-sm-4 col-form-label">Password</label>
                                 <div class="col-sm-8">
                                     <input id="pw" type="password" name="password" class="form-control " id="" value="<?php echo $data_pemilik->password ?>">
-                                    <span toggle="#pw" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-secondary" style="margin-top:0.5cm">Simpan</button>
