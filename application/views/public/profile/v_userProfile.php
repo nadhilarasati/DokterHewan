@@ -55,7 +55,7 @@
 
         <div id="UbahPassword" class="tabcontent">
             <h4 style="margin-left:20px; margin-top:20px">Ubah Password</h4>
-            <p style="margin-left:20px">Ubahlah password anda di sini. Anda bisa mengombinasikan huruf dan angka dengan panjang minimum 5 karakter dan maksimal 12 karakter.</p>
+            <p style="margin-left:20px">Ubahlah password anda di sini. Anda bisa mengombinasikan huruf dan angka dengan panjang maksimal 12 karakter.</p>
             <div class="row" style="margin-top:20px">
                 <div class="col" style="margin-left:20px">
                     <form class="data-pasien" action="<?php base_url('UserProfile/seeProfile') ?>" method="post">
