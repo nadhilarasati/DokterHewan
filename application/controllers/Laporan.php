@@ -139,7 +139,7 @@ class Laporan extends CI_Controller
         $pdf->SetFont('Arial', '', 12);
         $pdf->Cell(195, 55, 'Bandung, ......', 0, 1, 'L');
         $pdf->SetFont('Arial', '', 12);
-        $pdf->Cell(195, 20, '(Pemilik Hewan)', 0, 1, 'L');
+        $pdf->Cell(195, 20, '(Nama Pemilik Hewan)', 0, 1, 'L');
 
         $pdf->Output();
     }
