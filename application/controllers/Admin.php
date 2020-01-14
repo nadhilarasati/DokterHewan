@@ -64,7 +64,7 @@ class Admin extends CI_Controller
     //insert rekam medis
     public function formRekamMedis($fk)
     {
-        $data['title'] = 'Data Pasien';
+        $data['title'] = 'Data Medis';
         $formmedis = $this->m_admin;
         $validation = $this->form_validation;
         $validation->set_rules($formmedis->rules_rekammedis());
